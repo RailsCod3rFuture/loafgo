@@ -1,4 +1,5 @@
                      Prefix Verb   URI Pattern                       Controller#Action
+     client_dashboard_index GET    /client_dashboard/index(.:format) client_dashboard#index
         new_manager_session GET    /managers/sign_in(.:format)       devise/sessions#new
             manager_session POST   /managers/sign_in(.:format)       devise/sessions#create
     destroy_manager_session DELETE /managers/sign_out(.:format)      devise/sessions#destroy

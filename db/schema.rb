@@ -30,6 +30,11 @@ ActiveRecord::Schema.define(version: 20180228233012) do
   create_table "clients", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "company_name"
+    t.string "state"
+    t.string "telephone"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -67,6 +72,8 @@ ActiveRecord::Schema.define(version: 20180228233012) do
   create_table "managers", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.string "full_name"
+    t.string "contact_number"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

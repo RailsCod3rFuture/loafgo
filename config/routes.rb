@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'client_dashboard/index'
+
   devise_for :managers
   devise_for :clients
   controller :home do

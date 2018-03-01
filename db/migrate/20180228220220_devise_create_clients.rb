@@ -6,9 +6,9 @@ class DeviseCreateClients < ActiveRecord::Migration[5.1]
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
-      t.string :first_name
-      t.string :last_name
-      t.string :company_name
+      t.string :full_name
+      t.string :company
+      t.string :zip_code
       t.string :state
       t.string :telephone
 
