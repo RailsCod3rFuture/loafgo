@@ -1,0 +1,69 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.welcome-to-loaf-go-top-hr > h1 {
+  text-align: center;
+}
+
+.loaf-go-hr > h1 {
+  color: coral;
+  margin-left: 1em;
+}
+
+.name img {
+
+  margin-left:20px;
+
+}
+
+.callout-box {
+  text-align: center;
+  margin-left: 50em;
+  height: 6em;
+  width: 17em;
+  border: 0.10em #534450 solid;
+  border-radius: 0.10em;
+}
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+  .name img {
+    height:35px;
+    padding-top: 2em;
+    margin-top:5px;
+    margin-left:5px;
+  }
+}
+
+/* Medium and up */
+@media screen and (min-width: 40em) {
+  .title-area {
+
+  }
+  .name {
+
+  }
+
+  .name img {
+    height:35px;
+    padding-top: 2em;
+    margin-top:5px;
+    margin-left:5px;
+  }
+}
+
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+
+}
+
+/* Large and up */
+@media screen and (min-width: 64em) {
+
+}
+
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 74.9375em) {
+
+}
+

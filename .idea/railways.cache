@@ -1,0 +1,35 @@
+                     Prefix Verb   URI Pattern                       Controller#Action
+        new_manager_session GET    /managers/sign_in(.:format)       devise/sessions#new
+            manager_session POST   /managers/sign_in(.:format)       devise/sessions#create
+    destroy_manager_session DELETE /managers/sign_out(.:format)      devise/sessions#destroy
+       new_manager_password GET    /managers/password/new(.:format)  devise/passwords#new
+      edit_manager_password GET    /managers/password/edit(.:format) devise/passwords#edit
+           manager_password PATCH  /managers/password(.:format)      devise/passwords#update
+                            PUT    /managers/password(.:format)      devise/passwords#update
+                            POST   /managers/password(.:format)      devise/passwords#create
+cancel_manager_registration GET    /managers/cancel(.:format)        devise/registrations#cancel
+   new_manager_registration GET    /managers/sign_up(.:format)       devise/registrations#new
+  edit_manager_registration GET    /managers/edit(.:format)          devise/registrations#edit
+       manager_registration PATCH  /managers(.:format)               devise/registrations#update
+                            PUT    /managers(.:format)               devise/registrations#update
+                            DELETE /managers(.:format)               devise/registrations#destroy
+                            POST   /managers(.:format)               devise/registrations#create
+         new_client_session GET    /clients/sign_in(.:format)        devise/sessions#new
+             client_session POST   /clients/sign_in(.:format)        devise/sessions#create
+     destroy_client_session DELETE /clients/sign_out(.:format)       devise/sessions#destroy
+        new_client_password GET    /clients/password/new(.:format)   devise/passwords#new
+       edit_client_password GET    /clients/password/edit(.:format)  devise/passwords#edit
+            client_password PATCH  /clients/password(.:format)       devise/passwords#update
+                            PUT    /clients/password(.:format)       devise/passwords#update
+                            POST   /clients/password(.:format)       devise/passwords#create
+ cancel_client_registration GET    /clients/cancel(.:format)         devise/registrations#cancel
+    new_client_registration GET    /clients/sign_up(.:format)        devise/registrations#new
+   edit_client_registration GET    /clients/edit(.:format)           devise/registrations#edit
+        client_registration PATCH  /clients(.:format)                devise/registrations#update
+                            PUT    /clients(.:format)                devise/registrations#update
+                            DELETE /clients(.:format)                devise/registrations#destroy
+                            POST   /clients(.:format)                devise/registrations#create
+                       home GET    /home/index(.:format)             home#index
+                      about GET    /home/about(.:format)             home#about
+                    contact GET    /home/contact(.:format)           home#contact
+                       root GET    /                                 home#index

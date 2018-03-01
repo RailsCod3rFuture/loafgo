@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>LoafGo</title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <% if client_signed_in? %>
+    <% elsif manager_signed_in? %>
+    <% else %>
+    <%= render 'navbar/default_navbar' %>
+    <% end %>
+    <%= yield %>
+    <%= javascript_include_tag "application" %>
+  </body>
+</html>
