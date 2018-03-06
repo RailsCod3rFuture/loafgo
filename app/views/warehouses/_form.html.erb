@@ -1,0 +1,27 @@
+<%= simple_form_for(@warehouse, :method => :patch, :html => {:multipart => true}) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-group">
+    <label>Warehouse Address</label>
+    <%= f.input :address, class: 'form-control', required: true, label: false %>
+  </div>
+
+  <div class="form-group">
+    <label>Warehouse Zip Code</label>
+    <%= f.input :zip_code, class: 'form-control', required: true, label: false %>
+  </div>
+  <div class="form-group">
+    <label>Warehouse State</label>
+    <%= f.input :state, class: 'form-control', required: true, label: false %>
+  </div>
+  <div class="form-group">
+    <label>Employee Count</label>
+    <%= f.input :delivery_men_count, class: 'form-control', required: false, label: false %>
+  </div>
+  <div class="form-group">
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: 'btn btn-outline-success' %>
+  </div>
+<% end %>

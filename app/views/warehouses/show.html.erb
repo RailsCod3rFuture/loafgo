@@ -1,0 +1,54 @@
+<div class="full-width-warehouse-bg-top">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="my-warehouse-header">
+          <div class="warehouse-edit-btn">
+            <%= link_to 'Modify Warehouse', edit_warehouse_path, class: 'btn btn-success' %>
+          </div>
+          <h1>LoafGo Warehouse</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <div class="manager-info-box-pos">
+        <div class="manager-info-box">
+          <div class="manager-info">
+            <ul>
+              <li><%= fa_icon 'user-circle' %> Manager: <%= current_manager.full_name %></li>
+              <li><%= fa_icon 'industry' %> Address: <%= current_manager.warehouse.address %> </li>
+              <li><%= fa_icon 'envelope-square' %> Zip code: <%= current_manager.warehouse.zip_code %></li>
+              <li><%= fa_icon 'map-marker' %> State: <%= current_manager.warehouse.state %> </li>
+              <li><%= fa_icon 'barcode' %> Bread Stock Quantity: <%= current_manager.inventories.size %> </li>
+              <li><%= fa_icon 'truck' %> Trucks Available: <%= current_manager.warehouse.trucks.size %></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="manager-newest-orders-box-pos">
+        <div class="manager-newest-orders-box">
+          <div class="manager-newest-orders-header">
+            <h2>Newest Client Orders</h2>
+            <div class="orders-list">
+              <% @orders.each do |order| %>
+                <%= order.client_name %>
+                <%= order.client_zip_code %>
+                <%= order.client_state %>
+                <%= order.client_address %>
+                <%= order.bread_quantity %>
+                <%= order.id %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

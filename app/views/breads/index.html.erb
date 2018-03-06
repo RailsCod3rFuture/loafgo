@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="bread-factory-hr">
+        <h1><%= image_tag 'bread_factory/bun-breads.png', height: '56em', width: '56em' %> Bread Factory</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <div class="panel-body">
+        <div class="quick-scan">
+          <h3><%= fa_icon 'barcode' %> Quick Scan</h3>
+        </div>
+        <div id="barcode-scanner"></div>
+      </div>
+    </div>
+    <div class="col-8">
+      <div class="bread-collection-hr">
+        <h3>Bread Collection</h3>
+      </div>
+      <table class="table table-inverse text-center" style="background-color: #534450">
+        <thead>
+        <tr class="table-success">
+          <th>#</th>
+          <th>Bread Name</th>
+          <th>Type</th>
+          <th>Available</th>
+          <th>View</th>
+          <th>Edit</th>
+          <th>Remove</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @breads.each.with_index(1) do |bread, index| %>
+          <tr>
+            <td><%= index %></td>
+            <td><%= bread.bread_name %></td>
+            <td><%= bread.bread_type %></td>
+            <td><%= bread.bread_quantity %></td>
+            <td><%= link_to 'Go to Bread', bread, class: 'btn btn-outline-info' %></td>
+            <td><%= link_to 'Change', edit_bread_path(bread), class: 'btn btn-outline-warning' %></td>
+            <td><%= link_to 'Destroy', bread, class: 'btn btn-outline-danger', method: :delete, data: {confirm: 'Are you sure?'} %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<br>
+
+<%= link_to 'New Bread', new_bread_path %>

@@ -1,0 +1,12 @@
+<%= simple_form_for(@bread) do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :bread_name %>
+  <%= f.input :bread_type %>
+  <%= f.input :upc %>
+  <%= f.input :image_url %>
+  <div class="form-inputs">
+  </div>
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

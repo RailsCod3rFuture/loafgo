@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="new-order-header text-center">
+        <h1>New Order</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <%= render 'form', my_order: @my_order %>
+    </div>
+  </div>
+</div>
+
+
+<%= link_to 'Back', my_orders_path %>
