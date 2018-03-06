@@ -28,8 +28,8 @@ feature 'client profile page', :devise do
   #   When I visit another client's profile
   #   Then I see an 'access denied' message
   scenario "client cannot see another client's profile" do
-    me = FactoryGirl.create(:client)
-    other = FactoryGirl.create(:client, email: 'other@example.com')
+    me = FactoryBot.create(:client)
+    other = FactoryBot.create(:client, email: 'other@example.com')
     login_as(me, :scope => :client)
     Capybara.current_session.driver.header 'Referer', root_path
     visit client_path(other)

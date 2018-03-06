@@ -10,8 +10,6 @@ class CreateOrders < ActiveRecord::Migration[5.1]
       t.string :bread_name
       t.string :bread_type
       t.integer :bread_quantity
-      t.string :img_url
-      t.string :upc
       t.references :client, foreign_key: true
       t.timestamps
     end

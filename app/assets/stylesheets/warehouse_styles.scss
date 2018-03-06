@@ -1,0 +1,58 @@
+@import "loafgo-color-palette";
+
+.full-width-warehouse-bg-top {
+  position: relative;
+  background: url('manager_img_assets/warehouse-bg.jpg') center center no-repeat;
+  background-size: cover;
+  -web-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 400px;
+  padding: 0;
+}
+
+.my-warehouse-header > h1 {
+  text-align: center;
+  color: whitesmoke;
+  margin-top: 4em;
+}
+
+.manager-info-box {
+  height: 16em;
+  width: 17em;
+  background-color: #534450;
+  border: $color1 0.10em solid;
+}
+
+.manager-newest-orders-box-pos {
+  margin-top: 1em;
+}
+
+.manager-newest-orders-box {
+  height: 16em;
+  width: 30em;
+  background-color: #e5e5e5;
+  border: $color1 0.10em solid;
+}
+
+.manager-newest-orders-header > h2 {
+  text-align: center;
+  color: #534450;
+}
+
+.warehouse-edit-btn > a {
+  float: right;
+  margin-top: -6.50em;
+}
+
+.manager-info-box-pos {
+  margin-top: 1em;
+}
+
+.manager-info > ul, li {
+  margin-left: -1em;
+  margin-top: 1em;
+  list-style: none;
+  color: whitesmoke;
+}

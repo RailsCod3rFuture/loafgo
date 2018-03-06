@@ -1,0 +1,38 @@
+@import "loafgo-color-palette";
+
+.welcome-message-box > h1 {
+  text-align: center;
+
+}
+
+.navbar-melon-default {
+  background-color: $color4;
+  border-bottom: 0.10em #534450;
+
+}
+
+.navbar-melon {
+  background-color: $color1;
+  border-bottom: 0.10em $color5 solid;
+}
+
+.nav-brand-txt-color {
+  color: $color1;
+  text-decoration: none;
+}
+
+.navbar-link-icon-pos > svg {
+  margin-left: 0.60em;
+}
+
+.client-navbar-link-icon-pos > svg {
+  margin-left: 1.80em;
+}
+
+a.nav-link-color {
+  color: $color5;
+}
+
+a.nav-link-color:hover {
+  color: $color1;
+}

@@ -1,36 +1,108 @@
-                     Prefix Verb   URI Pattern                       Controller#Action
-     client_dashboard_index GET    /client_dashboard/index(.:format) client_dashboard#index
-        new_manager_session GET    /managers/sign_in(.:format)       devise/sessions#new
-            manager_session POST   /managers/sign_in(.:format)       devise/sessions#create
-    destroy_manager_session DELETE /managers/sign_out(.:format)      devise/sessions#destroy
-       new_manager_password GET    /managers/password/new(.:format)  devise/passwords#new
-      edit_manager_password GET    /managers/password/edit(.:format) devise/passwords#edit
-           manager_password PATCH  /managers/password(.:format)      devise/passwords#update
-                            PUT    /managers/password(.:format)      devise/passwords#update
-                            POST   /managers/password(.:format)      devise/passwords#create
-cancel_manager_registration GET    /managers/cancel(.:format)        devise/registrations#cancel
-   new_manager_registration GET    /managers/sign_up(.:format)       devise/registrations#new
-  edit_manager_registration GET    /managers/edit(.:format)          devise/registrations#edit
-       manager_registration PATCH  /managers(.:format)               devise/registrations#update
-                            PUT    /managers(.:format)               devise/registrations#update
-                            DELETE /managers(.:format)               devise/registrations#destroy
-                            POST   /managers(.:format)               devise/registrations#create
-         new_client_session GET    /clients/sign_in(.:format)        devise/sessions#new
-             client_session POST   /clients/sign_in(.:format)        devise/sessions#create
-     destroy_client_session DELETE /clients/sign_out(.:format)       devise/sessions#destroy
-        new_client_password GET    /clients/password/new(.:format)   devise/passwords#new
-       edit_client_password GET    /clients/password/edit(.:format)  devise/passwords#edit
-            client_password PATCH  /clients/password(.:format)       devise/passwords#update
-                            PUT    /clients/password(.:format)       devise/passwords#update
-                            POST   /clients/password(.:format)       devise/passwords#create
- cancel_client_registration GET    /clients/cancel(.:format)         devise/registrations#cancel
-    new_client_registration GET    /clients/sign_up(.:format)        devise/registrations#new
-   edit_client_registration GET    /clients/edit(.:format)           devise/registrations#edit
-        client_registration PATCH  /clients(.:format)                devise/registrations#update
-                            PUT    /clients(.:format)                devise/registrations#update
-                            DELETE /clients(.:format)                devise/registrations#destroy
-                            POST   /clients(.:format)                devise/registrations#create
-                       home GET    /home/index(.:format)             home#index
-                      about GET    /home/about(.:format)             home#about
-                    contact GET    /home/contact(.:format)           home#contact
-                       root GET    /                                 home#index
+                     Prefix Verb   URI Pattern                         Controller#Action
+    manager_dashboard_index GET    /manager_dashboard/index(.:format)  manager_dashboard#index
+     client_dashboard_index GET    /client_dashboard/index(.:format)   client_dashboard#index
+        new_manager_session GET    /managers/sign_in(.:format)         devise/sessions#new
+            manager_session POST   /managers/sign_in(.:format)         devise/sessions#create
+    destroy_manager_session DELETE /managers/sign_out(.:format)        devise/sessions#destroy
+       new_manager_password GET    /managers/password/new(.:format)    devise/passwords#new
+      edit_manager_password GET    /managers/password/edit(.:format)   devise/passwords#edit
+           manager_password PATCH  /managers/password(.:format)        devise/passwords#update
+                            PUT    /managers/password(.:format)        devise/passwords#update
+                            POST   /managers/password(.:format)        devise/passwords#create
+cancel_manager_registration GET    /managers/cancel(.:format)          devise/registrations#cancel
+   new_manager_registration GET    /managers/sign_up(.:format)         devise/registrations#new
+  edit_manager_registration GET    /managers/edit(.:format)            devise/registrations#edit
+       manager_registration PATCH  /managers(.:format)                 devise/registrations#update
+                            PUT    /managers(.:format)                 devise/registrations#update
+                            DELETE /managers(.:format)                 devise/registrations#destroy
+                            POST   /managers(.:format)                 devise/registrations#create
+         new_client_session GET    /clients/sign_in(.:format)          devise/sessions#new
+             client_session POST   /clients/sign_in(.:format)          devise/sessions#create
+     destroy_client_session DELETE /clients/sign_out(.:format)         devise/sessions#destroy
+        new_client_password GET    /clients/password/new(.:format)     devise/passwords#new
+       edit_client_password GET    /clients/password/edit(.:format)    devise/passwords#edit
+            client_password PATCH  /clients/password(.:format)         devise/passwords#update
+                            PUT    /clients/password(.:format)         devise/passwords#update
+                            POST   /clients/password(.:format)         devise/passwords#create
+ cancel_client_registration GET    /clients/cancel(.:format)           devise/registrations#cancel
+    new_client_registration GET    /clients/sign_up(.:format)          devise/registrations#new
+   edit_client_registration GET    /clients/edit(.:format)             devise/registrations#edit
+        client_registration PATCH  /clients(.:format)                  devise/registrations#update
+                            PUT    /clients(.:format)                  devise/registrations#update
+                            DELETE /clients(.:format)                  devise/registrations#destroy
+                            POST   /clients(.:format)                  devise/registrations#create
+                       home GET    /home/index(.:format)               home#index
+                      about GET    /home/about(.:format)               home#about
+                    contact GET    /home/contact(.:format)             home#contact
+             sign_up_portal GET    /home/sign_up_portal(.:format)      home#sign_up_portal
+               login_portal GET    /home/login_portal(.:format)        home#login_portal
+         get_barcode_breads POST   /breads/get_barcode(.:format)       breads#get_barcode
+                     breads GET    /breads(.:format)                   breads#index
+                            POST   /breads(.:format)                   breads#create
+                  new_bread GET    /breads/new(.:format)               breads#new
+                 edit_bread GET    /breads/:id/edit(.:format)          breads#edit
+                      bread GET    /breads/:id(.:format)               breads#show
+                            PATCH  /breads/:id(.:format)               breads#update
+                            PUT    /breads/:id(.:format)               breads#update
+                            DELETE /breads/:id(.:format)               breads#destroy
+                 deliveries GET    /deliveries(.:format)               deliveries#index
+                            POST   /deliveries(.:format)               deliveries#create
+               new_delivery GET    /deliveries/new(.:format)           deliveries#new
+              edit_delivery GET    /deliveries/:id/edit(.:format)      deliveries#edit
+                   delivery GET    /deliveries/:id(.:format)           deliveries#show
+                            PATCH  /deliveries/:id(.:format)           deliveries#update
+                            PUT    /deliveries/:id(.:format)           deliveries#update
+                            DELETE /deliveries/:id(.:format)           deliveries#destroy
+                inventories GET    /inventories(.:format)              inventories#index
+                            POST   /inventories(.:format)              inventories#create
+              new_inventory GET    /inventories/new(.:format)          inventories#new
+             edit_inventory GET    /inventories/:id/edit(.:format)     inventories#edit
+                  inventory GET    /inventories/:id(.:format)          inventories#show
+                            PATCH  /inventories/:id(.:format)          inventories#update
+                            PUT    /inventories/:id(.:format)          inventories#update
+                            DELETE /inventories/:id(.:format)          inventories#destroy
+                  my_orders GET    /my_orders(.:format)                my_orders#index
+                            POST   /my_orders(.:format)                my_orders#create
+               new_my_order GET    /my_orders/new(.:format)            my_orders#new
+              edit_my_order GET    /my_orders/:id/edit(.:format)       my_orders#edit
+                   my_order GET    /my_orders/:id(.:format)            my_orders#show
+                            PATCH  /my_orders/:id(.:format)            my_orders#update
+                            PUT    /my_orders/:id(.:format)            my_orders#update
+                            DELETE /my_orders/:id(.:format)            my_orders#destroy
+                     orders GET    /orders(.:format)                   orders#index
+                            POST   /orders(.:format)                   orders#create
+                  new_order GET    /orders/new(.:format)               orders#new
+                 edit_order GET    /orders/:id/edit(.:format)          orders#edit
+                      order GET    /orders/:id(.:format)               orders#show
+                            PATCH  /orders/:id(.:format)               orders#update
+                            PUT    /orders/:id(.:format)               orders#update
+                            DELETE /orders/:id(.:format)               orders#destroy
+            order_feedbacks GET    /order_feedbacks(.:format)          order_feedbacks#index
+                            POST   /order_feedbacks(.:format)          order_feedbacks#create
+         new_order_feedback GET    /order_feedbacks/new(.:format)      order_feedbacks#new
+        edit_order_feedback GET    /order_feedbacks/:id/edit(.:format) order_feedbacks#edit
+             order_feedback GET    /order_feedbacks/:id(.:format)      order_feedbacks#show
+                            PATCH  /order_feedbacks/:id(.:format)      order_feedbacks#update
+                            PUT    /order_feedbacks/:id(.:format)      order_feedbacks#update
+                            DELETE /order_feedbacks/:id(.:format)      order_feedbacks#destroy
+             order_trackers GET    /order_trackers(.:format)           order_trackers#index
+                            POST   /order_trackers(.:format)           order_trackers#create
+          new_order_tracker GET    /order_trackers/new(.:format)       order_trackers#new
+         edit_order_tracker GET    /order_trackers/:id/edit(.:format)  order_trackers#edit
+              order_tracker GET    /order_trackers/:id(.:format)       order_trackers#show
+                            PATCH  /order_trackers/:id(.:format)       order_trackers#update
+                            PUT    /order_trackers/:id(.:format)       order_trackers#update
+                            DELETE /order_trackers/:id(.:format)       order_trackers#destroy
+                     trucks GET    /trucks(.:format)                   trucks#index
+                            POST   /trucks(.:format)                   trucks#create
+                  new_truck GET    /trucks/new(.:format)               trucks#new
+                 edit_truck GET    /trucks/:id/edit(.:format)          trucks#edit
+                      truck GET    /trucks/:id(.:format)               trucks#show
+                            PATCH  /trucks/:id(.:format)               trucks#update
+                            PUT    /trucks/:id(.:format)               trucks#update
+                            DELETE /trucks/:id(.:format)               trucks#destroy
+             edit_warehouse GET    /warehouse/edit(.:format)           warehouses#edit
+                  warehouse GET    /warehouse(.:format)                warehouses#show
+                            PATCH  /warehouse(.:format)                warehouses#update
+                            PUT    /warehouse(.:format)                warehouses#update
+                       root GET    /                                   home#index

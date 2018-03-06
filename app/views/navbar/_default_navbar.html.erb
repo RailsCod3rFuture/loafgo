@@ -1,18 +1,33 @@
-<nav class="top-bar" data-topbar role="navigation">
-  <ul class="title-area">
-    <li class="name loaf-go-hr">
-      <h1>LoafGo</h1>
-    </li>
-    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-  </ul>
-  <section class="top-bar-section">
-    <div class="top-bar-left">
-      <ul class="inline-list left">
-        <li><%= link_to 'Home', home_path %> </li>
-        <li><%= link_to 'About', about_path %> </li>
-        <li><%= link_to 'Contact', contact_path %></li>
-      </ul>
+<nav class="navbar sticky-top navbar-expand-md navbar-toggleable-md navbar-melon-default">
+  <div class="navbar-brand nav-brand-txt-color">
+    <%= inline_svg 'loafgo_logo/bread.svg', size: '10% * 10%', class: 'd-inline-block align-top' %>
+    LoafGo
+  </div>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <%= active_link_to home_path, class: 'nav-item nav-link active navbar-link-icon-pos nav-link-color', :class_inactive => 'inactive' do %>
+        <%= inline_svg 'default_navbar_icons/home.svg', width: 24, height: 24 %>
+        <h6>Home</h6>
+      <% end %>
+      <%= active_link_to login_portal_path, class: 'nav-item nav-link active navbar-link-icon-pos nav-link-color', :class_inactive => 'inactive' do %>
+        <%= inline_svg 'default_navbar_icons/key.svg', width: 24, height: 24 %>
+        <h6>Login</h6>
+      <% end %>
+
+      <%= active_link_to sign_up_portal_path, class: 'nav-item nav-link active navbar-link-icon-pos nav-link-color', :class_inactive => 'inactive' do %>
+        <%= inline_svg 'default_navbar_icons/sign_up.svg', width: 24, height: 24 %>
+        <h6>Register</h6>
+      <% end %>
+
+      <%= active_link_to about_path, class: 'nav-item nav-link active navbar-link-icon-pos nav-link-color', :class_inactive => 'inactive' do %>
+        <%= inline_svg 'default_navbar_icons/info.svg', width: 24, height: 24 %>
+        <h6>About</h6>
+      <% end %>
+
+      <%= active_link_to contact_path, class: 'nav-item nav-link active navbar-link-icon-pos nav-link-color', :class_inactive => 'inactive' do %>
+        <%= inline_svg 'default_navbar_icons/phone.svg', width: 24, height: 24 %>
+        <h6>Contact</h6>
+      <% end %>
     </div>
-  </section>
+  </div>
 </nav>

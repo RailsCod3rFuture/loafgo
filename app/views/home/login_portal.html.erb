@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <div class="login-panel-client">
+        <h3>
+          Login to your Account
+          <small class="text-muted">Client</small>
+        </h3>
+        <%= image_tag 'home_img_assets/login_client_panel_workstation.jpg', class: 'rounded', style: 'height: 12em; width: 23.86em;' %>
+        <div class="login-panel-btn-pos-client">
+          <%= link_to 'Client Login', new_client_session_path, class: 'btn btn-primary btn-block' %>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="login-panel-manager login-panel-btn-pos">
+        <h3>
+          Login to your Account
+          <small class="text-muted">Manager</small>
+        </h3>
+        <%= image_tag 'home_img_assets/login_manager_doll_baker.jpg', class: 'rounded', style: 'height: 12em; width: 23.86em;' %>
+        <div class="login-panel-btn-pos-manager">
+          <%= link_to 'Manager Login', new_manager_session_path, class: 'btn btn-success btn-block' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

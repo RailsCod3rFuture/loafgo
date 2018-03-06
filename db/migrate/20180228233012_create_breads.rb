@@ -4,7 +4,6 @@ class CreateBreads < ActiveRecord::Migration[5.1]
       t.string :bread_name
       t.string :bread_type
       t.date :bread_expire_date
-      t.references :order, foreign_key: true
       t.references :warehouse, foreign_key: true
 
       t.timestamps

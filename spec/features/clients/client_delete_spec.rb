@@ -17,7 +17,7 @@ feature 'client delete', :devise, :js do
   #   Then I should see an account deleted message
   scenario 'client can delete own account' do
     skip 'skip a slow test'
-    client = FactoryGirl.create(:client)
+    client = FactoryBot.create(:client)
     login_as(client, :scope => :client)
     visit edit_client_registration_path(client)
     click_button 'Cancel my account'

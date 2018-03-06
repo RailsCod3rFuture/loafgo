@@ -1,23 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <%= favicon_link_tag 'loafgo_favicon/loafgo_favicon' %>
+    <%= javascript_include_tag "modernizr" %>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>LoafGo</title>
+    <title>LoafGo: 24 hour bread deliveries</title>
 
     <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
 
   <body>
-    <% if client_signed_in? %>
-    <% elsif manager_signed_in? %>
-    <% else %>
+  <% if client_signed_in? %>
+    <%= render 'navbar/client_navbar' %>
+  <% elsif manager_signed_in? %>
+    <%= render 'navbar/manager_navbar' %>
+  <% else %>
     <%= render 'navbar/default_navbar' %>
-    <% end %>
-    <%= yield %>
-    <%= javascript_include_tag "application" %>
+  <% end %>
+
+  <div class="text-center" style="position: absolute; z-index: 999; color: whitesmoke; margin-left: 40em; margin-top: 2em;">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+  </div>
+
+  <%= yield %>
+  <script type="text/javascript">
+      $(document).on('turbolinks:load', function () {
+          $('.dropdown-toggle').dropdown()
+      });
+  </script>
   </body>
 </html>

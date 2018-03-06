@@ -1,17 +1,170 @@
-<div class="grid-container">
-  <div class="grid-x">
-    <div class="cell">
-      <div class="welcome-to-loaf-go-top-hr">
-        <h1>Welcome to LoafGo</h1>
+<div class="full-width-top-bg">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <div class="catch-phrase-header">
+          <h1 class="display-4 bounceInLeft animated">
+            <small>LoafGo</small>
+            is the fastest bread delivery service in the world!
+          </h1>
+        </div>
+        <div class="deliver-msg">
+          <h3>We have 40,000 clients & distributors that depend on us to meet their goals</h3>
+        </div>
+        <section class="deliveries-so-far deliveries-so-far-counter">
+          <p class="deliveries-so-far" style="vertical-align: middle; padding:4px 4px"><%= inline_svg 'home_img_assets/package.svg', height: 50, width: 50 %>
+            Deliveries Made So Far</p>
+          <h1 class="jumbo" id="myTargetElement">0</h1>
+          <!--<h1 class="jumbo" count-up start-val="0" end-val="2536.1" duration="2.5" decimals="1"></h1>-->
+        </section>
+        <section id="errorSection" style="background-color:#FFDCDC; display:none" class="col-inner">
+          <h4 id="error" style="color: red" class="noMargin"></h4>
+        </section>
       </div>
     </div>
-    <div class="grid-x">
-      <div class="cell">
-        <div class="callout-box">
-          <h5>More to come!</h5>
-          <p>We're using Zurb Foundation since Bootstrap is having issues</p>
+  </div>
+
+</div>
+<div class="full-width-bg-color-1">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="welcome-message-box">
+          <h1><%= inline_svg 'home_img_assets/truck.svg', height: 27, width: 27 %> WHAT DO WE OFFER?</h1>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="card">
+          <div class="card-block text-center card-bottom-padding">
+            <%= image_tag 'home_img_assets/Warehouse-Forklift.jpg', class: 'card-img-top' %>
+            <h3 class="card-title card-header-color">24 Hour Shipment or Less</h3>
+            <p class="card-text">We will ship a bulk order of fresh bread loaves from our warehouse as soon as your
+              order is placed</p>
+            <a href="#" class="btn btn-outline-info video-btn card-button-bottom-padding" data-toggle="modal" data-src="https://www.youtube.com/watch?v=KzsHYFK4Zhw" data-target="#myModal">Learn
+              more about our fast deliveries</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card">
+          <div class="card-block text-center card-bottom-padding">
+            <%= image_tag 'home_img_assets/Truck-Formula-1.jpg', class: 'card-img-top' %>
+            <h3 class="card-title card-header-color">GPS Tracking</h3>
+            <p class="card-text">You will easily be able to locate the truck with your shipment on it</p>
+            <a href="#" class="btn btn-outline-info video-btn" data-toggle="modal" data-src="https://www.youtube.com/watch?v=EKN_dwIVuZE" data-target="#myModal">Learn
+              more about our AI 'Loctable'</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card">
+          <div class="card-block text-center card-bottom-padding">
+            <%= image_tag 'home_img_assets/Bakery-Boulanger-Bread-Stick.jpg', class: 'card-img-top' %>
+            <h3 class="card-title card-header-color">Fresh Bread Guaranteed</h3>
+            <p class="card-text">LoafGo will bake your shipment within 2 hours of receiving/confirming your order.</p>
+            <a href="#" class="btn btn-outline-info video-btn" data-toggle="modal" data-src="https://www.youtube.com/watch?v=3UjUWfwWAC4" data-target="#myModal">Learn
+              more about our Bread Factory</a>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+<div class="full-width-bakery-bg-img">
+  <div class="five-star-ratings-title">
+    <h1><%= inline_svg 'home_img_assets/star.svg', height: 100, width: 100 %> The Critics Have Spoken!</h1>
+  </div>
+  <div class="critically-acclaimed-header-1">
+    <h1><%= inline_svg 'home_img_assets/star_solo.svg', height: 40, width: 40 %> "Unbelievably delicious bread" -
+      <small class="critically-acclaimed-header-small">Costco CEO</small>
+    </h1>
+  </div>
+  <div class="critically-acclaimed-header-1">
+    <h1><%= inline_svg 'home_img_assets/star_solo.svg', height: 40, width: 40 %> "LoafGo Deliveries are always on time!"
+      -
+      <small class="critically-acclaimed-header-small">BJs CEO</small>
+    </h1>
+  </div>
+  <div class="critically-acclaimed-header-1">
+    <h1><%= inline_svg 'home_img_assets/star_solo.svg', height: 40, width: 40 %> "We chose LoafGo and we're happy with
+      their service!" -
+      <small class="critically-acclaimed-header-small">ShopRite CEO</small>
+    </h1>
+  </div>
+
+  <div class="call-for-more-info">
+    <h1>Want to learn more about LoafGo? Call our toll free adviser <strong style="color: white">1-800-233-LOAF</strong>
+    </h1>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+
+      <div class="modal-body">
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <!-- 16:9 aspect ratio -->
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src="" id="video" allowscriptaccess="always">></iframe>
+        </div>
+
+
+      </div>
+
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+    $(document).on('turbolinks:load', function () {
+        var options = {
+            useEasing: true,
+            useGrouping: true,
+            separator: ',',
+            decimal: '.',
+        };
+        var demo = new CountUp('myTargetElement', 0, 100000, 0, 49, options);
+        if (!demo.error) {
+            demo.start();
+        } else {
+            console.error(demo.error);
+        }
+
+        $(document).ready(function () {
+
+// Gets the video src from the data-src on each button
+
+            var $videoSrc;
+            $('.video-btn').click(function () {
+                $videoSrc = $(this).data("src");
+            });
+            console.log($videoSrc);
+
+
+// when the modal is opened autoplay it
+            $('#myModal').on('shown.bs.modal', function (e) {
+
+// set the video src to autoplay and not to show related video. Youtube related video is like a box of chocolates... you never know what you're gonna get
+                $("#video").attr('src', $videoSrc + "?rel=0&amp;showinfo=0&amp;modestbranding=1&amp;autoplay=1");
+            });
+
+
+// stop playing the youtube video when I close the modal
+            $('#myModal').on('hide.bs.modal', function (e) {
+                // a poor man's stop video
+                $("#video").attr('src', $videoSrc);
+            })
+
+
+// document ready
+        });
+
+    });
+</script>

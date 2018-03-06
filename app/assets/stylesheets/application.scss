@@ -13,7 +13,15 @@
 *= require font-awesome
 *= require jquery-ui
  */
-
+@import "bootstrap";
 @import "home";
 @import "animate/animate";
-@import "foundation_and_overrides";
+@import "navbar-style";
+@import "loafgo-color-palette";
+@import "order";
+@import "warehouse_styles";
+@import "hover";
+@import "barcode_scanner";
+@import "bread_factory";
+
+

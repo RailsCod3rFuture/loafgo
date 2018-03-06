@@ -5,12 +5,13 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'bootstrap', '~> 4.0.0.beta'
 gem 'carrierwave'
 gem 'chartkick'
 gem 'chosen-rails'
 gem 'cocoon'
-gem 'foundation-rails'
 # gem 'country_state_select'
+gem 'active_link_to'
 gem 'city-state'
 gem 'country_select'
 gem 'devise'
@@ -55,7 +56,8 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+#gem 'bcrypt', '~> 3.1.7', platforms: :ruby
+gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

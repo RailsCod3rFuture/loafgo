@@ -1,69 +1,188 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "loafgo-color-palette";
 
-.welcome-to-loaf-go-top-hr > h1 {
-  text-align: center;
-}
-
-.loaf-go-hr > h1 {
-  color: coral;
-  margin-left: 1em;
-}
-
-.name img {
-
-  margin-left:20px;
-
-}
-
-.callout-box {
-  text-align: center;
-  margin-left: 50em;
-  height: 6em;
-  width: 17em;
-  border: 0.10em #534450 solid;
-  border-radius: 0.10em;
-}
-/* Small only */
-@media screen and (max-width: 39.9375em) {
-  .name img {
-    height:35px;
-    padding-top: 2em;
-    margin-top:5px;
-    margin-left:5px;
+@include media-breakpoint-up(md) {
+  .card-header-color {
+    color: $color2;
   }
-}
-
-/* Medium and up */
-@media screen and (min-width: 40em) {
-  .title-area {
-
-  }
-  .name {
-
+  .catch-phrase-header > h1 {
+    margin-top: 2em;
+    color: #e8e8e8;
+    text-align: center;
   }
 
-  .name img {
-    height:35px;
-    padding-top: 2em;
-    margin-top:5px;
-    margin-left:5px;
+  p.deliveries-so-far {
+    color: #534450;
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    margin-left: 0.50em;
   }
+
+  .deliveries-so-far-counter > h1 {
+    color: #F7F7F7;
+    text-align: center;
+  }
+
+  .deliver-msg > h3 {
+    margin-top: 2em;
+    text-align: center;
+    color: $color1;
+    text-decoration: underline;
+  }
+  .full-width-top-bg {
+    position: relative;
+    background: url('home_img_assets/Bakery-Bread-BG.jpg') center center no-repeat;
+    background-size: cover;
+    -web-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 500px;
+    padding: 0;
+  }
+
+  .full-width-bg-color-1 {
+    position: relative;
+    background-color: $color5;
+    background-size: cover;
+    -web-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 500px;
+    padding: 0;
+  }
+
+  .full-width-bakery-bg-img {
+    position: relative;
+    background: url('home_img_assets/Bakery-Cafe-Bread.jpg') center center no-repeat;
+    background-size: cover;
+    -web-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 600px;
+    padding: 0;
+  }
+
+  .critically-acclaimed-header-1 > h1 {
+    margin-top: 0.60em;
+    text-align: center;
+    color: #F7F7F7;
+  }
+
+  .call-for-more-info > h1 {
+    margin-top: 2em;
+    text-align: center;
+    color: #21b3ee;
+  }
+
+  .critically-acclaimed-header-small {
+    color: $color1;
+  }
+
+  .five-star-ratings-title > h1 {
+    text-align: center;
+    color: whitesmoke;
+  }
+
+  .welcome-to-loaf-go-top-hr > h1 {
+    text-align: center;
+  }
+
+  .loaf-go-hr > h1 {
+    color: coral;
+    margin-left: 1em;
+  }
+  .welcome-message-box > h1 {
+    color: #F7F7F7;
+    font-weight: lighter;
+  }
+
+  // B4 Video Modal
+  .modal-dialog {
+    max-width: 800px;
+    margin: 30px auto;
+  }
+  .card-bottom-padding {
+    padding-bottom: 1em;
+  }
+
+  .modal-body {
+    position: relative;
+    padding: 0px;
+  }
+  .close {
+    position: absolute;
+    right: -30px;
+    top: 0;
+    z-index: 999;
+    font-size: 2rem;
+    font-weight: normal;
+    color: #fff;
+    opacity: 1;
+  }
+
+  // Registration Portal
+  .client-registration-header > h4 {
+    text-align: center;
+    color: #676767;
+  }
+
+  .manager-registration-header > h4 {
+    text-align: center;
+    color: #676767;
+  }
+
+  .card-top-margin {
+    margin-top: 2em;
+  }
+
+  .become-a-member-today-hr h1 {
+    margin-top: 1em;
+    text-align: center;
+    color: $color5;
+  }
+
+  .login-panel-client {
+    margin-top: 2em;
+    height: 18em;
+    width: 24em;
+    background-color: $color1;
+    border-radius: 0.11em;
+    border: 0.05em $color5 solid;
+
+    &.login-panel-client > h3 {
+      color: #F7F7F7;
+      text-align: center;
+    }
+  }
+
+  .login-panel-manager {
+    margin-top: 2em;
+    height: 18em;
+    width: 26em;
+    background-color: $color3;
+    border-radius: 0.11em;
+    border: 0.05em $color5 solid;
+
+    &.login-panel-manager > h3 {
+      color: #F7F7F7;
+      text-align: center;
+    }
+  }
+
+  .login-panel-btn-pos-client {
+    padding-top: 0.54em;
+    text-align: center;
+  }
+
+  .login-panel-btn-pos-manager {
+    padding-top: 0.50em;
+    text-align: center;
+  }
+
 }
-
-/* Medium only */
-@media screen and (min-width: 40em) and (max-width: 63.9375em) {
-
-}
-
-/* Large and up */
-@media screen and (min-width: 64em) {
-
-}
-
-/* Large only */
-@media screen and (min-width: 64em) and (max-width: 74.9375em) {
-
-}
-

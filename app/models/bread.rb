@@ -1,4 +1,5 @@
 class Bread < ApplicationRecord
-  belongs_to :order
+  has_many :orders
+  has_many :deliveries
   belongs_to :warehouse
 end

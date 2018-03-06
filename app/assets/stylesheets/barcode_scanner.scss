@@ -1,0 +1,10 @@
+#barcode-scanner canvas.drawingBuffer, #barcode-scanner video.drawingBuffer {
+  display: none;
+}
+
+#barcode-scanner canvas, #barcode-scanner video {
+  width: 20em;
+  height: 20em;
+  border: 0.20em #534450 solid;
+  border-radius: 0.12em;
+}

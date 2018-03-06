@@ -1,10 +1,17 @@
 class HomeController < ApplicationController
-  def index
+  def index;
   end
 
-  def about
+  def about;
   end
 
-  def contact
+  def contact;
+  end
+
+  def sign_up_portal;
+  end
+
+  def login_portal;
   end
 end
+
