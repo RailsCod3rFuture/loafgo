@@ -1,10 +1,69 @@
-<%= simple_form_for(@truck) do |f| %>
-  <%= f.error_notification %>
+<div class="container">
+  <%= simple_form_for(@truck) do |f| %>
+    <%= f.error_notification %>
+    <div class="form-group">
+      <div class="col-3">
+        <label>Loaded Date (Click Box Below)</label>
+        <%= f.input :loaded_date, as: :date_time_picker, class: 'form-control', placeholder: "Tap to view calendar <i class: 'fa fa-hand-o-up'></i>", label: false %>
+      </div>
 
-  <div class="form-inputs">
-  </div>
+    </div>
+    <div class="form-group">
+      <div class="col-5">
+        <%= f.input :delivery_total, class: 'form-control' %>
+      </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+    </div>
+    <div class="form-group">
+      <div class="col-5">
+        <%= f.input :truck_driver_name, class: 'form-control btn btn-outline-primary' %>
+      </div>
+
+    </div>
+    <div class="form-group">
+      <div class="col-5">
+        <%= f.input :current_street_address, class: 'form-control' %>
+      </div>
+
+    </div>
+    <div class="form-group">
+      <div class="col-5">
+        <%= f.input :current_city, class: 'form-control' %>
+      </div>
+
+    </div>
+    <div class="form-group">
+      <div class="col-5">
+        <%= f.input :current_state, class: 'form-control' %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-5">
+        <%= f.input :current_country, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-5">
+        <%= f.input :delivery_id, collection: @deliveries, :label_method => lambda {|delivery| "Estimated Delivery Date: #{delivery.delivery_date} | Order Id: #{delivery.id}"}, value_method: :id, label: "Delivery Jobs", include_blank: false, prompt: 'Add a delivery to the truck' %>
+      </div>
+
+    </div>
+    <div class="form-actions">
+      <%= f.button :submit, class: 'btn btn-outline-success' %>
+    </div>
+  <% end %>
+</div>
+
+
+
+<script>
+    $(document).on('turbolinks:load', function () {
+        $('.form_datetime').datetimepicker({
+            autoclose: true,
+            todayBtn: true,
+            pickerPosition: "bottom-left",
+            format: 'mm-dd-yyyy hh:ii'
+        });
+    });
+</script>

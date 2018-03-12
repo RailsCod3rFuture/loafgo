@@ -1,3 +1,4 @@
+
 # Feature: Sign in
 #   As a client
 #   I want to sign in
@@ -19,7 +20,7 @@ feature 'Sign in', :devise do
   #   When I sign in with valid credentials
   #   Then I see a success message
   scenario 'client can sign in with valid credentials' do
-    client = FactoryGirl.create(:client)
+    client = FactoryBot.create(:client)
     signin(client.email, client.password)
     expect(page).to have_content I18n.t 'devise.sessions.signed_in'
   end
@@ -30,7 +31,7 @@ feature 'Sign in', :devise do
   #   When I sign in with a wrong email
   #   Then I see an invalid email message
   scenario 'client cannot sign in with wrong email' do
-    client = FactoryGirl.create(:client)
+    client = FactoryBot.create(:client)
     signin('invalid@email.com', client.password)
     expect(page).to have_content I18n.t 'devise.failure.not_found_in_database', authentication_keys: 'Email'
   end
@@ -41,7 +42,7 @@ feature 'Sign in', :devise do
   #   When I sign in with a wrong password
   #   Then I see an invalid password message
   scenario 'client cannot sign in with wrong password' do
-    client = FactoryGirl.create(:client)
+    client = FactoryBot.create(:client)
     signin(client.email, 'invalidpass')
     expect(page).to have_content I18n.t 'devise.failure.invalid', authentication_keys: 'Email'
   end

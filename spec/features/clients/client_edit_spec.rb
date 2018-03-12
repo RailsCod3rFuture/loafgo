@@ -34,7 +34,7 @@ feature 'client edit', :devise do
     me = FactoryGirl.create(:client)
     other = FactoryGirl.create(:client, email: 'other@example.com')
     login_as(me, :scope => :client)
-    visit edit_user_registration_path(other)
+    visit edit_client_registration_path(other)
     expect(page).to have_content 'Edit client'
     expect(page).to have_field('Email', with: me.email)
   end

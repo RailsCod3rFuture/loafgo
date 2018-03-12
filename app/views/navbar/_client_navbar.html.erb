@@ -8,7 +8,7 @@
         <%= inline_svg 'manager_navbar_icons/home_manager_icon.svg', width: 24, height: 24 %>
         <h6>Dashboard</h6>
       <% end %>
-      <%= active_link_to my_orders_path, class: 'nav-item nav-link active client-navbar-link-icon-pos nav-link-color', :class_inactive => 'inactive' do %>
+      <%= active_link_to orders_path, class: 'nav-item nav-link active client-navbar-link-icon-pos nav-link-color', :class_inactive => 'inactive' do %>
         <%= inline_svg 'manager_navbar_icons/orders_manager_icon.svg', width: 24, height: 24 %>
         <h6>My Orders</h6>
       <% end %>

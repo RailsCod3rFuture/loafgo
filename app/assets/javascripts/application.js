@@ -14,11 +14,13 @@
 //= require rails-ujs
 //= require turbolinks
 //= require jquery3
+//= require bootstrap-datetimepicker.min
 //= require popper
 //= require jquery_ujs
 //= require jquery.remotipart
 //= require jquery-ui
 //= require countUp
+//= require moment
 //= require rails-timeago
 //= require Chart.bundle
 //= require chartkick

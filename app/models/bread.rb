@@ -1,5 +1,7 @@
 class Bread < ApplicationRecord
   has_many :orders
   has_many :deliveries
-  belongs_to :warehouse
+  has_one :inventory, :dependent => :destroy
+  belongs_to :warehouse, optional: true
+  after_create :build_inventory
 end

@@ -10,7 +10,7 @@ gem 'carrierwave'
 gem 'chartkick'
 gem 'chosen-rails'
 gem 'cocoon'
-# gem 'country_state_select'
+#gem 'country_state_select'
 gem 'active_link_to'
 gem 'city-state'
 gem 'country_select'
@@ -33,6 +33,7 @@ gem 'scss_lint', require: false
 gem 'simple_form'
 gem 'spring', group: :development
 gem 'spring-watcher-listen', group: :development
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'

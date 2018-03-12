@@ -11,7 +11,7 @@ class DeviseCreateClients < ActiveRecord::Migration[5.1]
       t.string :zip_code
       t.string :state
       t.string :telephone
-
+      t.references :order, index: true, foreign_key: true
       ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at

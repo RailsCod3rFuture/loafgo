@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'order_finder/index'
+
   get 'manager_dashboard/index'
 
   get 'client_dashboard/index'
@@ -19,7 +21,7 @@ Rails.application.routes.draw do
 
   resources :deliveries
   resources :inventories
-  resources :my_orders
+  resources :order_finder, only: [:index]
   resources :orders
   resources :order_feedbacks
   resources :order_trackers

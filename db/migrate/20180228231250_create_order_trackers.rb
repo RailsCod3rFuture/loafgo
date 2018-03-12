@@ -6,7 +6,6 @@ class CreateOrderTrackers < ActiveRecord::Migration[5.1]
       t.string :time_delivered
       t.boolean :delivery_on_time
       t.references :order, foreign_key: true
-      t.references :delivery, foreign_key: true
 
       t.timestamps
     end

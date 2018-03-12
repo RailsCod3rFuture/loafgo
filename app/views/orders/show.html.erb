@@ -1,4 +1,35 @@
 <p id="notice"><%= notice %></p>
 
+<h6>Order Details</h6>
+
+<div class="bread-purchase">
+  <h6>Bread name:</h6>
+  <p><%= @order.bread_name %></p>
+</div>
+<div class="purchase-date">
+  <h6>Order date:</h6>
+  <p><%= @order.created_at %></p>
+</div>
+<div class="bread-quantity">
+  <h6>Bread Quantity:</h6>
+  <p><%= @order.bread_quantity %></p>
+</div>
+<div class="billing-name">
+  <h6>Name of buyer:</h6>
+  <p><%= @order.client_name %></p>
+</div>
+<div class="billing-address">
+  <h6>Shipment Address</h6>
+  <%= @order.client_address %>
+</div>
+<div class="billing-state">
+  <%= @order.client_state %>
+</div>
+<div class="billing-zip-code">
+  <h6>Shipment Zip Code:</h6>
+  <p><%= @order.client_zip_code %></p>
+</div>
+
+
 <%= link_to 'Edit', edit_order_path(@order) %> |
 <%= link_to 'Back', orders_path %>

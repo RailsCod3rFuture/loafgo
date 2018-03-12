@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_manager!
+  # before_action :authenticate_manager! || :authenticate_client!
 
   # GET /orders
   # GET /orders.json
@@ -16,6 +16,7 @@ class OrdersController < ApplicationController
   # GET /orders/new
   def new
     @order = Order.new
+    @breads = Bread.all
   end
 
   # GET /orders/1/edit
@@ -25,7 +26,7 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
-    @order = Order.new(order_params)
+    @order = current_client.orders.build(order_params)
 
     respond_to do |format|
       if @order.save
@@ -70,6 +71,6 @@ class OrdersController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def order_params
-    params.fetch(:order, {})
+    params.require(:order).permit(:client_name, :client_zip_code, :client_state, :lon, :lat, :client_address, :bread_name, :bread_quantity, :bread_id)
   end
 end

@@ -8,6 +8,7 @@ class DeviseCreateManagers < ActiveRecord::Migration[5.1]
       t.string :encrypted_password, null: false, default: ""
       t.string :full_name
       t.string :contact_number
+      t.references :warehouse, index: true, foreign_key: true
       ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at

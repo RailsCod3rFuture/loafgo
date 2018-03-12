@@ -15,6 +15,7 @@ class TrucksController < ApplicationController
   # GET /trucks/new
   def new
     @truck = Truck.new
+    @deliveries = Delivery.all
   end
 
   # GET /trucks/1/edit
@@ -24,7 +25,7 @@ class TrucksController < ApplicationController
   # POST /trucks
   # POST /trucks.json
   def create
-    @truck = current_manager.trucks.build(truck_params)
+    @truck = current_manager.warehouse.trucks.build(truck_params)
 
     respond_to do |format|
       if @truck.save
@@ -70,6 +71,6 @@ class TrucksController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def truck_params
-    params.require(:truck).permit(:delivery_total, :lon, :lat)
+    params.require(:truck).permit(:delivery_total, :lon, :lat, :delivery_id, :loaded_date, :truck_driver_name, :current_street_address, :current_city, :current_state, :current_country)
   end
 end

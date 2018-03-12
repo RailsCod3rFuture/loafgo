@@ -2,7 +2,8 @@
   <div class="row">
     <div class="col-12">
       <div class="bread-factory-hr">
-        <h1><%= image_tag 'bread_factory/bun-breads.png', height: '56em', width: '56em' %> Bread Factory</h1>
+        <h1><%= image_tag 'bread_factory/bun-breads.png', height: '56em', width: '56em' %> Bread
+          Factory <%= link_to 'Add New Bread', new_bread_path, class: 'btn btn-outline-info small' %></h1>
       </div>
     </div>
   </div>
@@ -41,7 +42,11 @@
             <td><%= index %></td>
             <td><%= bread.bread_name %></td>
             <td><%= bread.bread_type %></td>
-            <td><%= bread.bread_quantity %></td>
+            <% if bread.inventory.present? %>
+              <td><%= bread.inventory.bread_stock_quantity %></td>
+            <% else %>
+              <td>None</td>
+            <% end %>
             <td><%= link_to 'Go to Bread', bread, class: 'btn btn-outline-info' %></td>
             <td><%= link_to 'Change', edit_bread_path(bread), class: 'btn btn-outline-warning' %></td>
             <td><%= link_to 'Destroy', bread, class: 'btn btn-outline-danger', method: :delete, data: {confirm: 'Are you sure?'} %></td>
@@ -56,4 +61,4 @@
 
 <br>
 
-<%= link_to 'New Bread', new_bread_path %>
+

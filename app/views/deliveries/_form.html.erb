@@ -1,10 +1,18 @@
-<%= simple_form_for(@delivery) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+<div class="container">
+  <%= simple_form_for(@delivery) do |f| %>
+    <%= f.error_notification %>
+    <div class="form-group">
+      <label>Estimated Delivery Date</label>
+      <%= f.input :delivery_date, class: 'form-control', label: false %>
+    </div>
+    <%= f.simple_fields_for :delivery_order do |d| %>
+      <div class="form-control">
+        <label>Delivery Order</label>
+        <%= d.input :order_id, collection: @orders, label_method: lambda {|c| "Order Id: #{c.id} Client Name: #{c.client_name} | Client Address: #{c.client_address} | Bread Choice: #{c.bread_name}"}, value_method: :id, include_blank: false, prompt: 'Add your first order to the delivery', class: 'form-control', label: false %>
+      </div>
+    <% end %>
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
+  <% end %>
+</div>

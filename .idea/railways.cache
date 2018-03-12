@@ -1,4 +1,5 @@
                      Prefix Verb   URI Pattern                         Controller#Action
+         order_finder_index GET    /order_finder/index(.:format)       order_finder#index
     manager_dashboard_index GET    /manager_dashboard/index(.:format)  manager_dashboard#index
      client_dashboard_index GET    /client_dashboard/index(.:format)   client_dashboard#index
         new_manager_session GET    /managers/sign_in(.:format)         devise/sessions#new
@@ -61,14 +62,7 @@ cancel_manager_registration GET    /managers/cancel(.:format)          devise/re
                             PATCH  /inventories/:id(.:format)          inventories#update
                             PUT    /inventories/:id(.:format)          inventories#update
                             DELETE /inventories/:id(.:format)          inventories#destroy
-                  my_orders GET    /my_orders(.:format)                my_orders#index
-                            POST   /my_orders(.:format)                my_orders#create
-               new_my_order GET    /my_orders/new(.:format)            my_orders#new
-              edit_my_order GET    /my_orders/:id/edit(.:format)       my_orders#edit
-                   my_order GET    /my_orders/:id(.:format)            my_orders#show
-                            PATCH  /my_orders/:id(.:format)            my_orders#update
-                            PUT    /my_orders/:id(.:format)            my_orders#update
-                            DELETE /my_orders/:id(.:format)            my_orders#destroy
+                            GET    /order_finder(.:format)             order_finder#index
                      orders GET    /orders(.:format)                   orders#index
                             POST   /orders(.:format)                   orders#create
                   new_order GET    /orders/new(.:format)               orders#new

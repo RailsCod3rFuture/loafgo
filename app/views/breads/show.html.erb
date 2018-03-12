@@ -1,6 +1,4 @@
 <p id="notice"><%= notice %></p>
-<%= content_tag :p do %>
-  <%= image_tag @bread.image_url, class: 'img-responsive', width: 640, height: 480 %>
-<% end if @bread.image_url.present? %>
+
 <%= link_to 'Edit', edit_bread_path(@bread) %> |
 <%= link_to 'Back', breads_path %>

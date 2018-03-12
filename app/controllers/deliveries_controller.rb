@@ -1,5 +1,5 @@
 class DeliveriesController < ApplicationController
-  before_action :set_delivery, only: [:show, :edit, :update, :destroy]
+  before_action :set_delivery, only: %i[show edit update destroy]
 
   # GET /deliveries
   # GET /deliveries.json
@@ -9,23 +9,24 @@ class DeliveriesController < ApplicationController
 
   # GET /deliveries/1
   # GET /deliveries/1.json
-  def show
+  def show;
   end
 
   # GET /deliveries/new
   def new
     @delivery = Delivery.new
+    @delivery.build_delivery_order
+    @orders = Order.all
   end
 
   # GET /deliveries/1/edit
-  def edit
+  def edit;
   end
 
   # POST /deliveries
   # POST /deliveries.json
   def create
-    @delivery = Delivery.new(delivery_params)
-
+    @delivery = current_manager.warehouse.deliveries.build(delivery_params)
     respond_to do |format|
       if @delivery.save
         format.html {redirect_to @delivery, notice: 'Delivery was successfully created.'}
@@ -62,6 +63,7 @@ class DeliveriesController < ApplicationController
   end
 
   private
+
   # Use callbacks to share common setup or constraints between actions.
   def set_delivery
     @delivery = Delivery.find(params[:id])
@@ -69,6 +71,6 @@ class DeliveriesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def delivery_params
-    params.fetch(:delivery, {})
+    params.require(:delivery).permit(:delivery_date, :delivery_on_time, delivery_order_attributes: %i[order_id])
   end
 end

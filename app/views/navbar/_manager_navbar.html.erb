@@ -12,9 +12,9 @@
         <%= inline_svg 'manager_navbar_icons/warehouse_manager_icon.svg', width: 24, height: 24 %>
         <h6>Warehouse</h6>
       <% end %>
-      <%= active_link_to orders_path, class: 'nav-item nav-link active navbar-link-icon-pos nav-link-color', :class_inactive => 'inactive' do %>
+      <%= active_link_to order_finder_index_path, class: 'nav-item nav-link active navbar-link-icon-pos nav-link-color', :class_inactive => 'inactive' do %>
         <%= inline_svg 'manager_navbar_icons/orders_manager_icon.svg', width: 24, height: 24 %>
-        <h6>Orders</h6>
+        <h6>Order Finder</h6>
       <% end %>
 
       <%= active_link_to deliveries_path, class: 'nav-item nav-link active navbar-link-icon-pos nav-link-color', :class_inactive => 'inactive' do %>
