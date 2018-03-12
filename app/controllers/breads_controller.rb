@@ -16,6 +16,7 @@ class BreadsController < ApplicationController
   def new
     @bread = Bread.new
     @bread.upc = params[:upc]
+    @bread.build_inventory
   end
 
   # GET /breads/1/edit
@@ -74,11 +75,11 @@ class BreadsController < ApplicationController
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_bread
-    @bread = current_manager.breads
+    @bread = Bread.find(params[:id])
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def bread_params
-    params.require(:bread).permit(:bread_name, :bread_type, :upc, :image_url, :bread_expire_date, :bread_quantity)
+    params.require(:bread).permit(:bread_name, :bread_type, :upc, :image_url, :bread_expire_date, :id, :bread_quantity, inventory_attributes: [:bread_stock_quantity, :bread_inventory_low, :id])
   end
 end

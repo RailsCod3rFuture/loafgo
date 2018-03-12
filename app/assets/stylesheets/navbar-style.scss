@@ -36,3 +36,31 @@ a.nav-link-color {
 a.nav-link-color:hover {
   color: $color1;
 }
+
+.trucks-navbar-icon-pos > svg {
+  margin-left: 0.80em;
+}
+
+.bread-navbar-icon-pos > svg {
+  margin-left: 2.10em;
+}
+
+.tracking-icon-pos > svg {
+  margin-left: 1em;
+}
+
+.deliveries-icon-pos > svg {
+  margin-left: 1.50em;
+}
+
+.order-finder-icon-pos > svg {
+  margin-left: 2em;
+}
+
+.warehouse-icon-pos > svg {
+  margin-left: 2em;
+}
+
+.manager-home-icon-pos svg {
+  margin-left: 2em;
+}

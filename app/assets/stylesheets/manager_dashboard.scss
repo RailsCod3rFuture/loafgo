@@ -1,3 +1,25 @@
 // Place all the styles related to the manager_dashboard controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.manager-dashboard-header > h2 {
+  text-align: center;
+  padding-top: 1em;
+  color: #534450;
+}
+
+.manager-gray-side-panel {
+  margin-top: 1em;
+  margin-left: 1em;
+  height: 14em;
+  width: 16em;
+  background-color: #534450;
+  border: #666666 0.10em solid;
+  border-radius: 0.14em;
+}
+
+.manager-dashboard-divider {
+  width: 100%;
+  height: 0.20em;
+  background-color: #534450;
+}

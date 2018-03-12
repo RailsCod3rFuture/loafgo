@@ -20,7 +20,6 @@ Rails.application.routes.draw do
   end
 
   resources :deliveries
-  resources :inventories
   resources :order_finder, only: [:index]
   resources :orders
   resources :order_feedbacks

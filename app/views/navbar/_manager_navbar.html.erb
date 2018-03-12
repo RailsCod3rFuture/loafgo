@@ -4,38 +4,32 @@
   </div>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <%= active_link_to manager_dashboard_index_path, class: 'nav-item nav-link active navbar-link-icon-pos nav-link-color', :class_inactive => 'inactive' do %>
+      <%= active_link_to manager_dashboard_index_path, class: 'nav-item nav-link active navbar-link-icon-pos nav-link-color manager-home-icon-pos', :class_inactive => 'inactive' do %>
         <%= inline_svg 'manager_navbar_icons/home_manager_icon.svg', width: 24, height: 24 %>
         <h6>Dashboard</h6>
       <% end %>
-      <%= active_link_to warehouse_path, class: 'nav-item nav-link active navbar-link-icon-pos nav-link-color', :class_inactive => 'inactive' do %>
+      <%= active_link_to warehouse_path, class: 'nav-item nav-link active navbar-link-icon-pos nav-link-color warehouse-icon-pos', :class_inactive => 'inactive' do %>
         <%= inline_svg 'manager_navbar_icons/warehouse_manager_icon.svg', width: 24, height: 24 %>
         <h6>Warehouse</h6>
       <% end %>
-      <%= active_link_to order_finder_index_path, class: 'nav-item nav-link active navbar-link-icon-pos nav-link-color', :class_inactive => 'inactive' do %>
+      <%= active_link_to order_finder_index_path, class: 'nav-item nav-link active navbar-link-icon-pos nav-link-color order-finder-icon-pos', :class_inactive => 'inactive' do %>
         <%= inline_svg 'manager_navbar_icons/orders_manager_icon.svg', width: 24, height: 24 %>
         <h6>Order Finder</h6>
       <% end %>
 
-      <%= active_link_to deliveries_path, class: 'nav-item nav-link active navbar-link-icon-pos nav-link-color', :class_inactive => 'inactive' do %>
+      <%= active_link_to deliveries_path, class: 'nav-item nav-link active navbar-link-icon-pos nav-link-color deliveries-icon-pos', :class_inactive => 'inactive' do %>
         <%= inline_svg 'manager_navbar_icons/deliveries_manager_icon.svg', width: 24, height: 24 %>
         <h6>Deliveries</h6>
       <% end %>
-
-      <%= active_link_to inventories_path, class: 'nav-item nav-link active navbar-link-icon-pos nav-link-color', :class_inactive => 'inactive' do %>
-        <%= inline_svg 'manager_navbar_icons/inventory_manager_icon', width: 24, height: 24 %>
-        <h6>Inventory</h6>
-      <% end %>
-
-      <%= active_link_to order_trackers_path, class: 'nav-item nav-link active navbar-link-icon-pos nav-link-color', :class_inactive => 'inactive' do %>
+      <%= active_link_to order_trackers_path, class: 'nav-item nav-link active navbar-link-icon-pos nav-link-color tracking-icon-pos', :class_inactive => 'inactive' do %>
         <%= inline_svg 'manager_navbar_icons/tracking_manager_icon.svg', width: 24, height: 24 %>
         <h6>Tracking</h6>
       <% end %>
-      <%= active_link_to breads_path, class: 'nav-item nav-link active navbar-link-icon-pos nav-link-color', :class_inactive => 'inactive' do %>
+      <%= active_link_to breads_path, class: 'nav-item nav-link active navbar-link-icon-pos nav-link-color bread-navbar-icon-pos', :class_inactive => 'inactive' do %>
         <%= inline_svg 'manager_navbar_icons/factory_manager_icon.svg', width: 24, height: 24 %>
         <h6>Bread Factory</h6>
       <% end %>
-      <%= active_link_to trucks_path, class: 'nav-item nav-link active navbar-link-icon-pos nav-link-color', :class_inactive => 'inactive' do %>
+      <%= active_link_to trucks_path, class: 'nav-item nav-link active nav-link-color trucks-navbar-icon-pos', :class_inactive => 'inactive' do %>
         <%= inline_svg 'manager_navbar_icons/trucks_manager_icon.svg', width: 24, height: 24 %>
         <h6>Trucks</h6>
       <% end %>
@@ -49,6 +43,7 @@
           <%= fa_icon 'cog' %> Settings
         </button>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
+          <%= link_to 'Edit Account', edit_manager_registration_path, class: 'dropdown-item' %>
           <%= link_to 'Sign Out', destroy_manager_session_path, class: 'dropdown-item', method: :delete %>
         </div>
       </div>
