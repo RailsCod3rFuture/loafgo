@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180314192451) do
+ActiveRecord::Schema.define(version: 20180314201229) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,8 +57,6 @@ ActiveRecord::Schema.define(version: 20180314192451) do
     t.bigint "warehouse_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "delivery_order_id"
-    t.index ["delivery_order_id"], name: "index_deliveries_on_delivery_order_id"
     t.index ["warehouse_id"], name: "index_deliveries_on_warehouse_id"
   end
 
@@ -161,6 +159,16 @@ ActiveRecord::Schema.define(version: 20180314192451) do
     t.index ["warehouse_id"], name: "index_trucks_on_warehouse_id"
   end
 
+  create_table "versions", force: :cascade do |t|
+    t.string "item_type", null: false
+    t.integer "item_id", null: false
+    t.string "event", null: false
+    t.string "whodunnit"
+    t.text "object"
+    t.datetime "created_at"
+    t.index ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id"
+  end
+
   create_table "warehouses", force: :cascade do |t|
     t.string "address"
     t.string "zip_code"
@@ -174,7 +182,6 @@ ActiveRecord::Schema.define(version: 20180314192451) do
 
   add_foreign_key "breads", "inventories"
   add_foreign_key "breads", "warehouses"
-  add_foreign_key "deliveries", "delivery_orders"
   add_foreign_key "deliveries", "warehouses"
   add_foreign_key "delivery_orders", "deliveries"
   add_foreign_key "delivery_orders", "orders"

@@ -33,7 +33,7 @@ gem 'scss_lint', require: false
 gem 'simple_form'
 gem 'spring', group: :development
 gem 'spring-watcher-listen', group: :development
-
+gem 'paper_trail'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
