@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180312204758) do
+ActiveRecord::Schema.define(version: 20180314190925) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,7 +72,7 @@ ActiveRecord::Schema.define(version: 20180312204758) do
   end
 
   create_table "inventories", force: :cascade do |t|
-    t.integer "bread_stock_quantity"
+    t.string "bread_stock_quantity"
     t.boolean "bread_inventory_low"
     t.bigint "warehouse_id"
     t.bigint "manager_id"
@@ -156,6 +156,7 @@ ActiveRecord::Schema.define(version: 20180312204758) do
     t.string "current_state"
     t.string "current_country"
     t.string "truck_driver_name"
+    t.string "current_location_title"
     t.index ["delivery_id"], name: "index_trucks_on_delivery_id"
     t.index ["warehouse_id"], name: "index_trucks_on_warehouse_id"
   end

@@ -18,8 +18,66 @@
   border-radius: 0.14em;
 }
 
+.full-width-manager-dashboard-bg-color-1 {
+  position: relative;
+  background-color: #e2e2e2;
+  background-size: cover;
+  -web-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 370px;
+  padding: 0;
+}
+
+.full-width-manager-dashboard-bg-color-2 {
+  position: relative;
+  background-color: slategrey;
+  background-size: cover;
+  -web-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 280px;
+  padding: 0;
+}
+
 .manager-dashboard-divider {
   width: 100%;
   height: 0.20em;
   background-color: #534450;
+}
+
+.manager-panel-title-box {
+  width: 100%;
+  height: 2em;
+  background-color: #006dcc;
+
+  &.manager-panel-title-box > h4 {
+    text-align: center;
+    color: whitesmoke;
+  }
+}
+
+.manager-dashboard-acc-summary > ul {
+  text-align: center;
+}
+
+.manager-dashboard-order-header > h4 {
+  margin-top: 0.50em;
+  text-align: center;
+  color: #656565;
+}
+
+.manager-dashboard-order-container {
+  margin-top: 1em;
+  height: 16em;
+  width: 30em;
+  border: 0.20em #534450 solid;
+  border-radius: 0.50em;
+  //overflow-y: ;
+}
+
+.recently-added-orders-list > li {
+  color: #2E2F30;
 }

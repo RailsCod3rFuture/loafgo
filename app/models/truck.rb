@@ -2,8 +2,8 @@ class Truck < ApplicationRecord
   belongs_to :warehouse, optional: true
   has_many :deliveries
   geocoded_by :truck_location, :latitude => :lat, :longitude => :lon
-
+  after_validation :geocode, if: -> (obj) {obj.current_street_address.present? && obj.current_street_address_changed?}
   def truck_location
-    [current_street_address, current_state, current_country]
+    [current_street_address, current_state, current_country].compact.join(', ')
   end
 end

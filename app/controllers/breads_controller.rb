@@ -64,7 +64,7 @@ class BreadsController < ApplicationController
   end
 
   def get_barcode
-    @bread = Bread.find_by(upc: params[:upc])
+    @bread = Bread.find_or_initialize_by(upc: params[:upc])
     unless @bread.new_record?
       redirect_to @bread
     else

@@ -1,12 +1,55 @@
-<div class="container-fluid" style="background-color: #e2e2e2">
-  <div class="row">
-    <div class="col-12">
-      <div class="manager-dashboard-header">
-        <h2>My Dashboard</h2>
+<div class="full-width-manager-dashboard-bg-color-1">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="manager-dashboard-header">
+          <h2>Management Dashboard</h2>
+        </div>
+        <div class="manager-dashboard-divider"></div>
       </div>
-      <div class="manager-dashboard-divider"></div>
-      <div class="manager-gray-side-panel">
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <div class="manager-gray-side-panel">
+          <div class="manager-panel-title-box">
+            <h4>Account Summary</h4>
+          </div>
+          <div class="manager-dashboard-acc-summary">
+            <ul>
+              <li>Owner: <%= current_manager.full_name %></li>
+              <li>Total Orders: <%= @orders.count %></li>
+              <li>Trucks Available: <%= current_manager.warehouse.trucks.count %></li>
+              <li>Delivery Men Available: <%= current_manager.warehouse.delivery_men_count %> </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="manager-dashboard-order-container">
+          <div class="manager-dashboard-order-header">
+            <h4>Recently Added Orders</h4>
+          </div>
+          <% @recently_added_orders.each do |order| %>
+            <ul class="recently-added-orders-list">
+              <li><%= fa_icon 'user' %> <strong><%= order.client_name %></strong></li>
+              <li><%= fa_icon 'map' %> <%= order.client_address + " " + order.client_state + " " + order.client_zip_code %> </li>
+              <li><p><%= fa_icon 'barcode' %> <strong>Bread Name:</strong> <%= order.bread_name %> |
+                <strong>Quantity:</strong> <%= order.bread_quantity %></p></li>
+            </ul>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 
+</div>
+<div class="full-width-manager-dashboard-bg-color-2">
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <div class="trucks-overview-container">
+          <h1>Truck Assembly</h1>
+        </div>
       </div>
     </div>
   </div>
