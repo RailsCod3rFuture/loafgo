@@ -4,7 +4,7 @@ class OrderTrackersController < ApplicationController
   # GET /order_trackers
   # GET /order_trackers.json
   def index
-    @order_trackers = OrderTracker.all
+    @order_trackers = current_client.orders.includes(:order_tracker)
   end
 
   # GET /order_trackers/1

@@ -1,7 +1,32 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="truck-driver-show-header">
+        <h1 class="display-4"> <%= @truck.truck_driver_name %>
+          <small>New Hire!
+          </small> <%= link_to 'Change Truck Driver Information', edit_truck_path(@truck), class: 'btn btn-outline-success' %>
+        </h1>
+      </div>
+      <div class="">
 
-<%= link_to 'Edit', edit_truck_path(@truck) %> |
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <%= static_map_for(@truck) %>
+    </div>
+    <div class="col-6">
+      <iframe width="500" height="500" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyBNg3p1HLMTIrU_KZzT5qwdSPe3kedtKxc&origin=<%= @truck.current_street_address + @truck.current_city + @truck.current_state %>&destination=<%= @truck.delivery.delivery_order.order.client_address + @truck.delivery.delivery_order.order.client_state %>&avoid=tolls|highways" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+
+|
 <%= link_to 'Back', trucks_path %>
 
 
-<%= static_map_for(@truck) %>
+

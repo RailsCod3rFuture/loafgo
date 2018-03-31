@@ -21,12 +21,11 @@
   <% else %>
     <%= render 'navbar/default_navbar' %>
   <% end %>
-
-  <div class="text-center" style="position: absolute; z-index: 999; color: whitesmoke; margin-left: 40em; margin-top: 2em;">
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+  <div id="container">
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, :id => "flash_#{name}", style: 'z-index: 999; margin-left: 40em; position: absolute;' %>
+    <% end %>
   </div>
-
   <%= yield %>
   <script type="text/javascript">
       $(document).on('turbolinks:load', function () {

@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
-  get 'order_finder/index'
 
-  get 'manager_dashboard/index'
 
-  get 'client_dashboard/index'
-
-  devise_for :managers
-  devise_for :clients
+  devise_for :managers, :controllers => {
+      :registrations => "managers/registrations",
+      :passwords => "managers/passwords"
+  }
+  devise_for :clients, :controllers => {
+      :registrations => "clients/registrations",
+      :passwords => "clients/passwords"
+  }
   controller :home do
     get 'home/index', to: 'home#index', as: 'home'
     get 'home/about', to: 'home#about', as: 'about'
@@ -19,8 +21,18 @@ Rails.application.routes.draw do
     post :get_barcode, on: :collection
   end
 
+  controller :manager_dashboard do
+    get 'm_dashboard', to: 'manager_dashboard#index', :as => :manager_dashboard
+  end
+
+  controller :client_dashboard do
+    get 'c_dashboard', to: 'client_dashboard#index', :as => :client_dashboard
+  end
+  controller :order_finder do
+    get 'order_finder', to: 'order_finder#index', :as => :order_finder
+  end
+
   resources :deliveries
-  resources :order_finder, only: [:index]
   resources :orders
   resources :order_feedbacks
   resources :order_trackers

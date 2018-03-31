@@ -1,6 +1,18 @@
-<h1>Editing Warehouse</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="edit-warehouse-header">
+        <h1>Change Warehouse Information</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <%= render 'form', warehouse: @warehouse %>
+    </div>
+  </div>
+</div>
 
-<%= render 'form', warehouse: @warehouse %>
-
-<%= link_to 'Show', @warehouse %> |
 

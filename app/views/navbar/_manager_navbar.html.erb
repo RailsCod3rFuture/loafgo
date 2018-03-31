@@ -1,36 +1,36 @@
-<nav class="navbar sticky-top navbar-expand-md navbar-toggleable-md navbar-melon-default">
+<nav class="navbar sticky-top navbar-expand-md navbar-toggleable-md navbar-manager-passion-fruit nav-box-shadow">
   <div class="navbar-brand nav-brand-txt-color">
-    <%= inline_svg 'loafgo_logo/bread.svg', size: '26% * 26%', class: 'd-inline-block align-top' %>
+    <%= inline_svg 'loafgo_logo/bread.svg', size: '22% * 22%', class: 'd-inline-block align-top' %>
   </div>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <%= active_link_to manager_dashboard_index_path, class: 'nav-item nav-link active navbar-link-icon-pos nav-link-color manager-home-icon-pos', :class_inactive => 'inactive' do %>
-        <%= inline_svg 'manager_navbar_icons/home_manager_icon.svg', width: 24, height: 24 %>
+      <%= active_link_to manager_dashboard_path, class: 'nav-brand-txt-color-manager nav-item nav-link active navbar-link-icon-pos nav-link-color-manager manager-home-icon-pos', :class_inactive => 'inactive' do %>
+        <%= inline_svg 'manager_navbar_icons/house.svg', width: 24, height: 24 %>
         <h6>Dashboard</h6>
       <% end %>
-      <%= active_link_to warehouse_path, class: 'nav-item nav-link active navbar-link-icon-pos nav-link-color warehouse-icon-pos', :class_inactive => 'inactive' do %>
-        <%= inline_svg 'manager_navbar_icons/warehouse_manager_icon.svg', width: 24, height: 24 %>
+      <%= active_link_to warehouse_path, class: 'nav-brand-txt-color-manager nav-item nav-link active navbar-link-icon-pos nav-link-color-manager warehouse-icon-pos', :class_inactive => 'inactive' do %>
+        <%= inline_svg 'manager_navbar_icons/warehouse.svg', width: 24, height: 24 %>
         <h6>Warehouse</h6>
       <% end %>
-      <%= active_link_to order_finder_index_path, class: 'nav-item nav-link active navbar-link-icon-pos nav-link-color order-finder-icon-pos', :class_inactive => 'inactive' do %>
-        <%= inline_svg 'manager_navbar_icons/orders_manager_icon.svg', width: 24, height: 24 %>
+      <%= active_link_to order_finder_path, class: 'nav-brand-txt-color-manager nav-item nav-link active navbar-link-icon-pos nav-link-color-manager order-finder-icon-pos', :class_inactive => 'inactive' do %>
+        <%= inline_svg 'manager_navbar_icons/orders.svg', width: 24, height: 24 %>
         <h6>Order Finder</h6>
       <% end %>
 
-      <%= active_link_to deliveries_path, class: 'nav-item nav-link active navbar-link-icon-pos nav-link-color deliveries-icon-pos', :class_inactive => 'inactive' do %>
-        <%= inline_svg 'manager_navbar_icons/deliveries_manager_icon.svg', width: 24, height: 24 %>
+      <%= active_link_to deliveries_path, class: 'nav-brand-txt-color-manager nav-item nav-link active navbar-link-icon-pos nav-link-color-manager deliveries-icon-pos', :class_inactive => 'inactive' do %>
+        <%= inline_svg 'manager_navbar_icons/delivery-box.svg', width: 24, height: 24 %>
         <h6>Deliveries</h6>
       <% end %>
-      <%= active_link_to order_trackers_path, class: 'nav-item nav-link active navbar-link-icon-pos nav-link-color tracking-icon-pos', :class_inactive => 'inactive' do %>
-        <%= inline_svg 'manager_navbar_icons/tracking_manager_icon.svg', width: 24, height: 24 %>
+      <%= active_link_to order_trackers_path, class: 'nav-brand-txt-color-manager nav-item nav-link active navbar-link-icon-pos nav-link-color-manager tracking-icon-pos', :class_inactive => 'inactive' do %>
+        <%= inline_svg 'manager_navbar_icons/magnifying-glass.svg', width: 24, height: 24 %>
         <h6>Tracking</h6>
       <% end %>
-      <%= active_link_to breads_path, class: 'nav-item nav-link active navbar-link-icon-pos nav-link-color bread-navbar-icon-pos', :class_inactive => 'inactive' do %>
-        <%= inline_svg 'manager_navbar_icons/factory_manager_icon.svg', width: 24, height: 24 %>
+      <%= active_link_to breads_path, class: 'nav-brand-txt-color-manager nav-item nav-link active navbar-link-icon-pos nav-link-color-manager bread-navbar-icon-pos', :class_inactive => 'inactive' do %>
+        <%= inline_svg 'manager_navbar_icons/bakery-icon.svg', width: 24, height: 24 %>
         <h6>Bread Factory</h6>
       <% end %>
-      <%= active_link_to trucks_path, class: 'nav-item nav-link active nav-link-color trucks-navbar-icon-pos', :class_inactive => 'inactive' do %>
-        <%= inline_svg 'manager_navbar_icons/trucks_manager_icon.svg', width: 24, height: 24 %>
+      <%= active_link_to trucks_path, class: 'nav-brand-txt-color-manager nav-item nav-link active nav-link-color-manager trucks-navbar-icon-pos', :class_inactive => 'inactive' do %>
+        <%= inline_svg 'manager_navbar_icons/truck.svg', width: 24, height: 24 %>
         <h6>Trucks</h6>
       <% end %>
     </div>

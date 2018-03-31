@@ -19,12 +19,15 @@
         <div class="manager-info-box">
           <div class="manager-info">
             <ul>
-              <li><%= fa_icon 'user-circle' %> Manager: <%= current_manager.full_name %></li>
-              <li><%= fa_icon 'industry' %> Address: <%= current_manager.warehouse.address %> </li>
-              <li><%= fa_icon 'envelope-square' %> Zip code: <%= current_manager.warehouse.zip_code %></li>
-              <li><%= fa_icon 'map-marker' %> State: <%= current_manager.warehouse.state %> </li>
-              <li><%= fa_icon 'barcode' %> Bread Stock Quantity: <%= current_manager.inventories.size %> </li>
-              <li><%= fa_icon 'truck' %> Trucks Available: <%= current_manager.warehouse.trucks.size %></li>
+              <li><%= fa_icon 'user-circle' %> <strong>Manager:</strong> <%= current_manager.full_name %></li>
+              <li><%= fa_icon 'industry' %> <strong>Address:</strong> <%= current_manager.warehouse.address %> </li>
+              <li><%= fa_icon 'envelope-square' %> <strong>Zip code:</strong>  <%= current_manager.warehouse.zip_code %>
+              </li>
+              <li><%= fa_icon 'map-marker' %> <strong>State:</strong>  <%= current_manager.warehouse.state %> </li>
+              <li><%= fa_icon 'barcode' %>
+                <strong>Bread Stock Quantity:</strong>  <%= current_manager.inventories.size %> </li>
+              <li><%= fa_icon 'truck' %>
+                <strong>Trucks Available:</strong>  <%= current_manager.warehouse.trucks.size %></li>
             </ul>
           </div>
         </div>

@@ -1,4 +1,4 @@
 class OrderFeedback < ApplicationRecord
-  belongs_to :delivery, optional: true
-  has_many :orders, through: :deliveries
+  belongs_to :order, optional: true
+  belongs_to :client, optional: true
 end

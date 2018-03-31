@@ -10,16 +10,19 @@
   </thead>
 
   <tbody>
-  <% @order_trackers.each do |order_tracker| %>
+  <% @order_trackers.each do |o| %>
     <tr>
-      <td><%= link_to 'Show', order_tracker %></td>
-      <td><%= link_to 'Edit', edit_order_tracker_path(order_tracker) %></td>
-      <td><%= link_to 'Destroy', order_tracker, method: :delete, data: {confirm: 'Are you sure?'} %></td>
-    </tr>
+      <td>< Order Date: <%= o.order_tracker.order_date %> </td>
+      <td>Time delivered: <%= o.order_tracker.time_delivered %> </td>
+      <td>Order Shipped: <%= o.order_tracker.order_shipped %></td>
+      <td>Order Location: <%= o.order_tracker.order_location %></td>
+      <td><%= link_to 'Show', order_tracker_path(o.order_tracker.id) %></td>
+      <% if current_manager && manager_logged_in? %>
+        <td><%= link_to 'Edit', edit_order_tracker_path(o) %></td>
+        <td><%= link_to 'Destroy', o, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+      <% end %>
   <% end %>
+    </tr>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Order Tracker', new_order_tracker_path %>

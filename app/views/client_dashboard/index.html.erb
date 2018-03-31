@@ -1,4 +1,95 @@
-<h1>ClientDashboard#index</h1>
-<p>Find me in app/views/client_dashboard/index.html.erb</p>
+<div class="client-dashboard-bg-1">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="hello-client-pos">
+          <h6><strong>Hello</strong>, <%= current_client.full_name %>! </h6>
+        </div>
+        <div class="client-dashboard-header">
+          <h4>My Dashboard
+            <small class="client-dashboard-sub-header">by Loafgo</small>
+          </h4>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <div class="client-info-panel">
+          <div class="user-avatar-icon">
+            <%= fa_icon 'user', class: 'fa-3x' %>
+          </div>
+          <div class="client-info-panel-name">
+            <h4><%= current_client.full_name %></h4>
+          </div>
+          <div class="client-info-divider"></div>
+          <div class="client-info-panel-company">
+            <h5><%= fa_icon 'building' %> <%= current_client.company %></h5>
+          </div>
+          <div class="client-info-divider"></div>
+          <div class="client-info-contact">
+            <h5><%= fa_icon 'phone' %> <%= number_to_phone(current_client.telephone) %></h5>
+          </div>
+          <div class="client-info-divider"></div>
+          <div class="client-info-state">
+            <h5><%= fa_icon 'map' %>  <%= current_client.state %></h5>
+          </div>
+          <div class="client-info-divider"></div>
+          <div class="client-info-zipcode">
+            <h5><%= fa_icon 'list' %>  <%= current_client.zip_code %></h5>
+          </div>
+        </div>
 
-<%= current_client.email %>
+      </div>
+      <div class="col-6">
+        <div class="client-dashboard-latest-orders-container">
+          <div class="client-dashboard-latest-orders-header">
+            <h4><%= fa_icon 'cart-arrow-down' %> Latest Orders</h4>
+          </div>
+          <div class="client-orders">
+            <% @my_orders.each do |order| %>
+              <div class="order-date">
+                <p>Order Date: <%= order.created_at %></p>
+              </div>
+              <div class="order-address">
+                <p>Order Address: <%= order.client_address %></p>
+              </div>
+              <div class="order-state">
+                <p>Order State: <%= order.client_state %></p>
+              </div>
+              <div class="order-bread">
+                <p>Bread Name: <%= order.bread_name %></p>
+              </div>
+              <div class="order-quantity">
+                <p>Magnitude of order: <%= order.bread_quantity %></p>
+              </div>
+              <div class="my-order-tracker">
+                <%= link_to 'Track Order', order_tracker_path(order.order_tracker.id), class: 'bttn-material-flat bttn-sm bttn-success' %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="client-dashboard-order-feedback-container">
+          <div class="client-dashboard-order-feedback-header">
+            <h2>New Order Feedback</h2>
+          </div>
+          <div class="order-feedback-list">
+            <% if @order_feedbacks %>
+              <% @order_feedbacks.each do |order| %>
+                <%= order.order_feedback.try(:title) %>
+                <%= order.order_feedback.try(:order_opinion) %>
+              <% end %>
+            <% else %>
+              <h4>You haven't posted any new order feedbacks!</h4>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+

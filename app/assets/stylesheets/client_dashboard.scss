@@ -1,3 +1,117 @@
 // Place all the styles related to the client_dashboard controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "loafgo-color-palette";
+
+.client-dashboard-bg-1 {
+  position: relative;
+  background-color: $color4;
+  background-size: cover;
+  -web-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 50em;
+  max-height: 100em;
+  padding: 0;
+}
+
+.client-dashboard-header > h4 {
+  margin-top: 0.50em;
+  text-align: center;
+  color: #EFEFEF;
+}
+
+small.client-dashboard-sub-header {
+  color: $color1;
+}
+
+.client-info-panel {
+  height: 17em;
+  width: 16em;
+  background-color: #efefef;
+  border: #ffffff 0.10em solid;
+  border-radius: 0.10em;
+}
+
+.hello-client-pos > h6 {
+  color: whitesmoke;
+  margin-top: 0.50em;
+  float: right;
+}
+
+.user-avatar-icon > i {
+  margin-left: 2.20em;
+  margin-top: 0.50em;
+  color: #464748;
+}
+
+.client-info-divider {
+  height: 0.10em;
+  width: 100%;
+  background-color: #6a6a6a;
+}
+
+.client-info-panel-name > h4 {
+  color: #666666;
+  text-align: center;
+}
+
+.client-info-panel-company > h5 {
+  text-align: center;
+  color: #666666;
+  margin-top: 0.18em;
+}
+
+.client-info-contact > h5 {
+  text-align: center;
+  color: #666666;
+  margin-top: 0.18em;
+}
+
+.client-info-state > h5 {
+  text-align: center;
+  color: #666666;
+  margin-top: 0.18em;
+}
+
+.client-info-zipcode > h5 {
+  text-align: center;
+  color: #666666;
+  margin-top: 0.18em;
+}
+
+.client-orders {
+  margin-left: 0.50em;
+  height: 15em;
+  width: 24em;
+  background-color: $color1;
+  padding: 0.50em;
+  border-radius: 0.13em;
+  border: 0.05em $color5 solid;
+  max-height: 20em;
+  &.client-orders::before {
+    content: url("client_dashboard/new.png");
+    position: absolute;
+    z-index: 10000;
+    margin-left: 22.10em;
+    margin-top: -1.42em;
+  }
+}
+
+.client-dashboard-latest-orders-header > h4 {
+  margin-left: 3.96em;
+  color: #ffffff;
+  padding-bottom: 0.50em;
+}
+
+.client-dashboard-order-feedback-container {
+
+}
+
+.client-dashboard-order-feedback-header > h2 {
+  text-align: center;
+  color: #EFEFEF;
+  padding-top: 1em;
+
+}

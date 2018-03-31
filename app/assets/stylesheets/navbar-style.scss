@@ -11,13 +11,34 @@
 
 }
 
+.client-navbar-icon-color {
+  color: #EFEFEF;
+}
+
+.navbar-blueberry {
+  background-color: $color5;
+}
+
+.navbar-manager-passion-fruit {
+  background-color: $color1;
+}
+
 .navbar-melon {
   background-color: $color1;
   border-bottom: 0.10em $color5 solid;
 }
 
+a.nav-link-color-manager:hover {
+  color: #534450;
+}
+
 .nav-brand-txt-color {
   color: $color1;
+  text-decoration: none;
+}
+
+.nav-brand-txt-color-manager {
+  color: #2E2F30;
   text-decoration: none;
 }
 
@@ -30,11 +51,17 @@
 }
 
 a.nav-link-color {
-  color: $color5;
+  color: $color1;
+}
+
+.nav-box-shadow {
+  -webkit-box-shadow: 0 8px 6px -6px #999;
+  -moz-box-shadow: 0 8px 6px -6px #999;
+  box-shadow: 0 8px 6px -6px #999;
 }
 
 a.nav-link-color:hover {
-  color: $color1;
+  color: $color3;
 }
 
 .trucks-navbar-icon-pos > svg {

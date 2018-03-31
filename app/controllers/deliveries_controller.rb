@@ -17,6 +17,7 @@ class DeliveriesController < ApplicationController
     @delivery = Delivery.new
     @delivery.build_delivery_order
     @orders = Order.all
+    @trucks = Truck.all
   end
 
   # GET /deliveries/1/edit
@@ -71,6 +72,6 @@ class DeliveriesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def delivery_params
-    params.require(:delivery).permit(:delivery_date, :delivery_on_time, delivery_order_attributes: %i[order_id])
+    params.require(:delivery).permit(:delivery_date, :delivery_on_time, :warehouse_id, :truck_id, delivery_order_attributes: %i[order_id])
   end
 end

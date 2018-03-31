@@ -10,7 +10,7 @@ gem 'carrierwave'
 gem 'chartkick'
 gem 'chosen-rails'
 gem 'cocoon'
-#gem 'country_state_select'
+# gem 'country_state_select'
 gem 'active_link_to'
 gem 'city-state'
 gem 'country_select'
@@ -24,16 +24,17 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'kaminari'
 gem 'mini_magick'
+gem 'paper_trail'
 gem 'phony'
 gem 'phony_rails'
 gem 'rails-timeago'
 gem 'rails_emoji_picker'
+gem 'ransack'
 gem 'remotipart'
 gem 'scss_lint', require: false
 gem 'simple_form'
 gem 'spring', group: :development
 gem 'spring-watcher-listen', group: :development
-gem 'paper_trail'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
@@ -57,8 +58,8 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
-#gem 'bcrypt', '~> 3.1.7', platforms: :ruby
-gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
+# gem 'bcrypt', '~> 3.1.7', platforms: :ruby
+gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', require: 'bcrypt'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

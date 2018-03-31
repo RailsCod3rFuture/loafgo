@@ -115,6 +115,7 @@
     <orderEntry type="library" scope="PROVIDED" name="pg (v0.21.0, ruby-2.4.3-p205) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="phony (v2.16.3, ruby-2.4.3-p205) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="phony_rails (v0.14.6, ruby-2.4.3-p205) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="polyamorous (v1.3.3, ruby-2.4.3-p205) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="popper_js (v1.11.1, ruby-2.4.3-p205) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="pry (v0.11.3, ruby-2.4.3-p205) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="public_suffix (v3.0.2, ruby-2.4.3-p205) [gem]" level="application" />
@@ -128,6 +129,7 @@
     <orderEntry type="library" scope="PROVIDED" name="rails_emoji_picker (v0.1.5, ruby-2.4.3-p205) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="railties (v5.1.5, ruby-2.4.3-p205) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rake (v12.3.0, ruby-2.4.3-p205) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="ransack (v1.8.8, ruby-2.4.3-p205) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rb-fsevent (v0.10.2, ruby-2.4.3-p205) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rb-inotify (v0.9.10, ruby-2.4.3-p205) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="remotipart (v1.3.1, ruby-2.4.3-p205) [gem]" level="application" />

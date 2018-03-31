@@ -1,3 +1,47 @@
-// Place all the styles related to the order_finder controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.order-finder-search-background {
+  position: relative;
+  background-color: #979797;
+  border: 0.10em #d9d9d9 solid;
+  background-size: cover;
+  -web-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 200px;
+  padding: 0;
+  border-bottom-left-radius: 0.12em;
+  border-bottom-right-radius: 0.12em;
+}
+
+.order-finder-title > h3 {
+  color: #f7f7f7;
+  text-align: center;
+  margin-top: 2em;
+}
+
+.order-finder-sub-header {
+  color: #eac78c;
+}
+
+.order-finder-search-box {
+  margin-left: 16em;
+}
+
+.search-box-size {
+  width: 36em;
+  // margin-left: 41em;
+}
+
+.order-box {
+  padding: 1em;
+  margin-top: 1em;
+  height: 16em;
+  width: 20em;
+  background-color: #f3f3f3;
+  border: #fdd49a 0.09em solid;
+  border-radius: 0.17em;
+}
+
+.order-box-header-txt-format > h5 {
+  color: #6d6d6d;
+}

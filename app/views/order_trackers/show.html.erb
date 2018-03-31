@@ -1,4 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+<%= @order_tracker.order_date %>
+<%= @order_tracker.time_delivered %>
+<%= @order_tracker.delivery_on_time %>
+<%= @order_tracker.order_shipped %>
+<%= @order_tracker.order_location %>
 <%= link_to 'Edit', edit_order_tracker_path(@order_tracker) %> |
 <%= link_to 'Back', order_trackers_path %>

@@ -1,18 +1,44 @@
 <div class="container">
   <%= simple_form_for(@bread) do |f| %>
     <%= f.error_notification %>
-    <%= f.input :bread_name %>
-    <%= f.input :bread_type %>
-    <%= f.input :upc %>
-    <%= f.input :image_url %>
-    <%= f.simple_fields_for :inventory do |i| %>
-      <%= i.input :bread_stock_quantity, class: 'form-control' %>
-      <%= i.input :bread_inventory_low, as: :boolean, boolean_style: :inline, input_html: {include_hidden: false}, class: 'form-control' %>
-    <% end %>
-    <div class="form-inputs">
+    <div class="form-group">
+      <div class="col-5">
+        <label>Bread Name</label>
+        <%= f.input :bread_name, class: 'form-control', label: false %>
+      </div>
     </div>
-    <div class="form-actions">
-      <%= f.button :submit %>
+    <div class="form-group">
+      <div class="col-5">
+        <label>Bread Type</label>
+        <%= f.input :bread_type, class: 'form-control', label: false %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-5">
+        <label>UPC</label>
+        <%= f.input :upc, class: 'form-control', label: false %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-5">
+        <%= f.input :image_url, class: 'form-control' %>
+      </div>
+    </div>
+
+
+    <%= f.simple_fields_for :inventory do |i| %>
+      <div class="form-group">
+        <div class="col-3">
+          <label>Bread Stock Quantity</label>
+          <%= i.input :bread_stock_quantity, class: 'form-control', label: false %>
+          <%= i.input :bread_inventory_low, as: :boolean, boolean_style: :inline, input_html: {include_hidden: false}, class: 'form-control' %>
+        </div>
+      </div>
+
+    <% end %>
+    <div class="form-group">
+      <%= f.button :submit, class: 'btn btn-outline-primary' %>
     </div>
   <% end %>
 </div>

@@ -1,0 +1,24 @@
+@import "loafgo-color-palette";
+
+.delivery-index-bg-1 {
+  // position: relative;
+  background-color: $color2;
+  background-size: cover;
+  -web-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 200px;
+  padding: 0;
+}
+
+.delivery-index-header > h2 {
+  text-align: center;
+  color: #EFEFEF;
+  // margin-top: 1em;
+}
+
+.new-delivery-header > h1 {
+  color: $color3;
+  padding-top: 1em;
+}

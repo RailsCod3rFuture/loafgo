@@ -213,6 +213,8 @@ GEM
     phony_rails (0.14.6)
       activesupport (>= 3.0)
       phony (> 2.15)
+    polyamorous (1.3.3)
+      activerecord (>= 3.0)
     popper_js (1.11.1)
     pry (0.11.3)
       coderay (~> 1.1.0)
@@ -251,6 +253,12 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (12.3.0)
+    ransack (1.8.8)
+      actionpack (>= 3.0)
+      activerecord (>= 3.0)
+      activesupport (>= 3.0)
+      i18n
+      polyamorous (~> 1.3.2)
     rb-fsevent (0.10.2)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
@@ -382,6 +390,7 @@ DEPENDENCIES
   rails (~> 5.1.4)
   rails-timeago
   rails_emoji_picker
+  ransack
   remotipart
   rspec-rails (~> 3.7)
   sass-rails (~> 5.0)

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180314201229) do
+ActiveRecord::Schema.define(version: 20180330043516) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,10 +53,12 @@ ActiveRecord::Schema.define(version: 20180314201229) do
 
   create_table "deliveries", force: :cascade do |t|
     t.datetime "delivery_date"
-    t.boolean "delivery_on_time"
-    t.bigint "warehouse_id"
+    t.boolean "delivery_on_time", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "truck_id"
+    t.bigint "warehouse_id"
+    t.index ["truck_id"], name: "index_deliveries_on_truck_id"
     t.index ["warehouse_id"], name: "index_deliveries_on_warehouse_id"
   end
 
@@ -104,22 +106,23 @@ ActiveRecord::Schema.define(version: 20180314201229) do
     t.string "title"
     t.string "order_opinion"
     t.text "feedback_body_text"
-    t.bigint "delivery_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["delivery_id"], name: "index_order_feedbacks_on_delivery_id"
+    t.bigint "client_id"
+    t.bigint "order_id"
+    t.index ["client_id"], name: "index_order_feedbacks_on_client_id"
+    t.index ["order_id"], name: "index_order_feedbacks_on_order_id"
   end
 
   create_table "order_trackers", force: :cascade do |t|
     t.datetime "order_date"
-    t.string "order_created_at"
     t.string "time_delivered"
     t.boolean "delivery_on_time"
     t.bigint "order_id"
-    t.bigint "delivery_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["delivery_id"], name: "index_order_trackers_on_delivery_id"
+    t.string "order_shipped"
+    t.string "order_location"
     t.index ["order_id"], name: "index_order_trackers_on_order_id"
   end
 
@@ -131,7 +134,6 @@ ActiveRecord::Schema.define(version: 20180314201229) do
     t.string "lat"
     t.string "client_address"
     t.string "bread_name"
-    t.string "bread_type"
     t.integer "bread_quantity"
     t.bigint "client_id"
     t.datetime "created_at", null: false
@@ -182,16 +184,17 @@ ActiveRecord::Schema.define(version: 20180314201229) do
 
   add_foreign_key "breads", "inventories"
   add_foreign_key "breads", "warehouses"
+  add_foreign_key "deliveries", "trucks", on_delete: :cascade
   add_foreign_key "deliveries", "warehouses"
-  add_foreign_key "delivery_orders", "deliveries"
+  add_foreign_key "delivery_orders", "deliveries", on_delete: :cascade
   add_foreign_key "delivery_orders", "orders"
   add_foreign_key "inventories", "managers"
   add_foreign_key "inventories", "warehouses"
-  add_foreign_key "order_feedbacks", "deliveries"
-  add_foreign_key "order_trackers", "deliveries"
+  add_foreign_key "order_feedbacks", "clients"
+  add_foreign_key "order_feedbacks", "orders"
   add_foreign_key "order_trackers", "orders"
   add_foreign_key "orders", "clients", on_delete: :cascade
-  add_foreign_key "trucks", "deliveries"
+  add_foreign_key "trucks", "deliveries", on_delete: :cascade
   add_foreign_key "trucks", "warehouses"
   add_foreign_key "warehouses", "managers"
 end

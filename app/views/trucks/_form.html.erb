@@ -16,6 +16,11 @@
     </div>
     <div class="form-group">
       <div class="col-5">
+        <%= f.input :current_location_title, class: 'form-control' %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-5">
         <%= f.input :truck_driver_name, class: 'form-control btn btn-outline-primary' %>
       </div>
 
@@ -45,7 +50,7 @@
 
     <div class="form-group">
       <div class="col-5">
-        <%= f.input :delivery_id, collection: @deliveries, :label_method => lambda {|delivery| "Estimated Delivery Date: #{delivery.delivery_date} | Order Id: #{delivery.id}"}, value_method: :id, label: "Delivery Jobs", include_blank: false, prompt: 'Add a delivery to the truck' %>
+        <%= f.hidden_field :delivery_id %>
       </div>
 
     </div>

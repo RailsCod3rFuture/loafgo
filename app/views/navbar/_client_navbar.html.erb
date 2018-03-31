@@ -1,20 +1,20 @@
-<nav class="navbar sticky-top navbar-expand-md navbar-toggleable-md navbar-melon-default">
+<nav class="navbar sticky-top navbar-expand-md navbar-toggleable-md navbar-blueberry">
   <div class="navbar-brand nav-brand-txt-color">
-    <%= inline_svg 'loafgo_logo/bread.svg', size: '26% * 26%', class: 'd-inline-block align-top' %>
+    <%= inline_svg 'loafgo_logo/bread.svg', size: '20% * 20%', class: 'd-inline-block align-top' %>
   </div>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <%= active_link_to client_dashboard_index_path, class: 'nav-item nav-link active client-navbar-link-icon-pos nav-link-color', :class_inactive => 'inactive' do %>
-        <%= inline_svg 'manager_navbar_icons/home_manager_icon.svg', width: 24, height: 24 %>
+      <%= active_link_to client_dashboard_path, class: 'nav-item nav-link active client-navbar-link-icon-pos nav-link-color', :class_inactive => 'inactive' do %>
+        <%= inline_svg 'client_navbar_icons/arrow-outline-in-circular-btn.svg', width: 34, height: 34 %>
         <h6>Dashboard</h6>
       <% end %>
       <%= active_link_to orders_path, class: 'nav-item nav-link active client-navbar-link-icon-pos nav-link-color', :class_inactive => 'inactive' do %>
-        <%= inline_svg 'manager_navbar_icons/orders_manager_icon.svg', width: 24, height: 24 %>
+        <%= inline_svg 'client_navbar_icons/outline-archive-circular-button.svg', width: 34, height: 34 %>
         <h6>My Orders</h6>
       <% end %>
 
       <%= active_link_to order_trackers_path, class: 'nav-item nav-link active client-navbar-link-icon-pos nav-link-color', :class_inactive => 'inactive' do %>
-        <%= inline_svg 'manager_navbar_icons/deliveries_manager_icon.svg', width: 24, height: 24 %>
+        <%= inline_svg 'client_navbar_icons/compass-rounded-tool.svg', width: 34, height: 34 %>
         <h6>Order Tracker</h6>
       <% end %>
     </div>
@@ -25,7 +25,7 @@
         <button class="btn btn-secondary dropdown-toggle nav-link" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <%= fa_icon 'cog' %> Settings
         </button>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
+        <div class="dropdown-menu dropdown-menu-right text-center" aria-labelledby="dropdownMenu2">
           <%= link_to 'Edit Account', edit_client_registration_path, class: 'dropdown-item' %>
           <%= link_to 'Sign Out', destroy_client_session_path, class: 'dropdown-item', method: :delete %>
         </div>

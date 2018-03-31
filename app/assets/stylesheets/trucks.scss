@@ -1,0 +1,37 @@
+@import "loafgo-color-palette";
+
+.truck-index-bg-1 {
+  background-image: url("manager_img_assets/city-lights.jpg");
+  background-size: cover;
+  -web-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 500px;
+  padding: 0;
+}
+
+.truck-index-header > h1 {
+  color: white;
+  margin-top: 0.50em;
+}
+
+.newest-trucker-addition-header > h2 {
+  color: $color2;
+  margin-top: 0.50em;
+  text-align: center;
+}
+
+.trucking-staff > h1 {
+  text-align: center;
+  color: #6d6d6d;
+}
+
+.new-truck-header > h1 {
+  padding-top: 1em;
+  color: #6d6d6d;
+}
+
+.truck-driver-show-header > h1 {
+  text-align: center;
+}

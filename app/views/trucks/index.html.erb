@@ -1,25 +1,75 @@
-<p id="notice"><%= notice %></p>
+<div class="truck-index-bg-1">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-5">
+        <div class="truck-index-header">
+          <h1><strong>LoafGo</strong>
+            <small>Truck Stop</small>
+          </h1>
+        </div>
+      </div>
+      <div class="col-7">
+        <div class="newest-trucker-addition-header">
+          <h2>Newly Added Members</h2>
+        </div>
+        <div class="trucker-boxes">
+          <% @new_truckers.each do |truck| %>
+            <div class="card" style="width: 20em;">
+              <h5 class="card-header"><%= fa_icon 'user' %> <%= truck.truck_driver_name %> <%= link_to truck_path(truck), style: 'float: right; color: #FFCDB2;' do %> <%= fa_icon 'arrow-circle-right' %>
+                <% end %></h5>
+              <div class="card-body">
+                <h6><%= fa_icon 'map-pin' %> Location: <%= truck.current_location_title %></h6>
+                <h6><%= fa_icon 'angle-double-right' %> Truck load: <%= truck.delivery_total %> </h6>
+                <h6><%= fa_icon 'calendar' %> <%= truck.created_at.strftime('%D %r') %> </h6>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid">
+  <p id="notice"><%= notice %></p>
+  <div class="trucking-staff">
+    <h1><%= fa_icon 'truck' %> Available Truckers &
+      Locations <%= link_to 'Add New Trucker', new_truck_path, class: 'btn btn-outline-primary' %></h1>
+  </div>
 
-<h1>Add New Truck To Schedule</h1>
 
-<table>
-  <thead>
-  <tr>
-    <th colspan="3"></th>
-  </tr>
-  </thead>
-
-  <tbody>
-  <% @trucks.each do |truck| %>
+  <table class="table table-inverse">
+    <thead>
     <tr>
-      <td><%= link_to 'Show', truck %></td>
-      <td><%= link_to 'Edit', edit_truck_path(truck) %></td>
-      <td><%= link_to 'Destroy', truck, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+      <th>#</th>
+      <th>Truck Driver Name</th>
+      <th>Packages in Truck</th>
+      <th>Location Title</th>
+      <th>Street Address</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Country</th>
+      <th>View Trucker</th>
+      <th>Edit Trucker</th>
+      <th>Remove Trucker</th>
     </tr>
-  <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
-
-<%= link_to 'New Truck', new_truck_path %>
+    <tbody>
+    <% @trucks.each.with_index(1) do |truck, index| %>
+      <tr>
+        <td><%= index %></td>
+        <td><%= truck.truck_driver_name %></td>
+        <td><%= truck.delivery_total %> </td>
+        <td><%= truck.current_location_title %></td>
+        <td><%= truck.current_street_address %></td>
+        <td><%= truck.current_city %></td>
+        <td><%= truck.current_state %></td>
+        <td><%= truck.current_country %></td>
+        <td><%= link_to 'Visit Trucker', truck, class: 'btn btn-outline-success' %></td>
+        <td><%= link_to 'Change Info', edit_truck_path(truck), class: 'btn btn-outline-info' %></td>
+        <td><%= link_to 'Delete Truck', truck, method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-outline-danger' %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

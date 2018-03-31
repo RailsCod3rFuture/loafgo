@@ -5,6 +5,7 @@ class TrucksController < ApplicationController
   # GET /trucks.json
   def index
     @trucks = Truck.all
+    @new_truckers = Truck.last(4)
   end
 
   # GET /trucks/1
@@ -71,6 +72,6 @@ class TrucksController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def truck_params
-    params.require(:truck).permit(:delivery_total, :lon, :lat, :delivery_id, :loaded_date, :truck_driver_name, :current_street_address, :current_city, :current_state, :current_country)
+    params.require(:truck).permit(:delivery_total, :lon, :lat, :delivery_id, :loaded_date, :truck_driver_name, :current_location_title, :current_street_address, :current_city, :current_state, :current_country)
   end
 end

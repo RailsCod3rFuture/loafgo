@@ -5,4 +5,5 @@ class Client < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :orders, dependent: :destroy
   has_many :breads, through: :orders
+  has_many :order_feedbacks, through: :orders
 end

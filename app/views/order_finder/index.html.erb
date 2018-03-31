@@ -1,2 +1,50 @@
-<h1>OrderFinder#index</h1>
-<p>Find me in app/views/order_finder/index.html.erb</p>
+<div class="order-finder-search-background">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <div class="order-finder-title">
+          <h3>Order Finder
+            <small class="order-finder-sub-header">locate customer records in a jippy</small>
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-9">
+        <div class="order-finder-search-box">
+          <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+            <div class="input-group-addon"><%= fa_icon 'archive' %></div>
+            <input class="form-control py-2 border-right-0 border" type="text" placeholder="Search by order id, client name, order address" id="example-search-input">
+            <span class="input-group-append">
+                <button class="btn btn-outline-secondary border-left-0 border" type="button">
+                  <i class="fa fa-search" style="color: #ffffff"></i>
+                </button>
+              </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <div class="order-box">
+        <div class="media">
+          <i class="fa fa-clipboard mr-3 fa-3x" style="color: #534450"></i>
+          <div class="media-body order-box-header-txt-format">
+            <h5 class="mt-0">Darion Wood</h5>
+            <p><strong>Order Id: </strong> 4</p>
+            <p><strong>Order Date: </strong> 3/16/18</p>
+            <p><strong>Address: </strong> 8 S 15th Ave</p>
+            <p><strong>Bread Name: </strong> Bagel</p>
+            <p><strong>Bread Quantity: </strong> 14</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
