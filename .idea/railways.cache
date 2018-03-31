@@ -1,37 +1,34 @@
                      Prefix Verb   URI Pattern                         Controller#Action
-         order_finder_index GET    /order_finder/index(.:format)       order_finder#index
-    manager_dashboard_index GET    /manager_dashboard/index(.:format)  manager_dashboard#index
-     client_dashboard_index GET    /client_dashboard/index(.:format)   client_dashboard#index
         new_manager_session GET    /managers/sign_in(.:format)         devise/sessions#new
             manager_session POST   /managers/sign_in(.:format)         devise/sessions#create
     destroy_manager_session DELETE /managers/sign_out(.:format)        devise/sessions#destroy
-       new_manager_password GET    /managers/password/new(.:format)    devise/passwords#new
-      edit_manager_password GET    /managers/password/edit(.:format)   devise/passwords#edit
-           manager_password PATCH  /managers/password(.:format)        devise/passwords#update
-                            PUT    /managers/password(.:format)        devise/passwords#update
-                            POST   /managers/password(.:format)        devise/passwords#create
-cancel_manager_registration GET    /managers/cancel(.:format)          devise/registrations#cancel
-   new_manager_registration GET    /managers/sign_up(.:format)         devise/registrations#new
-  edit_manager_registration GET    /managers/edit(.:format)            devise/registrations#edit
-       manager_registration PATCH  /managers(.:format)                 devise/registrations#update
-                            PUT    /managers(.:format)                 devise/registrations#update
-                            DELETE /managers(.:format)                 devise/registrations#destroy
-                            POST   /managers(.:format)                 devise/registrations#create
+       new_manager_password GET    /managers/password/new(.:format)    managers/passwords#new
+      edit_manager_password GET    /managers/password/edit(.:format)   managers/passwords#edit
+           manager_password PATCH  /managers/password(.:format)        managers/passwords#update
+                            PUT    /managers/password(.:format)        managers/passwords#update
+                            POST   /managers/password(.:format)        managers/passwords#create
+cancel_manager_registration GET    /managers/cancel(.:format)          managers/registrations#cancel
+   new_manager_registration GET    /managers/sign_up(.:format)         managers/registrations#new
+  edit_manager_registration GET    /managers/edit(.:format)            managers/registrations#edit
+       manager_registration PATCH  /managers(.:format)                 managers/registrations#update
+                            PUT    /managers(.:format)                 managers/registrations#update
+                            DELETE /managers(.:format)                 managers/registrations#destroy
+                            POST   /managers(.:format)                 managers/registrations#create
          new_client_session GET    /clients/sign_in(.:format)          devise/sessions#new
              client_session POST   /clients/sign_in(.:format)          devise/sessions#create
      destroy_client_session DELETE /clients/sign_out(.:format)         devise/sessions#destroy
-        new_client_password GET    /clients/password/new(.:format)     devise/passwords#new
-       edit_client_password GET    /clients/password/edit(.:format)    devise/passwords#edit
-            client_password PATCH  /clients/password(.:format)         devise/passwords#update
-                            PUT    /clients/password(.:format)         devise/passwords#update
-                            POST   /clients/password(.:format)         devise/passwords#create
- cancel_client_registration GET    /clients/cancel(.:format)           devise/registrations#cancel
-    new_client_registration GET    /clients/sign_up(.:format)          devise/registrations#new
-   edit_client_registration GET    /clients/edit(.:format)             devise/registrations#edit
-        client_registration PATCH  /clients(.:format)                  devise/registrations#update
-                            PUT    /clients(.:format)                  devise/registrations#update
-                            DELETE /clients(.:format)                  devise/registrations#destroy
-                            POST   /clients(.:format)                  devise/registrations#create
+        new_client_password GET    /clients/password/new(.:format)     clients/passwords#new
+       edit_client_password GET    /clients/password/edit(.:format)    clients/passwords#edit
+            client_password PATCH  /clients/password(.:format)         clients/passwords#update
+                            PUT    /clients/password(.:format)         clients/passwords#update
+                            POST   /clients/password(.:format)         clients/passwords#create
+ cancel_client_registration GET    /clients/cancel(.:format)           clients/registrations#cancel
+    new_client_registration GET    /clients/sign_up(.:format)          clients/registrations#new
+   edit_client_registration GET    /clients/edit(.:format)             clients/registrations#edit
+        client_registration PATCH  /clients(.:format)                  clients/registrations#update
+                            PUT    /clients(.:format)                  clients/registrations#update
+                            DELETE /clients(.:format)                  clients/registrations#destroy
+                            POST   /clients(.:format)                  clients/registrations#create
                        home GET    /home/index(.:format)               home#index
                       about GET    /home/about(.:format)               home#about
                     contact GET    /home/contact(.:format)             home#contact
@@ -46,6 +43,8 @@ cancel_manager_registration GET    /managers/cancel(.:format)          devise/re
                             PATCH  /breads/:id(.:format)               breads#update
                             PUT    /breads/:id(.:format)               breads#update
                             DELETE /breads/:id(.:format)               breads#destroy
+          manager_dashboard GET    /m_dashboard(.:format)              manager_dashboard#index
+           client_dashboard GET    /c_dashboard(.:format)              client_dashboard#index
                  deliveries GET    /deliveries(.:format)               deliveries#index
                             POST   /deliveries(.:format)               deliveries#create
                new_delivery GET    /deliveries/new(.:format)           deliveries#new
@@ -54,15 +53,7 @@ cancel_manager_registration GET    /managers/cancel(.:format)          devise/re
                             PATCH  /deliveries/:id(.:format)           deliveries#update
                             PUT    /deliveries/:id(.:format)           deliveries#update
                             DELETE /deliveries/:id(.:format)           deliveries#destroy
-                inventories GET    /inventories(.:format)              inventories#index
-                            POST   /inventories(.:format)              inventories#create
-              new_inventory GET    /inventories/new(.:format)          inventories#new
-             edit_inventory GET    /inventories/:id/edit(.:format)     inventories#edit
-                  inventory GET    /inventories/:id(.:format)          inventories#show
-                            PATCH  /inventories/:id(.:format)          inventories#update
-                            PUT    /inventories/:id(.:format)          inventories#update
-                            DELETE /inventories/:id(.:format)          inventories#destroy
-                            GET    /order_finder(.:format)             order_finder#index
+                      index GET    /index(.:format)                    order_finder#index
                      orders GET    /orders(.:format)                   orders#index
                             POST   /orders(.:format)                   orders#create
                   new_order GET    /orders/new(.:format)               orders#new
