@@ -1,7 +1,35 @@
 <%= simple_form_for(@order_tracker) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
+  <%= f.simple_fields_for :order_tracker do |order_t| %>
+    <%= order_t.input :time_delivered, collection: ["Order Delayed", "Delivery Attempt Failed (Contact UPS)", Time.now], :include_blank => "Select a Delivery Time or Service Status" %>
+    <%= order_t.input :delivery_on_time, as: :boolean, :input_html => {:checked => false} %>
+    <%= order_t.input :order_shipped %>
+    <%= order_t.input :order_location %>
+  <% end %>
+  <div class="form-group">
+    <label>Name</label>
+    <%= f.input :client_name, required: true, label: false, class: 'form-control', disabled: true %>
+  </div>
+
+  <div class="form-group">
+    <label>Zip Code</label>
+    <%= f.input :client_zip_code, required: true, label: false, class: 'form-control', disabled: true %>
+  </div>
+
+  <div class="form-group">
+    <label>Address</label>
+    <%= f.input :client_address, required: true, label: false, class: 'form-control', disabled: true %>
+  </div>
+
+  <div class="form-group">
+    <label>State</label>
+    <%= f.input :client_state, required: true, label: false, class: 'form-control', disabled: true %>
+  </div>
+
+  <div class="form-group">
+    <label>Bread Quantity</label>
+    <%= f.input :bread_quantity, collection: 10..2000, prompt: "What is the bulk quantity of your loaves of bread?", required: true, label: false, class: 'form-control', disabled: true %>
   </div>
 
   <div class="form-actions">

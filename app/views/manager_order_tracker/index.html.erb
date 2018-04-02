@@ -1,6 +1,7 @@
-<p id="notice"><%= notice %></p>
+<h1>ManagerOrderTracker#index</h1>
+<p>Find me in app/views/manager_order_tracker/index.html.erb</p>
 
-<h1>Order Trackers</h1>
+<p id="notice"><%= notice %></p>
 
 <table>
   <thead>
@@ -10,19 +11,20 @@
   </thead>
 
   <tbody>
-  <% @order_trackers.each do |o| %>
+  <% @manager_order_trackers.each do |o| %>
     <tr>
       <td>Order Date: <%= o.order_tracker.order_date %> </td>
       <td>Time delivered: <%= o.order_tracker.time_delivered %> </td>
       <td>Order Shipped: <%= o.order_tracker.order_shipped %></td>
       <td>Order Location: <%= o.order_tracker.order_location %></td>
       <td><%= link_to 'Show', order_tracker_path(o.order_tracker.id) %></td>
-      <% if current_manager && manager_logged_in? %>
-        <td><%= link_to 'Edit', edit_order_tracker_path(o.order_tracker.id) %></td>
+      <% if current_manager && manager_signed_in? %>
+        <td><%= link_to 'Edit', edit_order_tracker_path(o) %></td>
         <td><%= link_to 'Destroy', o, method: :delete, data: {confirm: 'Are you sure?'} %></td>
       <% end %>
   <% end %>
-    </tr>
+  </tr>
   </tbody>
 </table>
+
 

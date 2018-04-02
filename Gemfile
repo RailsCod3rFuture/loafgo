@@ -5,21 +5,21 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'active_link_to'
 gem 'bootstrap', '~> 4.0.0.beta'
 gem 'carrierwave'
 gem 'chartkick'
 gem 'chosen-rails'
-gem 'cocoon'
-# gem 'country_state_select'
-gem 'active_link_to'
 gem 'city-state'
-gem 'country_select'
+gem 'cocoon'
+gem 'country_state_select', git: 'git://github.com/arvindvyas/Country-State-Select', branch: :master
 gem 'devise'
 gem 'font-awesome-rails'
 gem 'friendly_id'
 gem 'geocoder'
 gem 'groupdate'
 gem 'inline_svg'
+gem 'invoice_printer'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'kaminari'
@@ -35,7 +35,8 @@ gem 'scss_lint', require: false
 gem 'simple_form'
 gem 'spring', group: :development
 gem 'spring-watcher-listen', group: :development
-
+gem 'redcarpet'
+gem 'emd'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use postgresql as the database for Active Record

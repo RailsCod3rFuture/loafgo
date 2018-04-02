@@ -28,6 +28,11 @@
         <%= inline_svg 'default_navbar_icons/phone.svg', width: 24, height: 24 %>
         <h6>Contact</h6>
       <% end %>
+
+      <%= active_link_to markdown_path, class: 'nav-item nav-link active navbar-link-icon nav-link-color', :class_inactive => 'inactive' do %>
+        <%= inline_svg 'default_navbar_icons/api.svg', width: 24, height: 24 %>
+        <h6>Docs</h6>
+      <% end %>
     </div>
   </div>
 </nav>

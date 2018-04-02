@@ -1,0 +1,33 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <div class="loafgo-documentation-header text-center">
+        <h1 class="display-2">LoafGo HowTo And Documentation</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-4">
+      <div class="setup-doc-header text-center">
+        <h2>View Setup Information</h2>
+        <div class="setup-doc-btn">
+          <%= link_to 'Setup & Configuration Documentation', loafgo_setup_documentation_path, class: 'btn btn-outline-dark btn-block' %>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="code-doc-header text-center">
+        <h2>View Codebase Information</h2>
+        <%= link_to 'Code Knowledge Base', loafgo_code_documentation_path, class: 'btn btn-outline-info btn-block' %>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="api-doc-header text-center">
+        <h2>View API Information</h2>
+        <%= link_to 'API Knowledge Base', loafgo_api_documentation_path, class: 'btn btn-outline-danger btn-block' %>
+      </div>
+    </div>
+  </div>
+</div>

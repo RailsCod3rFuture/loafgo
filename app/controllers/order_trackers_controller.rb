@@ -1,5 +1,5 @@
 class OrderTrackersController < ApplicationController
-  before_action :set_order_tracker, only: [:show, :edit, :update, :destroy]
+  before_action :set_order_tracker, only: %i[show edit update destroy]
 
   # GET /order_trackers
   # GET /order_trackers.json
@@ -9,7 +9,7 @@ class OrderTrackersController < ApplicationController
 
   # GET /order_trackers/1
   # GET /order_trackers/1.json
-  def show
+  def show;
   end
 
   # GET /order_trackers/new
@@ -18,7 +18,7 @@ class OrderTrackersController < ApplicationController
   end
 
   # GET /order_trackers/1/edit
-  def edit
+  def edit;
   end
 
   # POST /order_trackers
@@ -42,7 +42,7 @@ class OrderTrackersController < ApplicationController
   def update
     respond_to do |format|
       if @order_tracker.update(order_tracker_params)
-        format.html {redirect_to @order_tracker, notice: 'Order tracker was successfully updated.'}
+        format.html {redirect_to manager_order_trackers_path, notice: 'Order tracker was successfully updated.'}
         format.json {render :show, status: :ok, location: @order_tracker}
       else
         format.html {render :edit}
@@ -62,13 +62,14 @@ class OrderTrackersController < ApplicationController
   end
 
   private
+
   # Use callbacks to share common setup or constraints between actions.
   def set_order_tracker
-    @order_tracker = OrderTracker.find(params[:id])
+    @order_tracker = Order.find(params[:id])
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def order_tracker_params
-    params.fetch(:order_tracker, {})
+    params.require(:order_tracker).permit(order: %i[client_name client_zip_code client_address client_state bread_quantity], :order_tracker_attributes => [:id, :time_delivered, :delivered_on_time, :order_shipped, :order_location, :_destroy])
   end
 end

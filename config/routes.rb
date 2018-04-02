@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
+  get 'manager_order_tracker/index'
 
+  get 'manager_order_tracker/edit'
+
+  get 'manager_order_tracker/show'
+
+  controller :app_documentation do
+    get '/software_documentation', to: 'app_documentation#index', as: :software_documentation
+  end
 
   devise_for :managers, :controllers => {
       :registrations => "managers/registrations",
@@ -15,6 +23,9 @@ Rails.application.routes.draw do
     get 'home/contact', to: 'home#contact', as: 'contact'
     get 'home/sign_up_portal', to: 'home#sign_up_portal', as: 'sign_up_portal'
     get 'home/login_portal', to: 'home#login_portal', as: 'login_portal'
+    get '/markdown', to: 'home#markdown'
+    get '/loafgo_code_documentation', to: 'home#loafgo_code_doc'
+    get '/loafgo_api_documentation', to: 'home#loafgo_api'
   end
 
   resources :breads do
@@ -32,6 +43,9 @@ Rails.application.routes.draw do
     get 'order_finder', to: 'order_finder#index', :as => :order_finder
   end
 
+  controller :manager_order_tracker do
+    get 'manager_order_trackers', to: 'manager_order_tracker#index', :as => :manager_order_trackers
+  end
   resources :deliveries
   resources :orders
   resources :order_feedbacks

@@ -41,12 +41,12 @@
 
       </div>
       <div class="col-6">
-        <div class="client-dashboard-latest-orders-container">
-          <div class="client-dashboard-latest-orders-header">
-            <h4><%= fa_icon 'cart-arrow-down' %> Latest Orders</h4>
-          </div>
-          <div class="client-orders">
-            <% @my_orders.each do |order| %>
+        <div class="client-dashboard-latest-orders-header">
+          <h4><%= fa_icon 'cart-arrow-down' %> Latest Orders</h4>
+        </div>
+        <% @my_orders.each do |order| %>
+          <div class="client-dashboard-latest-orders-container">
+            <div class="<%= show_new_order_icon(order) %>">
               <div class="order-date">
                 <p>Order Date: <%= order.created_at %></p>
               </div>
@@ -65,9 +65,9 @@
               <div class="my-order-tracker">
                 <%= link_to 'Track Order', order_tracker_path(order.order_tracker.id), class: 'bttn-material-flat bttn-sm bttn-success' %>
               </div>
-            <% end %>
+            </div>
           </div>
-        </div>
+        <% end %>
       </div>
     </div>
     <div class="row">

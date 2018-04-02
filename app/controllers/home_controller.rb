@@ -13,5 +13,8 @@ class HomeController < ApplicationController
 
   def login_portal;
   end
+
+  def markdown
+  end
 end
 
