@@ -1,30 +1,47 @@
-<h1>ManagerOrderTracker#index</h1>
-<p>Find me in app/views/manager_order_tracker/index.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="manage-orders-header">
+        <h1>Manage Client Order Trackers</h1>
+      </div>
+      <div class="notices-pos text-center">
+        <p id="notice"><%= notice %></p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <table>
+        <thead>
+        <tr>
+          <th colspan="3"></th>
+        </tr>
+        </thead>
 
-<p id="notice"><%= notice %></p>
+        <tbody>
+        <% @manager_order_trackers.each do |o| %>
+          <tr>
+            <td>Order Date: <%= o.order_tracker.order_date %> </td>
+            <td>Time delivered: <%= o.order_tracker.time_delivered %> </td>
+            <td>Order Shipped: <%= o.order_tracker.order_shipped %></td>
+            <td>Order Location: <%= o.order_tracker.order_location %></td>
+            <td><%= link_to 'Show', order_tracker_path(o.order_tracker.id) %></td>
+            <% if current_manager && manager_signed_in? %>
+              <td><%= link_to 'Edit', edit_order_tracker_path(o) %></td>
+              <td><%= link_to 'Destroy', o, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+            <% end %>
+        <% end %>
+        </tr>
+        </tbody>
+      </table>
 
-<table>
-  <thead>
-  <tr>
-    <th colspan="3"></th>
-  </tr>
-  </thead>
+    </div>
+  </div>
+</div>
 
-  <tbody>
-  <% @manager_order_trackers.each do |o| %>
-    <tr>
-      <td>Order Date: <%= o.order_tracker.order_date %> </td>
-      <td>Time delivered: <%= o.order_tracker.time_delivered %> </td>
-      <td>Order Shipped: <%= o.order_tracker.order_shipped %></td>
-      <td>Order Location: <%= o.order_tracker.order_location %></td>
-      <td><%= link_to 'Show', order_tracker_path(o.order_tracker.id) %></td>
-      <% if current_manager && manager_signed_in? %>
-        <td><%= link_to 'Edit', edit_order_tracker_path(o) %></td>
-        <td><%= link_to 'Destroy', o, method: :delete, data: {confirm: 'Are you sure?'} %></td>
-      <% end %>
-  <% end %>
-  </tr>
-  </tbody>
-</table>
+
+
 
 

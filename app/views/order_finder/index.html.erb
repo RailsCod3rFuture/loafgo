@@ -14,15 +14,7 @@
     <div class="row">
       <div class="col-9">
         <div class="order-finder-search-box">
-          <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-            <div class="input-group-addon"><%= fa_icon 'archive' %></div>
-            <input class="form-control py-2 border-right-0 border" type="text" placeholder="Search by order id, client name, order address" id="example-search-input">
-            <span class="input-group-append">
-                <button class="btn btn-outline-secondary border-left-0 border" type="button">
-                  <i class="fa fa-search" style="color: #ffffff"></i>
-                </button>
-              </span>
-          </div>
+          <%= render 'order_finder/shared/form', locales: @orders %>
         </div>
       </div>
     </div>
@@ -31,20 +23,26 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-4">
-      <div class="order-box">
-        <div class="media">
-          <i class="fa fa-clipboard mr-3 fa-3x" style="color: #534450"></i>
-          <div class="media-body order-box-header-txt-format">
-            <h5 class="mt-0">Darion Wood</h5>
-            <p><strong>Order Id: </strong> 4</p>
-            <p><strong>Order Date: </strong> 3/16/18</p>
-            <p><strong>Address: </strong> 8 S 15th Ave</p>
-            <p><strong>Bread Name: </strong> Bagel</p>
-            <p><strong>Bread Quantity: </strong> 14</p>
+    <% if @orders.blank? %>
+      <%= render 'order_finder/shared/no_results' %>
+    <% else %>
+      <div class="col-4">
+        <% @orders.each do |order| %>
+          <div class="order-box">
+            <div class="media">
+              <i class="fa fa-clipboard mr-3 fa-3x" style="color: #534450"></i>
+              <div class="media-body order-box-header-txt-format">
+                <h5 class="mt-0"><%= order.client_name %></h5>
+                <p><strong>Order ID: </strong> <%= order.id %></p>
+                <p><strong>Order Date: </strong> <%= order.created_at.strftime('%D') %></p>
+                <p><strong>Address: </strong> <%= order.client_address %></p>
+                <p><strong>Bread Name: </strong> <%= order.bread_name %> </p>
+                <p><strong>Bread Quantity: </strong> <%= order.bread_quantity %></p>
+              </div>
+            </div>
           </div>
-        </div>
+        <% end %>
       </div>
-    </div>
+    <% end %>
   </div>
 </div>

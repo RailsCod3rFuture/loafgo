@@ -1,4 +1,11 @@
-<%= search_form_for(@q) do |f| %>
-  <%= f.search_field :client_name_or_client_state_or_id_or_client_zip_code_client_address_bread_name, class: 'form-control py-2 border-right-0 border', placeholder: 'Search by order id, client name, order address' %>
-
+<%= search_form_for(@q, url: order_finder_path) do |f| %>
+  <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+    <div class="input-group-addon"><%= fa_icon 'archive' %></div>
+    <%= f.search_field :client_name_or_client_state, class: 'form-control py-2 border-right-0 border', placeholder: 'Search by order id, client name, order address' %>
+    <span class="input-group-append">
+      <%= f.submit class: 'btn btn-secondary border-left-0 border' do %>
+      <i class="fa fa-search" style="color: #ffffff"></i>
+      <% end %>
+    </span>
+  </div>
 <% end %>
