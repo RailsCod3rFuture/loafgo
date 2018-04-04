@@ -7,6 +7,7 @@ end
 
 gem 'active_link_to'
 gem 'bootstrap', '~> 4.0.0.beta'
+gem 'bootstrap4-datetime-picker-rails'
 gem 'carrierwave'
 gem 'chartkick'
 gem 'chosen-rails'
@@ -38,6 +39,7 @@ gem 'simple_form'
 gem 'split', require: 'split/dashboard'
 gem 'spring', group: :development
 gem 'spring-watcher-listen', group: :development
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use postgresql as the database for Active Record

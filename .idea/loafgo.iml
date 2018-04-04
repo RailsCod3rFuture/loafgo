@@ -44,6 +44,7 @@
     <orderEntry type="library" scope="PROVIDED" name="better_errors (v2.4.0, ruby-2.4.3-p205) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bindex (v0.5.0, ruby-2.4.3-p205) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bootstrap (v4.0.0.beta, ruby-2.4.3-p205) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bootstrap4-datetime-picker-rails (v0.1.6, ruby-2.4.3-p205) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="builder (v3.2.3, ruby-2.4.3-p205) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bundler (v1.16.1, ruby-2.4.3-p205) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="byebug (v10.0.0, ruby-2.4.3-p205) [gem]" level="application" />
@@ -104,6 +105,7 @@
     <orderEntry type="library" scope="PROVIDED" name="mini_mime (v1.0.0, ruby-2.4.3-p205) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mini_portile2 (v2.3.0, ruby-2.4.3-p205) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="minitest (v5.11.3, ruby-2.4.3-p205) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="momentjs-rails (v2.20.1, ruby-2.4.3-p205) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="multi_json (v1.13.1, ruby-2.4.3-p205) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mustermann (v1.0.2, ruby-2.4.3-p205) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="nenv (v0.3.0, ruby-2.4.3-p205) [gem]" level="application" />

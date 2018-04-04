@@ -20,7 +20,7 @@
               <div class="card-body">
                 <h6><%= fa_icon 'map-pin' %> Location: <%= truck.current_location_title %></h6>
                 <h6><%= fa_icon 'angle-double-right' %> Truck load: <%= truck.delivery_total %> </h6>
-                <h6><%= fa_icon 'calendar' %> <%= truck.created_at.strftime('%D %r') %> </h6>
+                <h6><%= fa_icon 'calendar' %> Join Date: <%= truck.created_at.strftime('%D %r') %> </h6>
               </div>
             </div>
           <% end %>
