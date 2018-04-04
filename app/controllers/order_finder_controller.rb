@@ -3,6 +3,6 @@ class OrderFinderController < ApplicationController
 
   def index
     @q = Order.ransack(params[:q])
-    @orders = @q.result
+    @orders = @q.result.includes(:clients).page(params[:page])
   end
 end

@@ -14,6 +14,7 @@ gem 'city-state'
 gem 'cocoon'
 gem 'country_state_select', git: 'git://github.com/arvindvyas/Country-State-Select', branch: :master
 gem 'devise'
+gem 'emd'
 gem 'font-awesome-rails'
 gem 'friendly_id'
 gem 'geocoder'
@@ -30,13 +31,13 @@ gem 'phony_rails'
 gem 'rails-timeago'
 gem 'rails_emoji_picker'
 gem 'ransack'
+gem 'redcarpet'
 gem 'remotipart'
 gem 'scss_lint', require: false
 gem 'simple_form'
+gem 'split', require: 'split/dashboard'
 gem 'spring', group: :development
 gem 'spring-watcher-listen', group: :development
-gem 'redcarpet'
-gem 'emd'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use postgresql as the database for Active Record

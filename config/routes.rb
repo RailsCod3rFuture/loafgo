@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  match '/split' => Split::Dashboard, anchor: false, via: %i[get post delete], constraints: ->(request) do
+    request.env['warden'].authenticated? # are we authenticated?
+    request.env['warden'].authenticate! # authenticate if not already
+    request.env['warden'].manager
+  end
 
   devise_for :managers, controllers: {
       registrations: 'managers/registrations',
@@ -28,7 +33,7 @@ Rails.application.routes.draw do
   end
 
   controller :manager_order_tracker do
-    get 'manager_order_tracker', to: 'manager_order_tracker#index', as: :manager_order_trackers_path
+    get 'manager_order_tracker', to: 'manager_order_tracker#index', as: :manager_order_trackers
   end
 
   controller :client_dashboard do

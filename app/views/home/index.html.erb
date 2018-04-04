@@ -5,7 +5,7 @@
         <div class="catch-phrase-header">
           <h1 class="display-4 bounceInLeft animated">
             <small>LoafGo</small>
-            is the fastest bread delivery service in the world!
+            <%= ab_test('loafgo_header_phrase', 'is the fastest bread delivery service in the world!', 'is the fastest growing bread delivery service in the world!') %>
           </h1>
         </div>
         <div class="deliver-msg">
@@ -30,7 +30,7 @@
     <div class="row">
       <div class="col-md-12">
         <div class="welcome-message-box">
-          <h1><%= inline_svg 'home_img_assets/truck.svg', height: 27, width: 27 %> WHAT DO WE OFFER?</h1>
+          <h1><%= inline_svg 'home_img_assets/truck.svg', height: 27, width: 27 %> <%= ab_test('offer_header', 'WHAT DO WE OFFER?', 'WHAT DOES LOAFGO HAVE TO OFFER?') %></h1>
         </div>
       </div>
     </div>
@@ -42,7 +42,7 @@
             <h3 class="card-title card-header-color">24 Hour Shipment or Less</h3>
             <p class="card-text">We will ship a bulk order of fresh bread loaves from our warehouse as soon as your
               order is placed</p>
-            <a href="#" class="btn btn-outline-info video-btn card-button-bottom-padding" data-toggle="modal" data-src="https://www.youtube.com/watch?v=KzsHYFK4Zhw" data-target="#myModal">Learn
+            <a href="#" class="btn btn-outline-info video-btn-1 card-button-bottom-padding" data-toggle="modal" data-src="https://www.youtube.com/watch?v=FApThToOqqU" data-target="#myModal">Learn
               more about our fast deliveries</a>
           </div>
         </div>
@@ -53,7 +53,7 @@
             <%= image_tag 'home_img_assets/Truck-Formula-1.jpg', class: 'card-img-top' %>
             <h3 class="card-title card-header-color">GPS Tracking</h3>
             <p class="card-text">You will easily be able to locate the truck with your shipment on it</p>
-            <a href="#" class="btn btn-outline-info video-btn" data-toggle="modal" data-src="https://www.youtube.com/watch?v=EKN_dwIVuZE" data-target="#myModal">Learn
+            <a href="#" class="btn btn-outline-info video-btn-2" data-toggle="modal" data-src="https://www.youtube.com/watch?v=EKN_dwIVuZE" data-target="#myModal">Learn
               more about our AI 'Loctable'</a>
           </div>
         </div>
@@ -64,7 +64,7 @@
             <%= image_tag 'home_img_assets/Bakery-Boulanger-Bread-Stick.jpg', class: 'card-img-top' %>
             <h3 class="card-title card-header-color">Fresh Bread Guaranteed</h3>
             <p class="card-text">LoafGo will bake your shipment within 2 hours of receiving/confirming your order.</p>
-            <a href="#" class="btn btn-outline-info video-btn" data-toggle="modal" data-src="https://www.youtube.com/watch?v=3UjUWfwWAC4" data-target="#myModal">Learn
+            <a href="#" class="btn btn-outline-info video-btn-3" data-toggle="modal" data-src="https://www.youtube.com/watch?v=3UjUWfwWAC4" data-target="#myModal">Learn
               more about our Bread Factory</a>
           </div>
         </div>
@@ -95,7 +95,8 @@
   </div>
 
   <div class="call-for-more-info">
-    <h1>Want to learn more about LoafGo? Call our toll free adviser <strong style="color: white">1-800-233-LOAF</strong>
+    <h1><%= ab_test('loafgo_call_to_action', 'Want to learn more about LoafGo? Call our toll free adviser', 'Join LoafGo Today!') %>
+      <strong style="color: white">1-800-233-LOAF</strong>
     </h1>
   </div>
 </div>
@@ -142,7 +143,7 @@
 // Gets the video src from the data-src on each button
 
             var $videoSrc;
-            $('.video-btn').click(function () {
+            $(['.video-btn-1', '.video-btn-2', '.video-btn-3']).click(function () {
                 $videoSrc = $(this).data("src");
             });
             console.log($videoSrc);
