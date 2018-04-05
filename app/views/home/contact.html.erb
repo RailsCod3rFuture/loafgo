@@ -1,2 +1,70 @@
-<h1>Home#contact</h1>
-<p>Find me in app/views/home/contact.html.erb</p>
+<head>
+  <style>
+    #map {
+      width: 50%;
+      height: 600px;
+      background-color: grey;
+    }
+  </style>
+</head>
+<body>
+  <div class="container-contact">
+    <div class="contact-map" id="map"></div>
+    <div class="wrap-contact">
+      <div class="form-group">
+        <label>For any questions, comments or concerns please fill out the form below.</label>
+      </div>
+      <div class="form-group">
+        <label>Name</label>
+        <input class="form-control" type="text" name="name" placeholder="Your Name...">
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input class="form-control" type="text" name="email" placeholder="Email Address...">
+      </div>
+      <div class="form-group">
+        <label>Phone</label>
+        <input class="form-control" type="text" name="phone" placeholder="Your phone number...">
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea class="form-control" name="message" placeholder="Questions/Comments..."></textarea>
+      </div>
+      <div class="form-actions">
+        <label>Want to talk to someone?
+          </br>Call us at: 1-800-233-LOAF.
+          </br>Hours: 24 hours, 7 days; best time to call: 9am.
+        </label>
+      </div>
+      <div class="form-actions">
+        <%= link_to 'Send', home_path, class: 'btn btn-outline-info btn-block' %>
+      </div>
+    </div>
+  </div>
+  <script>
+        function initMap() {
+            var whiteHouse = {lat: 38.89774, lng: -77.03679};
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 16,
+                center: whiteHouse
+            });
+            var marker = new google.maps.Marker({
+                position: whiteHouse,
+                map: map
+            });
+            infowindow = new google.maps.InfoWindow({
+                content:'<strong>LoafGo</strong><br>' +
+                '1600 Pensylvania Ave, NW Washington<br>' +
+                'D.C 20500<br>' +
+                'Phone: 1-800-233-5623'
+            });
+            google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker)});
+            infowindow.open(map,marker);
+        }
+  </script>
+  <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9sII76NEn3fgMKnG54Z1wRo2u2WPRvV8&callback=initMap">
+  </script>
+</body>
+
+

@@ -9,7 +9,8 @@
   }
   .catch-phrase-header > h1 {
     margin-top: 2em;
-    color: #e8e8e8;
+    color: #2b2329;
+    font-weight: bold;
     text-align: center;
   }
 
@@ -234,5 +235,60 @@
   .login-btn-pos {
     //margin-left: 6em;
   }
+  /*//////////////////////////////////////////////////////////////////
+  [ Contact]*/
+  .container-contact {
+    width: 95%;
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    background: transparent;
+    position: relative;
+    z-index: 1;
+  }
 
+  .contact-map {
+    position: absolute;
+    z-index: -2;
+    width: calc(100% - 680px);
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  .wrap-contact {
+    width: 640px;
+    min-height: 100vh;
+    background: #fff;
+    border-radius: 2px;
+    padding: 30px 55px 33px 55px;
+    position: relative;
+  }
+
+  .show-wrap-contact {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .input-contact {
+    display: block;
+    width: 100%;
+    background: transparent;
+    font-size: 14px;
+    color: #404040;
+    line-height: 1.2;
+    padding: 0 1px;
+  }
+  /*//////////////////////////////////////////////////////////////////
+ [ Index]*/
+  .wrap-img-index{
+    width: 100%;
+    max-height: 216px;
+  }
 }

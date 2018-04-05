@@ -4,16 +4,18 @@
       <div class="col-12">
         <div class="catch-phrase-header">
           <h1 class="display-4 bounceInLeft animated">
-            <small>LoafGo</small>
-            is the fastest bread delivery service in the world!
+            <big>LoafGo</big>
+            </br>The fastest bread delivery service in the world!
           </h1>
         </div>
         <div class="deliver-msg">
           <h3>We have 40,000 clients & distributors that depend on us to meet their goals</h3>
         </div>
         <section class="deliveries-so-far deliveries-so-far-counter">
-          <p class="deliveries-so-far bounceInUp animated" style="vertical-align: middle; padding:4px 4px"><%= inline_svg 'home_img_assets/package.svg', height: 50, width: 50 %>
-            Deliveries Made So Far</p>
+          <p class="deliveries-so-far bounceInUp animated" style="vertical-align: middle; padding:4px 4px">
+            <%= inline_svg 'home_img_assets/package.svg',height: 50, width: 50%>
+            Deliveries Made So Far
+          </p>
           <h1 class="jumbo" id="myTargetElement">0</h1>
           <!--<h1 class="jumbo" count-up start-val="0" end-val="2536.1" duration="2.5" decimals="1"></h1>-->
         </section>
@@ -38,9 +40,9 @@
       <div class="col-sm-4">
         <div class="card">
           <div class="card-block text-center card-bottom-padding">
-            <%= image_tag 'home_img_assets/Warehouse-Forklift.jpg', class: 'card-img-top' %>
+            <%= image_tag 'home_img_assets/Warehouse-Forklift.jpg', class: 'wrap-img-index' %>
             <h3 class="card-title card-header-color">24 Hour Shipment or Less</h3>
-            <p class="card-text">We will ship a bulk order of fresh bread loaves from our warehouse as soon as your
+            <p class="card-text">We will ship a bulk of fresh bread loaves from our warehouse as soon as your
               order is placed</p>
             <a href="#" class="btn btn-outline-info video-btn card-button-bottom-padding" data-toggle="modal" data-src="https://www.youtube.com/watch?v=KzsHYFK4Zhw" data-target="#myModal">Learn
               more about our fast deliveries</a>
@@ -50,7 +52,7 @@
       <div class="col-sm-4">
         <div class="card">
           <div class="card-block text-center card-bottom-padding">
-            <%= image_tag 'home_img_assets/Truck-Formula-1.jpg', class: 'card-img-top' %>
+            <%= image_tag 'home_img_assets/Truck-Formula-1.jpg', class: 'wrap-img-index' %>
             <h3 class="card-title card-header-color">GPS Tracking</h3>
             <p class="card-text">You will easily be able to locate the truck with your shipment on it</p>
             <a href="#" class="btn btn-outline-info video-btn" data-toggle="modal" data-src="https://www.youtube.com/watch?v=EKN_dwIVuZE" data-target="#myModal">Learn
@@ -61,7 +63,7 @@
       <div class="col-sm-4">
         <div class="card">
           <div class="card-block text-center card-bottom-padding">
-            <%= image_tag 'home_img_assets/Bakery-Boulanger-Bread-Stick.jpg', class: 'card-img-top' %>
+            <%= image_tag 'home_img_assets/Bakery-Boulanger-Bread-Stick.jpg', class: 'wrap-img-index' %>
             <h3 class="card-title card-header-color">Fresh Bread Guaranteed</h3>
             <p class="card-text">LoafGo will bake your shipment within 2 hours of receiving/confirming your order.</p>
             <a href="#" class="btn btn-outline-info video-btn" data-toggle="modal" data-src="https://www.youtube.com/watch?v=3UjUWfwWAC4" data-target="#myModal">Learn
@@ -72,34 +74,6 @@
     </div>
   </div>
 </div>
-<div class="full-width-bakery-bg-img">
-  <div class="five-star-ratings-title">
-    <h1><%= inline_svg 'home_img_assets/star.svg', height: 100, width: 100 %> The Critics Have Spoken!</h1>
-  </div>
-  <div class="critically-acclaimed-header-1">
-    <h1><%= inline_svg 'home_img_assets/star_solo.svg', height: 40, width: 40 %> "Unbelievably delicious bread" -
-      <small class="critically-acclaimed-header-small">Costco CEO</small>
-    </h1>
-  </div>
-  <div class="critically-acclaimed-header-1">
-    <h1><%= inline_svg 'home_img_assets/star_solo.svg', height: 40, width: 40 %> "LoafGo Deliveries are always on time!"
-      -
-      <small class="critically-acclaimed-header-small">BJs CEO</small>
-    </h1>
-  </div>
-  <div class="critically-acclaimed-header-1">
-    <h1><%= inline_svg 'home_img_assets/star_solo.svg', height: 40, width: 40 %> "We chose LoafGo and we're happy with
-      their service!" -
-      <small class="critically-acclaimed-header-small">ShopRite CEO</small>
-    </h1>
-  </div>
-
-  <div class="call-for-more-info">
-    <h1>Want to learn more about LoafGo? Call our toll free adviser <strong style="color: white">1-800-233-LOAF</strong>
-    </h1>
-  </div>
-</div>
-
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
