@@ -45,7 +45,7 @@ Rails.application.routes.draw do
 
   resources :deliveries
   resources :orders
-  resources :order_feedbacks
+  resources :order_feedbacks, except: [:new, :destroy]
   resources :order_trackers
   resources :trucks
   resource :warehouse, only: %i[edit show update]

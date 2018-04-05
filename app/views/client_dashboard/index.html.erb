@@ -63,7 +63,7 @@
                 <p>Magnitude of order: <%= order.bread_quantity %></p>
               </div>
               <div class="my-order-tracker">
-                <%= link_to 'Track Order', order_tracker_path(order.order_tracker.id), class: 'bttn-material-flat bttn-sm bttn-success' %>
+                <%= link_to 'Track Order', order_tracker_path(order.order_tracker.id), class: 'bttn-material-flat bttn-sm bttn-success' %> <%= link_to 'Add/Change Feedback', edit_order_feedback_path(order.order_feedback.id), class: 'bttn-material-flat bttn-sm bttn-primary' %>
               </div>
             </div>
           </div>

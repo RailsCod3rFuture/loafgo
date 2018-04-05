@@ -1,0 +1,39 @@
+
+.order-feedback-top-full-width-bg {
+  position: relative;
+  background: url('order_feedback_assets/Bakery-Dust-Clapping-Hands.jpg') center center no-repeat;
+  background-size: cover;
+  -web-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 13em;
+  padding: 0;
+}
+
+.order-feedback-top-bg-border {
+  height: 3em;
+  width: 100%;
+  background-color: #f7f7f7;
+  border: 0.10em #534450 solid;
+}
+
+.order-feedback-header > h1 {
+  color: #ffffff;
+  text-align: center;
+  margin-top: 1em;
+}
+
+.order-feedback-form-header > h3 {
+  color: #848484;
+  padding-top: 1em;
+}
+
+ul#horz-list {
+  list-style: none;
+}
+
+ul#horz-list li {
+  display: inline;
+}
+

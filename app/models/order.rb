@@ -5,7 +5,7 @@ class Order < ApplicationRecord
   has_one :order_tracker, dependent: :destroy
   has_one :order_feedback
   accepts_nested_attributes_for :order_tracker
-  after_create :build_order_feedback
+  accepts_nested_attributes_for :order_feedback
   geocoded_by :address, latitude: :lat, longitude: :lon
   after_validation :geocode, if: ->(obj) {obj.client_address.present? && obj.client_address_changed?}
 
@@ -26,9 +26,9 @@ class Order < ApplicationRecord
 
   after_create do
     create_order_feedback(
-        title: '',
+        title: 'Untitled',
         order_opinion: 'Positive',
-        feedback_body_text: '',
+        feedback_body_text: 'Add your comments & feedback about the order, here!',
         created_at: DateTime.now,
         client_id: client.id,
         order_id: order.id
