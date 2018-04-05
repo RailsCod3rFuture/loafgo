@@ -20,8 +20,6 @@ Rails.application.routes.draw do
     get 'home/sign_up_portal', to: 'home#sign_up_portal', as: 'sign_up_portal'
     get 'home/login_portal', to: 'home#login_portal', as: 'login_portal'
     get '/markdown', to: 'home#markdown'
-    get '/loafgo_code_documentation', to: 'home#loafgo_code_doc'
-    get '/loafgo_api_documentation', to: 'home#loafgo_api'
   end
 
   resources :breads do
