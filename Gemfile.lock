@@ -61,6 +61,7 @@ GEM
     arel (8.0.0)
     autoprefixer-rails (8.0.0)
       execjs
+    awesome_print (1.8.0)
     axiom-types (0.1.1)
       descendants_tracker (~> 0.0.4)
       ice_nine (~> 0.11.0)
@@ -112,6 +113,9 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
     crass (1.0.3)
+    curl (0.0.9)
+      awesome_print (>= 0.2.1)
+      unidecoder (>= 1.1.1)
     database_cleaner (1.6.2)
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
@@ -395,6 +399,7 @@ GEM
       tzinfo (>= 1.0.0)
     uglifier (4.1.6)
       execjs (>= 0.3.0, < 3)
+    unidecoder (1.1.2)
     virtus (1.0.5)
       axiom-types (~> 0.1)
       coercible (~> 1.0)
@@ -431,6 +436,7 @@ DEPENDENCIES
   cocoon
   coffee-rails (~> 4.2)
   country_state_select!
+  curl
   database_cleaner
   devise
   devise_token_auth

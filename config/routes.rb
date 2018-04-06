@@ -29,7 +29,8 @@ Rails.application.routes.draw do
     mount_devise_token_auth_for 'Manager', at: 'manager', skip: [:omniauth_callbacks]
   end
 
-  mount V1::Orders => '/V1/'
+  mount API => '/'
+
   controller :home do
     get 'home/index', to: 'home#index', as: 'home'
     get 'home/about', to: 'home#about', as: 'about'

@@ -13,6 +13,7 @@ class Client < ApplicationRecord
   has_many :order_feedbacks, through: :orders
 
   protected
+
   def confirmation_required?
     false
   end

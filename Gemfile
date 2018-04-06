@@ -14,6 +14,7 @@ gem 'chosen-rails'
 gem 'city-state'
 gem 'cocoon'
 gem 'country_state_select', git: 'git://github.com/arvindvyas/Country-State-Select', branch: :master
+gem 'curl'
 gem 'devise'
 gem 'devise_token_auth'
 gem 'emd'
