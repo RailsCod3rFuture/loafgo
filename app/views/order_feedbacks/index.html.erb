@@ -11,6 +11,7 @@
 </div>
 <div class="order-feedback-top-bg-border"></div>
 <div class="container">
+  <% if @order_feedbacks.present? %>
   <div class="card-deck mt-4">
     <% @order_feedbacks.each do |of| %>
       <div class="card text-center">
@@ -30,4 +31,9 @@
       </div>
       </div>
     <% end %>
+  <% else %>
+    <div class="no-order-feedbacks-present">
+      <h5 class="display-4">When you place an <strong>Order</strong>, one will appear <%= fa_icon 'comment' %></h5>
+    </div>
+  <% end %>
     </div>

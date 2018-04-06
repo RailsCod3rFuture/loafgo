@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-12">
         <div class="hello-client-pos">
-          <h6><strong>Hello</strong>, <%= current_client.full_name %>! </h6>
+          <h6 class="badge badge-info"><strong>Hello</strong>, <%= current_client.full_name %>! </h6>
         </div>
         <div class="client-dashboard-header">
           <h4>My Dashboard
@@ -44,6 +44,7 @@
         <div class="client-dashboard-latest-orders-header">
           <h4><%= fa_icon 'cart-arrow-down' %> Latest Orders</h4>
         </div>
+        <% if @my_orders.present? %>
         <% @my_orders.each do |order| %>
           <div class="client-dashboard-latest-orders-container">
             <div class="<%= show_new_order_icon(order) %>">
@@ -68,6 +69,13 @@
             </div>
           </div>
         <% end %>
+        <% else %>
+          <div class="no-new-orders-dashboard">
+            <h5>Would you like to place an
+              order? <%= link_to 'Place Bread Order', new_order_path, class: 'btn btn-outline-dark' %></h5>
+          </div>
+          <h5></h5>
+        <% end %>
       </div>
     </div>
     <div class="row">
@@ -77,13 +85,15 @@
             <h2>New Order Feedback</h2>
           </div>
           <div class="order-feedback-list">
-            <% if @order_feedbacks %>
+            <% if @order_feedbacks.present? %>
               <% @order_feedbacks.each do |order| %>
-                <%= order.order_feedback.try(:title) %>
-                <%= order.order_feedback.try(:order_opinion) %>
+                <%= order.order_feedback.title %>
+                <%= order.order_feedback.order_opinion %>
               <% end %>
             <% else %>
-              <h4>You haven't posted any new order feedbacks!</h4>
+              <div class="no-order-feedbacks-dashboard">
+                <h4>You must first place an order to leave a feedback</h4>
+              </div>
             <% end %>
           </div>
         </div>

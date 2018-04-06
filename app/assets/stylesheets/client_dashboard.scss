@@ -20,6 +20,7 @@
   margin-top: 0.50em;
   text-align: center;
   color: #EFEFEF;
+  padding-bottom: 1em;
 }
 
 small.client-dashboard-sub-header {
@@ -109,6 +110,11 @@ small.client-dashboard-sub-header {
 
 }
 
+.no-order-feedbacks-dashboard > h4 {
+  text-align: center;
+  color: #464748;
+}
+
 .client-dashboard-latest-orders-container {
   padding: 0.16em;
   height: 15em;
@@ -122,4 +128,8 @@ small.client-dashboard-sub-header {
   color: #EFEFEF;
   padding-top: 1em;
 
+}
+
+.no-new-orders-dashboard > h5 {
+  color: $color2;
 }
