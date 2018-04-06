@@ -16,7 +16,7 @@ module GrapeApi
       end
 
       def current_client
-        client = Client.where(authentication_token: params[:auth_token], is_approved: true).first
+        client = Client.where(tokens: params[:tokens]).first
         if client
           @current_client = client
         else
@@ -25,7 +25,7 @@ module GrapeApi
       end
     end
 
-    resource :orders do
+    resources :orders do
       desc 'Return Orders.'
       get :orders do
         authenticate_client!

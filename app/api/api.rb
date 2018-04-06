@@ -16,5 +16,5 @@ class API < Grape::API
                        }.to_json, 500).finish
   end
 
-  mount GrapeApi::Order
+  mount GrapeApi::Orders
 end

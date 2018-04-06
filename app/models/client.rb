@@ -1,4 +1,5 @@
 class Client < ApplicationRecord
+
   before_validation do
     self.uid = email if uid.blank?
   end
