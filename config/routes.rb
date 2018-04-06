@@ -1,18 +1,35 @@
 Rails.application.routes.draw do
+
   match '/split' => Split::Dashboard, anchor: false, via: %i[get post delete], constraints: ->(request) do
     request.env['warden'].authenticated? # are we authenticated?
-    request.env['warden'].authenticate! # authenticate if not already
+    request.env['warden'].authenticate_client! # authenticate if not already
     request.env['warden'].manager
   end
 
   devise_for :managers, controllers: {
       registrations: 'managers/registrations',
-      passwords: 'managers/passwords'
+      passwords: 'managers/passwords',
+      sessions: 'managers/sessions'
   }
   devise_for :clients, controllers: {
       registrations: 'clients/registrations',
-      passwords: 'clients/passwords'
+      passwords: 'clients/passwords',
+      sessions: 'clients/sessions'
   }
+
+  authenticated :client do
+    root 'client_dashboard#index'
+  end
+
+  authenticated :manager do
+    root 'manager_dashboard#index'
+  end
+  namespace :loafgo_api, defaults: {format: :json} do
+    mount_devise_token_auth_for 'Client', at: 'auth', skip: [:omniauth_callbacks]
+    mount_devise_token_auth_for 'Manager', at: 'manager', skip: [:omniauth_callbacks]
+  end
+
+  mount V1::Orders => '/V1/'
   controller :home do
     get 'home/index', to: 'home#index', as: 'home'
     get 'home/about', to: 'home#about', as: 'about'

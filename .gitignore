@@ -15,11 +15,6 @@
 
 /node_modules
 /yarn-error.log
-
-.byebug_history
-.idea/dataSources.local.xml
-.idea/inspectionProfiles/
-.idea/workspace.xml
-.idea/loafgo.iml
-.idea/railways.cache
+# Ignore all Idea config files
+.idea/*
 
