@@ -17,3 +17,5 @@
 /yarn-error.log
 # Ignore all Idea config files
 .idea/*
+/.idea/loafgo.iml
+/.idea/railways.cache

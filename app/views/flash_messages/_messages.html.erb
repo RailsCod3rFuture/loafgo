@@ -1,0 +1,23 @@
+<% if notice %>
+  <div class='alert alert-success' style="z-index: 999; text-align: center">
+    <%= notice %>
+  </div>
+<% end %>
+
+<% if alert %>
+  <div class='alert alert-danger' style="z-index: 999; text-align: center">
+    <%= alert %>
+  </div>
+<% end %>
+
+
+<script type="text/javascript">
+    $(document).on('turbolinks:load', function () {
+        window.setTimeout(function () {
+            $(".alert").fadeTo(500, 0).slideUp(500,
+                function () {
+                    $(this).remove();
+                });
+        }, 5000);
+    });
+</script>
