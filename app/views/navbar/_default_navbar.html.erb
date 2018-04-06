@@ -1,37 +1,31 @@
 <nav class="navbar sticky-top navbar-expand-md navbar-toggleable-md navbar-melon-default">
   <div class="navbar-brand nav-brand-txt-color">
-    <%= inline_svg 'loafgo_logo/bread.svg', size: '10% * 10%', class: 'd-inline-block align-top' %>
-    LoafGo
+    <%= inline_svg 'loafgo_logo/bread.svg', size: '15% * 15%', class: 'd-inline-block align-top' %>
+    <big>LoafGo</big>
   </div>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
       <%= active_link_to home_path, class: 'nav-item nav-link active navbar-link-icon-pos nav-link-color', :class_inactive => 'inactive' do %>
-        <%= inline_svg 'default_navbar_icons/home.svg', width: 24, height: 24 %>
-        <h6>Home</h6>
+        <h5>Home </h5>
       <% end %>
       <%= active_link_to login_portal_path, class: 'nav-item nav-link active navbar-link-icon-pos nav-link-color', :class_inactive => 'inactive' do %>
-        <%= inline_svg 'default_navbar_icons/key.svg', width: 24, height: 24 %>
-        <h6>Login</h6>
+        <h5>Login</h5>
       <% end %>
 
       <%= active_link_to sign_up_portal_path, class: 'nav-item nav-link active navbar-link-icon-pos nav-link-color', :class_inactive => 'inactive' do %>
-        <%= inline_svg 'default_navbar_icons/sign_up.svg', width: 24, height: 24 %>
-        <h6>Register</h6>
+        <h5>Register</h5>
       <% end %>
 
       <%= active_link_to about_path, class: 'nav-item nav-link active navbar-link-icon-pos nav-link-color', :class_inactive => 'inactive' do %>
-        <%= inline_svg 'default_navbar_icons/info.svg', width: 24, height: 24 %>
-        <h6>About</h6>
+        <h5>About</h5>
       <% end %>
 
       <%= active_link_to contact_path, class: 'nav-item nav-link active navbar-link-icon-pos nav-link-color', :class_inactive => 'inactive' do %>
-        <%= inline_svg 'default_navbar_icons/phone.svg', width: 24, height: 24 %>
-        <h6>Contact</h6>
+        <h5>Contact</h5>
       <% end %>
 
       <%= active_link_to markdown_path, class: 'nav-item nav-link active navbar-link-icon nav-link-color', :class_inactive => 'inactive' do %>
-        <%= inline_svg 'default_navbar_icons/api.svg', width: 24, height: 24 %>
-        <h6>Docs</h6>
+        <h5>Docs</h5>
       <% end %>
     </div>
   </div>
