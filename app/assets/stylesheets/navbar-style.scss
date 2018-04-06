@@ -12,7 +12,7 @@
 }
 
 .client-navbar-icon-color {
-  color: #EFEFEF;
+  color: #2b2329;
 }
 
 .navbar-blueberry {
@@ -51,7 +51,8 @@ a.nav-link-color-manager:hover {
 }
 
 a.nav-link-color {
-  color: $color1;
+  color: $color5;
+  margin-left: 2em;
 }
 
 .nav-box-shadow {
@@ -61,7 +62,7 @@ a.nav-link-color {
 }
 
 a.nav-link-color:hover {
-  color: $color3;
+  color: $color1;
 }
 
 .trucks-navbar-icon-pos > svg {
