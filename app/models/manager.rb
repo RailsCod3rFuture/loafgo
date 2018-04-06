@@ -13,7 +13,21 @@ class Manager < ApplicationRecord
   has_many :inventories, through: :warehouse
   has_many :breads, through: :warehouse
 
-  protected
+  before_save :create_token
+
+  def create_token
+    self.token = generate_token if token.blank?
+  end
+
+  private
+
+  def generate_token
+    loop do
+      token = Devise.friendly_token
+      break token unless Manager.where(token: token).first
+    end
+  end
+
   def confirmation_required?
     false
   end

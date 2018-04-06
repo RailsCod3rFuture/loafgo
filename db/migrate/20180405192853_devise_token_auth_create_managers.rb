@@ -5,7 +5,7 @@ class DeviseTokenAuthCreateManagers < ActiveRecord::Migration[5.1]
     add_column :managers, :uid, :string, :null => false, :default => ""
 
     ## Tokens
-    add_column :managers, :tokens, :json
+    add_column :managers, :token, :string
 
     add_index :managers, [:uid, :provider], unique: true
   end
