@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery with: :exception
+  protect_from_forgery with: :exception, if: :verify_api
   before_action :devise_parameter_sanitizer, if: :devise_controller?
 
   class Client::ParameterSanitizer < Devise::ParameterSanitizer
@@ -14,6 +14,12 @@ class ApplicationController < ActionController::Base
       super
       permit(:sign_up, keys: %i[email full_name contact_number password password_confirmation])
     end
+  end
+
+  private
+
+  def verify_api
+    params[:controller].split('/')[0] != 'devise_token_auth'
   end
 
   protected

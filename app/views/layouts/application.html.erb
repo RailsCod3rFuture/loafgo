@@ -21,15 +21,11 @@
   <% else %>
     <%= render 'navbar/default_navbar' %>
   <% end %>
-  <div id="container">
-    <% flash.each do |name, msg| %>
-      <%= content_tag :div, msg, :id => "flash_#{name}", style: 'z-index: 999; margin-left: 40em; position: absolute;' %>
-    <% end %>
-  </div>
+  <%= render 'flash_messages/messages' %>
   <%= yield %>
   <script type="text/javascript">
       $(document).on('turbolinks:load', function () {
-          $('.dropdown-toggle').dropdown()
+          $('.dropdown-toggle').dropdown();
       });
   </script>
   </body>

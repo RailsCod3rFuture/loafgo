@@ -2,32 +2,45 @@
   <%= f.error_notification %>
 
   <div class="form-group">
-    <label>Name</label>
-    <%= f.input :client_name, required: true, label: false, class: 'form-control' %>
+    <div class="col-5">
+      <label>Name</label>
+      <%= f.input :client_name, required: true, label: false, class: 'form-control' %>
+    </div>
   </div>
 
   <div class="form-group">
-    <label>Zip Code</label>
-    <%= f.input :client_zip_code, required: true, label: false, class: 'form-control' %>
+    <div class="col-5">
+      <label>Zip Code</label>
+      <%= f.input :client_zip_code, required: true, label: false, class: 'form-control' %>
+    </div>
   </div>
 
   <div class="form-group">
-    <label>Address</label>
-    <%= f.input :client_address, required: true, label: false, class: 'form-control' %>
+    <div class="col-5">
+      <label>Address</label>
+      <%= f.input :client_address, required: true, label: false, class: 'form-control' %>
+    </div>
   </div>
 
   <div class="form-group">
-    <label>State</label>
-    <%= f.input :client_state, required: true, label: false, class: 'form-control' %>
+    <div class="col-5">
+      <label>State</label>
+      <%= f.input :client_state, required: true, label: false, class: 'form-control' %>
+    </div>
   </div>
 
   <div class="form-group">
-    <label>Choose a Bread</label>
-    <%= f.input :bread_name, collection: @breads, label_method: :bread_name, value_method: :bread_name, include_blank: false, :prompt => "Bread Selection", label: false, class: 'form-control', selected: @order.bread_name %>
+    <div class="col-5">
+      <label>Choose a Bread</label>
+      <%= f.input :bread_name, collection: @breads, label_method: :bread_name, value_method: :bread_name, include_blank: false, :prompt => "Bread Selection", label: false, class: 'form-control', selected: @order.bread_name %>
+    </div>
   </div>
+
   <div class="form-group">
-    <label>Bread Quantity</label>
-    <%= f.input :bread_quantity, collection: 10..2000, prompt: "What is the bulk quantity of your loaves of bread?", required: true, label: false, class: 'form-control' %>
+    <div class="col-5">
+      <label>Bread Quantity</label>
+      <%= f.input :bread_quantity, collection: 10..2000, prompt: "What is the bulk quantity of your loaves of bread?", required: true, label: false, class: 'form-control' %>
+    </div>
   </div>
 
   <div class="form-group">

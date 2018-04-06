@@ -1,5 +1,8 @@
 class HomeController < ApplicationController
-  def index;
+  def index
+    ab_finished('loafgo_header_phrase')
+    ab_finished('loafgo_call_to_action')
+    ab_finished('offer_header')
   end
 
   def about;

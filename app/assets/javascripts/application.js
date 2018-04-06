@@ -19,8 +19,11 @@
 //= require jquery_ujs
 //= require jquery.remotipart
 //= require jquery-ui
-//= require countUp
 //= require moment
+//= require tempusdominus-bootstrap-4.js
+//= require countUp
+//= require rails_emoji_picker
+//= require chosen-jquery
 //= require rails-timeago
 //= require Chart.bundle
 //= require chartkick

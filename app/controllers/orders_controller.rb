@@ -5,7 +5,11 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
+    if current_manager
     @orders = Order.all
+    else
+      @orders = current_client.orders
+    end
   end
 
   # GET /orders/1

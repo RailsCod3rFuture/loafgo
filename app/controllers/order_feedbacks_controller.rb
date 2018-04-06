@@ -1,10 +1,10 @@
 class OrderFeedbacksController < ApplicationController
-  before_action :set_order_feedback, only: %i[show edit update destroy]
+  before_action :set_order_feedback, only: %i[show edit update]
 
   # GET /order_feedbacks
   # GET /order_feedbacks.json
   def index
-    @order_feedbacks = current_user.order_feedbacks
+    @order_feedbacks = current_client.orders
   end
 
   # GET /order_feedbacks/1
@@ -12,30 +12,11 @@ class OrderFeedbacksController < ApplicationController
   def show;
   end
 
-  # GET /order_feedbacks/new
-  def new
-    @order_feedback = OrderFeedback.new
-  end
 
   # GET /order_feedbacks/1/edit
   def edit;
   end
 
-  # POST /order_feedbacks
-  # POST /order_feedbacks.json
-  def create
-    @order_feedback = current_user.feed_backs.build(order_feedback_params)
-
-    respond_to do |format|
-      if @order_feedback.save
-        format.html {redirect_to @order_feedback, notice: 'Order feedback was successfully created.'}
-        format.json {render :show, status: :created, location: @order_feedback}
-      else
-        format.html {render :new}
-        format.json {render json: @order_feedback.errors, status: :unprocessable_entity}
-      end
-    end
-  end
 
   # PATCH/PUT /order_feedbacks/1
   # PATCH/PUT /order_feedbacks/1.json
@@ -51,16 +32,6 @@ class OrderFeedbacksController < ApplicationController
     end
   end
 
-  # DELETE /order_feedbacks/1
-  # DELETE /order_feedbacks/1.json
-  def destroy
-    @order_feedback.destroy
-    respond_to do |format|
-      format.html {redirect_to order_feedbacks_url, notice: 'Order feedback was successfully destroyed.'}
-      format.json {head :no_content}
-    end
-  end
-
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_order_feedback
@@ -69,6 +40,6 @@ class OrderFeedbacksController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def order_feedback_params
-    params.fetch(:order_feedback, {})
+    params.require(:order_feedback).permit(:title, :order_opinion, :feedback_body_text, :order_id, :_destroy)
   end
 end

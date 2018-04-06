@@ -4,7 +4,12 @@
     <div class="form-group">
       <div class="col-3">
         <label>Loaded Date (Click Box Below)</label>
-        <%= f.input :loaded_date, as: :date_time_picker, class: 'form-control', placeholder: "Tap to view calendar <i class: 'fa fa-hand-o-up'></i>", label: false %>
+        <div class="input-group date" id="truck_loaded_date" data-target-input="nearest">
+          <%= f.input :loaded_date, class: 'form-control', placeholder: "Tap to view calendar <i class: 'fa fa-hand-o-up'></i>", data: {target: '#truck_loaded_date'}, label: false %>
+          <div class="input-group-append" data-target="#truck_loaded_date" data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -39,12 +44,15 @@
     </div>
     <div class="form-group">
       <div class="col-5">
-        <%= f.input :current_state, class: 'form-control' %>
+        <label>Current State</label>
+        <%= options = {form: f, field_names: {:country => :current_country, :state => :current_state}, label: false, prompt: 'Choose your state'}
+            f.input :current_state, CountryStateSelect.state_options(options) %>
       </div>
     </div>
     <div class="form-group">
       <div class="col-5">
-        <%= f.input :current_country, class: 'form-control' %>
+
+        <%= f.input :current_country, collection: CountryStateSelect.countries_collection, prompt: 'Choose your country' %>
       </div>
     </div>
 
@@ -64,11 +72,21 @@
 
 <script>
     $(document).on('turbolinks:load', function () {
+
+        $('#truck_loaded_date').datetimepicker();
+
         $('.form_datetime').datetimepicker({
             autoclose: true,
             todayBtn: true,
             pickerPosition: "bottom-left",
             format: 'mm-dd-yyyy hh:ii'
         });
+
+        return CountryStateSelect({
+            chosen_ui: true,
+            country_id: "truck_current_country",
+            state_id: "truck_current_state"
+        });
+
     });
 </script>

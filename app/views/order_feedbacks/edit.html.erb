@@ -1,6 +1,21 @@
-<h1>Editing Order Feedback</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="order-feedback-form-header">
+        <h3>Tell Loafgo About Your Order Experience</h3>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <%= render 'form', order_feedback: @order_feedback %>
+    </div>
+  </div>
+</div>
 
-<%= render 'form', order_feedback: @order_feedback %>
+
 
 <%= link_to 'Show', @order_feedback %> |
 <%= link_to 'Back', order_feedbacks_path %>
