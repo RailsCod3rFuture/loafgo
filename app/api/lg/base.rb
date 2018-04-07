@@ -1,8 +1,8 @@
 module LG
   class Base < Grape::API
     acts_as_token_authentication_handler_for Client, fallback: :none
-    include Grape::Kaminari
     mount LG::V1::Orders
+    format :json
 
     rescue_from ActiveRecord::RecordNotFound do |e|
       Rack::Response.new({
@@ -19,13 +19,17 @@ module LG
     end
 
     helpers do
+      def warden
+        env['warden']
+      end
+
+      def authenticated
+        return true if warden.authenticated?
+        params[:access_token] && @client = Client.find_by_authentication_token(params[:access_token])
+      end
+
       def current_client
-        client = Client.where(authentication_token: params[:auth_token]).first
-        if user
-          @current_client = client
-        else
-          false
-        end
+        warden.client || @client
       end
 
       def authenticate!
