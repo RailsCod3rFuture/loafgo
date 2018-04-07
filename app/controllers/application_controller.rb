@@ -4,14 +4,14 @@ class ApplicationController < ActionController::Base
   class Client::ParameterSanitizer < Devise::ParameterSanitizer
     def initialize(*)
       super
-      permit(:sign_up, keys: %i[email full_name company state telephone zip_code password password_confirmation tokens])
+      permit(:sign_up, keys: %i[email full_name company state telephone zip_code password password_confirmation authentication_token])
     end
   end
 
   class Manager::ParameterSanitizer < Devise::ParameterSanitizer
     def initialize(*)
       super
-      permit(:sign_up, keys: %i[email full_name contact_number password password_confirmation tokens])
+      permit(:sign_up, keys: %i[email full_name contact_number password password_confirmation authentication_token])
     end
   end
 

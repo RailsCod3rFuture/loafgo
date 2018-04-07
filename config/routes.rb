@@ -25,11 +25,7 @@ Rails.application.routes.draw do
     root 'manager_dashboard#index'
   end
 
-  namespace :loafgo_api, defaults: {format: :json} do
-
-  end
-
-  mount API => '/'
+  mount LG::Base => '/'
 
   controller :home do
     get 'home/index', to: 'home#index', as: 'home'

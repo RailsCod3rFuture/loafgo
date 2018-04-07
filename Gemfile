@@ -21,6 +21,9 @@ gem 'font-awesome-rails'
 gem 'friendly_id'
 gem 'geocoder'
 gem 'grape'
+gem 'grape-jsonapi-resources'
+gem 'grape-kaminari', :github => 'joshmn/grape-kaminari'
+gem 'grape_on_rails_routes'
 gem 'groupdate'
 gem 'inline_svg'
 gem 'invoice_printer'
@@ -40,7 +43,7 @@ gem 'redcarpet'
 gem 'remotipart'
 gem 'scss_lint', require: false
 gem 'simple_form'
-gem 'simple_token_authentication', '~> 1.0'
+gem 'simple_token_authentication', github: 'gonzalo-bulnes/simple_token_authentication', branch: 'spike-add-grape-support-3'
 gem 'split', require: 'split/dashboard'
 gem 'spring', group: :development
 gem 'spring-watcher-listen', group: :development

@@ -13,6 +13,24 @@ GIT
   specs:
     bcrypt (3.1.11)
 
+GIT
+  remote: https://github.com/gonzalo-bulnes/simple_token_authentication.git
+  revision: edf2fd82aabafb272403447ca3851f4ac2d3d93e
+  branch: spike-add-grape-support-3
+  specs:
+    simple_token_authentication (1.14.0)
+      actionmailer (>= 3.2.6, < 6)
+      actionpack (>= 3.2.6, < 6)
+      devise (>= 3.2, < 6)
+
+GIT
+  remote: https://github.com/joshmn/grape-kaminari.git
+  revision: 5a7d7a8a6c01f3f8791ed3877aae0f3ed73cb915
+  specs:
+    grape-kaminari (0.1.9)
+      grape
+      kaminari
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -156,6 +174,11 @@ GEM
       rack (>= 1.3.0)
       rack-accept
       virtus (>= 1.0.0)
+    grape-jsonapi-resources (0.0.7)
+      grape
+      jsonapi-resources (>= 0.5.0)
+    grape_on_rails_routes (0.3.2)
+      rails (>= 3.1.1)
     groupdate (4.0.0)
       activesupport (>= 4.2)
     guard (2.14.2)
@@ -193,6 +216,10 @@ GEM
     jquery-ui-rails (6.0.1)
       railties (>= 3.2.16)
     json (2.1.0)
+    jsonapi-resources (0.9.0)
+      activerecord (>= 4.1)
+      concurrent-ruby
+      railties (>= 4.1)
     kaminari (1.1.1)
       activesupport (>= 4.1.0)
       kaminari-actionview (= 1.1.1)
@@ -358,10 +385,6 @@ GEM
     simple_form (3.5.1)
       actionpack (> 4, < 5.2)
       activemodel (> 4, < 5.2)
-    simple_token_authentication (1.15.1)
-      actionmailer (>= 3.2.6, < 6)
-      actionpack (>= 3.2.6, < 6)
-      devise (>= 3.2, < 6)
     sinatra (2.0.1)
       mustermann (~> 1.0)
       rack (~> 2.0)
@@ -443,6 +466,9 @@ DEPENDENCIES
   friendly_id
   geocoder
   grape
+  grape-jsonapi-resources
+  grape-kaminari!
+  grape_on_rails_routes
   groupdate
   guard-rspec
   inline_svg
@@ -471,7 +497,7 @@ DEPENDENCIES
   scss_lint
   selenium-webdriver
   simple_form
-  simple_token_authentication (~> 1.0)
+  simple_token_authentication!
   split
   spring
   spring-watcher-listen

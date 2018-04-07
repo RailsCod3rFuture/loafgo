@@ -1,35 +1,28 @@
+module LG
+  module V1
+    class Orders < Grape::API
+      include Grape::Kaminari
+      version 'v1', using: :path
+      format :json
+      prefix :api
 
-module GrapeApi
-  class Orders < Grape::API
-    format :json
-    prefix :api
-
-
-    helpers do
-      def authenticate_client!
-        error!('401 Unauthorized', 401) unless current_client
-      end
-
-      def current_client
-        client = Client.where(tokens: params[:tokens]).first
-        if client
-          @current_client = client
-        else
-          false
+      paginate per_page: 20, max_per_page: 30
+      resource :orders do
+        desc 'Return list of orders'
+        get do
+          orders = Order.all
+          present paginate(orders)
         end
-      end
-    end
 
-    resources :orders do
+      end
+=begin
       desc 'Return Orders.'
       get :orders do
-        authenticate_client!
-        current_client.orders.limit(20)
+        Order.limit(20) # current_client.orders.limit(20)
       end
 
       desc 'Return Order Trackers'
       get :order_trackers do
-        authenticate_client!
         current_client.order.order_trackers
       end
 
@@ -58,7 +51,6 @@ module GrapeApi
       end
 
       post do
-        authenticate_client!
         Order.create!(
             client_name: params[:client_n],
             client_zip_code: params[:client_z],
@@ -80,7 +72,6 @@ module GrapeApi
       end
 
       put ':id' do
-        authenticate_client!
         current_client.orders.find(params[:id]).update(
             client_id: current_client,
             client_zip_code: params[:client_z],
@@ -100,9 +91,9 @@ module GrapeApi
         requires :id, type: Integer, desc: 'Order ID'
       end
       delete ':id' do
-        authenticate_client!
         current_client.orders.find(params[:id]).destroy
       end
+=end
     end
   end
 end
