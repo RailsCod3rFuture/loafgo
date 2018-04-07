@@ -16,7 +16,7 @@ class Manager < ApplicationRecord
   before_save :create_token
 
   def create_token
-    self.token = generate_token if token.blank?
+    self.tokens = generate_token if tokens.blank?
   end
 
   private
@@ -24,7 +24,7 @@ class Manager < ApplicationRecord
   def generate_token
     loop do
       token = Devise.friendly_token
-      break token unless Manager.where(token: token).first
+      break token unless Manager.where(tokens: token).first
     end
   end
 

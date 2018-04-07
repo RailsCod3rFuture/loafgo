@@ -8,6 +8,7 @@ class Client < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
+
   has_many :orders, dependent: :destroy
   has_many :breads, through: :orders
   has_many :order_feedbacks, through: :orders
@@ -15,7 +16,7 @@ class Client < ApplicationRecord
   before_save :create_token
 
   def create_token
-    self.token = generate_token if token.blank?
+    self.tokens = generate_token if tokens.blank?
   end
 
   private
@@ -23,7 +24,7 @@ class Client < ApplicationRecord
   def generate_token
     loop do
       token = Devise.friendly_token
-      break token unless Client.where(token: token).first
+      break token unless Client.where(tokens: token).first
     end
   end
 
