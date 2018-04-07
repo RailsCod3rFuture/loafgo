@@ -20,7 +20,7 @@
 }
 
 .navbar-manager-passion-fruit {
-  background-color: $color1;
+  background-color: $color6;
 }
 
 .navbar-melon {
@@ -50,6 +50,14 @@ a.nav-link-color-manager:hover {
   margin-left: 1.80em;
 }
 
+a.client-nav-link-color {
+  color: whitesmoke;
+  margin-left: 2em;
+}
+
+a.client-nav-link-color:hover {
+  color: #ebbb8b;
+}
 a.nav-link-color {
   color: $color5;
   margin-left: 2em;

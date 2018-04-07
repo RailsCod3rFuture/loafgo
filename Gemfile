@@ -16,13 +16,11 @@ gem 'cocoon'
 gem 'country_state_select', git: 'git://github.com/arvindvyas/Country-State-Select', branch: :master
 gem 'curl'
 gem 'devise'
-gem 'devise_token_auth'
 gem 'emd'
 gem 'font-awesome-rails'
 gem 'friendly_id'
 gem 'geocoder'
 gem 'grape'
-gem 'grape_devise_token_auth'
 gem 'groupdate'
 gem 'inline_svg'
 gem 'invoice_printer'
@@ -42,6 +40,7 @@ gem 'redcarpet'
 gem 'remotipart'
 gem 'scss_lint', require: false
 gem 'simple_form'
+gem 'simple_token_authentication', '~> 1.0'
 gem 'split', require: 'split/dashboard'
 gem 'spring', group: :development
 gem 'spring-watcher-listen', group: :development

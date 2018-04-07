@@ -1,14 +1,9 @@
-GrapeDeviseTokenAuth.setup! do |config|
-  config.authenticate_all = false
-end
 
 module GrapeApi
   class Orders < Grape::API
-    auth :grape_devise_token_auth, resource_class: :client
-
     format :json
     prefix :api
-    helpers GrapeDeviseTokenAuth::AuthHelpers
+
 
     helpers do
       def authenticate_client!

@@ -1,34 +1,10 @@
 class Manager < ApplicationRecord
-
-  before_validation do
-    self.uid = email if uid.blank?
-  end
-  include DeviseTokenAuth::Concerns::User
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
+  acts_as_token_authenticatable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :confirmable
+         :recoverable, :rememberable, :trackable, :validatable
   has_one :warehouse
   after_create :build_warehouse
   has_many :inventories, through: :warehouse
   has_many :breads, through: :warehouse
 
-  before_save :create_token
-
-  def create_token
-    self.tokens = generate_token if tokens.blank?
-  end
-
-  private
-
-  def generate_token
-    loop do
-      token = Devise.friendly_token
-      break token unless Manager.where(tokens: token).first
-    end
-  end
-
-  def confirmation_required?
-    false
-  end
 end

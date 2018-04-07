@@ -24,9 +24,9 @@ Rails.application.routes.draw do
   authenticated :manager do
     root 'manager_dashboard#index'
   end
+
   namespace :loafgo_api, defaults: {format: :json} do
-    mount_devise_token_auth_for 'Client', at: 'auth', skip: [:omniauth_callbacks]
-    mount_devise_token_auth_for 'Manager', at: 'manager', skip: [:omniauth_callbacks]
+
   end
 
   mount API => '/'

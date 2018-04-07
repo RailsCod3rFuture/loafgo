@@ -4,20 +4,20 @@
   </div>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <%= active_link_to client_dashboard_path, class: 'nav-item nav-link active client-navbar-link-icon-pos nav-link-color', class_active: 'active', :class_inactive => 'inactive' do %>
+      <%= link_to client_dashboard_path, class: 'nav-item nav-link active client-navbar-link-icon-pos client-nav-link-color' do %>
         <%= inline_svg 'client_navbar_icons/arrow-outline-in-circular-btn.svg', width: 34, height: 34 %>
         <h6>Dashboard</h6>
       <% end %>
-      <%= active_link_to orders_path, class: 'nav-item nav-link active client-navbar-link-icon-pos nav-link-color', class_active: 'active', :class_inactive => 'inactive' do %>
+      <%= link_to orders_path, class: 'nav-item nav-link active client-navbar-link-icon-pos client-nav-link-color' do %>
         <%= inline_svg 'client_navbar_icons/outline-archive-circular-button.svg', width: 34, height: 34 %>
         <h6>My Orders</h6>
       <% end %>
 
-      <%= active_link_to order_trackers_path, class: 'nav-item nav-link active client-navbar-link-icon-pos nav-link-color', class_active: 'active', :class_inactive => 'inactive' do %>
+      <%= link_to order_trackers_path, class: 'nav-item nav-link active client-navbar-link-icon-pos client-nav-link-color' do %>
         <%= inline_svg 'client_navbar_icons/compass-rounded-tool.svg', width: 34, height: 34 %>
         <h6>Order Tracker</h6>
       <% end %>
-      <%= active_link_to order_feedbacks_path, class: 'nav-item nav-link client-navbar-link-icon-pos nav-link-color', class_active: 'active', class_inactive: 'inactive' do %>
+      <%= link_to order_feedbacks_path, class: 'nav-item nav-link client-navbar-link-icon-pos client-nav-link-color' do %>
         <%= inline_svg 'client_navbar_icons/favorites-star-white.svg', width: 34, height: 34 %>
         <h6>Order Feedback</h6>
       <% end %>
