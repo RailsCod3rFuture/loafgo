@@ -1,17 +1,15 @@
 module LG
   module V1
     class Orders < Grape::API
-      include Grape::Kaminari
       version 'v1', using: :path
       format :json
       prefix :api
 
-      paginate per_page: 20, max_per_page: 30
       resource :orders do
         desc 'Return list of orders'
         get do
           orders = Order.all
-          present paginate(orders)
+          present orders
         end
 
       end
