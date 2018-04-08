@@ -25,10 +25,13 @@
             <p class="card-text"><%= fa_icon 'th' %> Status: <%= my_order.order_tracker.time_delivered %></p>
             <% if current_manager %>
               <p class="card-text"><%= fa_icon 'user' %> <%= my_order.client_name %></p>
-              <p class="card-text"><%= fa_icon 'bookmark' %><%= my_order.client_zip_code %></p>
-              <p class="card-text"><%= fa_icon 'map-marker' %><%= my_order.client_address %></p>
+              <p class="card-text"><%= fa_icon 'bookmark' %> <%= my_order.client_zip_code %></p>
+              <p class="card-text"><%= fa_icon 'map-marker' %> <%= my_order.client_address %></p>
+              <%= link_to 'View', my_order, class: 'btn btn-outline-dark btn-sm' %>
             <% end %>
+            <% if current_client %>
             <%= link_to 'View', my_order, class: 'btn btn-outline-dark btn-sm' %> <%= link_to 'Change', edit_order_path(my_order), class: 'btn btn-outline-info btn-sm' %> <%= link_to 'Cancel', my_order, method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-outline-danger btn-sm' %>
+            <% end %>
           </div>
     <% end %>
     </div>

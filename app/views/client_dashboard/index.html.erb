@@ -6,7 +6,7 @@
           <h6 class="badge badge-info"><strong>Hello</strong>, <%= current_client.full_name %>! </h6>
         </div>
         <div class="client-dashboard-header">
-          <h4>My Dashboard
+          <h4>Dashboard
             <small class="client-dashboard-sub-header">by Loafgo</small>
           </h4>
         </div>
@@ -42,53 +42,85 @@
       </div>
       <div class="col-6">
         <div class="client-dashboard-latest-orders-header">
-          <h4><%= fa_icon 'cart-arrow-down' %> Latest Orders</h4>
+          <h4><%= fa_icon 'cart-arrow-down' %> Lastest Order</h4>
         </div>
         <% if @my_orders.present? %>
         <% @my_orders.each do |order| %>
           <div class="client-dashboard-latest-orders-container">
             <div class="<%= show_new_order_icon(order) %>">
               <div class="order-date">
-                <p>Order Date: <%= order.created_at %></p>
+                <p class="lead"><strong>Order Date:</strong>
+                  <small class="latest-order-text-color"><%= order.created_at.strftime('%D') %></small>
+                </p>
               </div>
               <div class="order-address">
-                <p>Order Address: <%= order.client_address %></p>
+                <p class="lead"><strong>Shipping Address:</strong>
+                  <small class="latest-order-text-color"><%= order.client_address %></small>
+                </p>
               </div>
               <div class="order-state">
-                <p>Order State: <%= order.client_state %></p>
+                <p class="lead"><strong>Shipping State:</strong>
+                  <small class="latest-order-text-color"><%= order.client_state %></small>
+                </p>
               </div>
               <div class="order-bread">
-                <p>Bread Name: <%= order.bread_name %></p>
+                <p class="lead"><strong>Bread Name:</strong>
+                  <small class="latest-order-text-color"><%= order.bread_name %></small>
+                </p>
               </div>
               <div class="order-quantity">
-                <p>Magnitude of order: <%= order.bread_quantity %></p>
+                <p class="lead"><strong>Magnitude of order:</strong>
+                  <small class="latest-order-text-color"><%= order.bread_quantity %></small>
+                </p>
               </div>
               <div class="my-order-tracker">
                 <%= link_to 'Track Order', order_tracker_path(order.order_tracker.id), class: 'bttn-material-flat bttn-sm bttn-success' %> <%= link_to 'Add/Change Feedback', edit_order_feedback_path(order.order_feedback.id), class: 'bttn-material-flat bttn-sm bttn-primary' %>
               </div>
             </div>
           </div>
+            <div class="view-all-orders-btn">
+              <%= link_to 'View All Of My Orders', orders_path, class: 'btn btn-outline-light btn-sm' %>
+            </div>
         <% end %>
         <% else %>
           <div class="no-new-orders-dashboard">
             <h5>Would you like to place an
               order? <%= link_to 'Place Bread Order', new_order_path, class: 'btn btn-outline-dark' %></h5>
           </div>
-          <h5></h5>
         <% end %>
       </div>
     </div>
+  </div>
+</div>
+<div class="client-dashboard-bg-2">
+  <div class="container">
     <div class="row">
       <div class="col-12">
         <div class="client-dashboard-order-feedback-container">
           <div class="client-dashboard-order-feedback-header">
-            <h2>New Order Feedback</h2>
+            <h2><%= inline_svg 'client_dashboard/review.svg', height: 50, width: 50 %> Newest Order Feedbacks</h2>
           </div>
           <div class="order-feedback-list">
             <% if @order_feedbacks.present? %>
               <% @order_feedbacks.each do |order| %>
-                <%= order.order_feedback.title %>
-                <%= order.order_feedback.order_opinion %>
+                <div class="col-md-6">
+                  <div class="card">
+                    <h5 class="card-header"><%= fa_icon 'braille' %> <%= order.order_feedback.title %></h5>
+                    <div class="card-body">
+                      <h5 class="card-title">Service Opinion:
+                        <small><%= order.order_feedback.order_opinion %></small>
+                      </h5>
+                      <p class="card-text"><%= order.order_feedback.feedback_body_text %></p>
+                    </div>
+                    <div class="client-dashboard-order-feedback-btn-pos">
+                      <%= link_to 'View Feedback', order_feedback_path(order.order_feedback.id), class: 'btn btn-outline-primary' %> <%= link_to 'Update/Edit Order Feedback', edit_order_feedback_path(order.order_feedback.id), class: 'btn btn-outline-success' %>
+                    </div>
+                    <blockquote class="blockquote mb-0">
+                      <small class="text-muted"><strong>Created
+                        on: </strong><%= order.order_feedback.created_at.strftime('%A, %d %b %Y %l:%M %p') %></small>
+                    </blockquote>
+                  </div>
+                </div>
               <% end %>
             <% else %>
               <div class="no-order-feedbacks-dashboard">
@@ -99,7 +131,6 @@
         </div>
       </div>
     </div>
-
   </div>
 </div>
 

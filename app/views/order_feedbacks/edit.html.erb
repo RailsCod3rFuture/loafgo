@@ -13,9 +13,9 @@
       <%= render 'form', order_feedback: @order_feedback %>
     </div>
   </div>
+  <%= link_to 'View Order Feedback', @order_feedback, class: 'bttn-minimal bttn-md bttn-primary' %>
+  <%= link_to 'Go back to Order Feedbacks', order_feedbacks_path, class: 'bttn-minimal bttn-md bttn-warning' %>
 </div>
 
 
 
-<%= link_to 'Show', @order_feedback %> |
-<%= link_to 'Back', order_feedbacks_path %>

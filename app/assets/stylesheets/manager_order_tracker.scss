@@ -1,3 +1,15 @@
 // Place all the styles related to the manager_order_tracker controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.order-tracker-edit-header > h2 {
+  padding-top: 0.50em;
+  text-align: center;
+  color: #a5a5a5;
+}
+
+.manage-orders-header > h2 {
+  padding-top: 0.50em;
+  text-align: center;
+  color: #BBBBBB;
+}

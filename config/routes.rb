@@ -28,11 +28,11 @@ Rails.application.routes.draw do
   mount LG::Base => '/'
 
   controller :home do
-    get 'home/index', to: 'home#index', as: 'home'
-    get 'home/about', to: 'home#about', as: 'about'
-    get 'home/contact', to: 'home#contact', as: 'contact'
-    get 'home/sign_up_portal', to: 'home#sign_up_portal', as: 'sign_up_portal'
-    get 'home/login_portal', to: 'home#login_portal', as: 'login_portal'
+    get 'home', to: 'home#index', as: 'home'
+    get 'about', to: 'home#about', as: 'about'
+    get 'contact', to: 'home#contact', as: 'contact'
+    get 'sign_up_portal', to: 'home#sign_up_portal', as: 'sign_up_portal'
+    get 'login_portal', to: 'home#login_portal', as: 'login_portal'
     get '/markdown', to: 'home#markdown'
   end
 

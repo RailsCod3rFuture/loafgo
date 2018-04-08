@@ -5,6 +5,9 @@
         <div class="order-feedback-header">
           <h1><%= inline_svg 'order_feedback_assets/feedback.svg', height: 40, width: 40 %> Order Feedback</h1>
         </div>
+        <div class="order-total-feedback">
+          <h4><strong>Total Number of Orders:</strong> <%= @order_feedbacks.size %></h4>
+        </div>
       </div>
     </div>
   </div>
@@ -14,19 +17,21 @@
   <% if @order_feedbacks.present? %>
   <div class="card-deck mt-4">
     <% @order_feedbacks.each do |of| %>
-      <div class="card text-center">
-        <div class="card-block">
-          <h4 class="card-title"><%= of.order_feedback.title %></h4>
-          <p class="card-text">
-            <%= content_with_emoji(of.order_feedback.feedback_body_text) %>
-          </p>
-        </div>
-        <div class="card-footer">
-          <p><%= fa_icon 'user' %> <%= of.client_name %></p>
-          <p><%= fa_icon 'clipboard' %> <%= of.bread_name %></p>
-          <p><%= fa_icon 'barcode' %> Quantity: <%= of.bread_quantity %></p>
-          <p><%= fa_icon 'calendar' %> <%= of.created_at.strftime('%D') %></p>
-          <%= link_to 'View Feedback', order_feedback_path(of.order_feedback.id), class: 'btn btn-outline-dark btn-sm' %> <%= link_to 'Change/Update Feedback', edit_order_feedback_path(of.order_feedback.id), class: 'btn btn-outline-info btn-sm' %>
+      <div class="col-md-5">
+        <div class="card text-center">
+          <div class="card-block">
+            <h4 class="card-title"><%= of.order_feedback.title %></h4>
+            <p class="card-text">
+              <%= content_with_emoji(of.order_feedback.feedback_body_text) %>
+            </p>
+          </div>
+          <div class="card-footer">
+            <p><%= fa_icon 'user' %> <%= of.client_name %></p>
+            <p><%= fa_icon 'clipboard' %> Bread Selection: <%= of.bread_name %></p>
+            <p><%= fa_icon 'barcode' %> Bread Quantity: <%= of.bread_quantity %></p>
+            <p><%= fa_icon 'calendar' %> <%= of.created_at.strftime('%D') %></p>
+            <%= link_to 'View Feedback', order_feedback_path(of.order_feedback.id), class: 'btn btn-outline-dark btn-sm' %> <%= link_to 'Change/Update Feedback', edit_order_feedback_path(of.order_feedback.id), class: 'btn btn-outline-info btn-sm' %>
+          </div>
         </div>
       </div>
       </div>
