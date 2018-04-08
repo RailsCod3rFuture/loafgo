@@ -2,8 +2,12 @@ module LG
   class Base < Grape::API
     acts_as_token_authentication_handler_for Client, fallback: :none
     mount LG::V1::Orders
-    format :json
+    mount LG::V1::Trucks
+    mount LG::V1::Clients
 
+    format :json
+    version 'v1', using: :path
+    prefix :api
     rescue_from ActiveRecord::RecordNotFound do |e|
       Rack::Response.new({
                              error_code: 404,
@@ -36,5 +40,10 @@ module LG
         error!('401 Unauthorized', 401) unless current_client
       end
     end
+    add_swagger_documentation \
+      info: {
+        title: 'LoafGo API Documentation',
+        description: "'Learn how to use LoafGo's API"
+    }
   end
 end

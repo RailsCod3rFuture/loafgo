@@ -18,13 +18,10 @@ module Loafgo
     config.paths.add File.join('app', 'api'), glob: File.join('**', '*.rb')
     config.autoload_paths += Dir[Rails.root.join('app', 'api', '*')]
 
-    config.middleware.use Rack::Cors do
+    config.middleware.insert_before 0, Rack::Cors do
       allow do
-        origins '*'
-        resource '*',
-                 :headers => :any,
-                 :expose => ['access-token', 'expiry', 'token-type', 'uid', 'client'],
-                 :methods => [:get, :post, :options, :delete, :put]
+        origins 'localhost:3000', '127.0.0.1:3000'
+        resource '*', :headers => :any, :methods => [:get, :post, :options, :head, :delete, :put, :patch]
       end
     end
   end

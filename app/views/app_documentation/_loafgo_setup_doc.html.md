@@ -1,10 +1,14 @@
 # LoafGo Installation
 
 ## Rails Framework
+---
 LoafGo requires Rails 5.1.4
+---
 ## Ruby GemSet
+---
 LoafGo requires ruby 2.4.3
 ## Gems used for project
+---
 ```ruby
 gem 'active_link_to'
 gem 'bootstrap', '~> 4.0.0.beta'
@@ -39,11 +43,14 @@ gem 'spring-watcher-listen', group: :development
 ```
 
 ## Database
+---
 PostgreSQL
 
 ## HTML TEMPLATE ENGINE
+---
 ERB
 
 # Testing Suite
+---
 RSpec
 Capybara
