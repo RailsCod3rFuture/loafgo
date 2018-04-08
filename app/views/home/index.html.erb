@@ -4,12 +4,12 @@
       <div class="col-12">
         <div class="catch-phrase-header">
           <h1 class="display-4 bounceInLeft animated">
-            <big>LoafGo</big>
+            <strong class="loaf-go-center-header">LoafGo</strong>
             </br>The fastest bread delivery service in the world!
           </h1>
         </div>
         <div class="deliver-msg">
-          <h3>We have 40,000 clients & distributors that depend on us to meet their goals</h3>
+          <h3><%= ab_test("loafgo_header_phrase", "We have 40,000 clients & distributors that depend on us to meet their goals", "We have over 40,000 clients and 32 warehouse locations around the world") %> </h3>
         </div>
         <section class="deliveries-so-far deliveries-so-far-counter">
           <p class="deliveries-so-far bounceInUp animated" style="vertical-align: middle; padding:4px 4px">

@@ -15,7 +15,7 @@
   }
 
   p.deliveries-so-far {
-    color: #534450;
+    color: $color4;
     text-align: center;
     font-size: 2em;
     font-weight: bold;
@@ -30,7 +30,7 @@
   .deliver-msg > h3 {
     margin-top: 2em;
     text-align: center;
-    color: $color1;
+    color: $color6;
     text-decoration: underline;
   }
   .full-width-top-bg {
@@ -291,4 +291,8 @@
     width: 100%;
     max-height: 216px;
   }
+}
+
+strong.loaf-go-center-header {
+  color: $color3;
 }

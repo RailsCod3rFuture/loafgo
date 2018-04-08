@@ -2,7 +2,6 @@ Rails.application.routes.draw do
 
   match '/split' => Split::Dashboard, anchor: false, via: %i[get post delete], constraints: ->(request) do
     request.env['warden'].authenticated? # are we authenticated?
-    request.env['warden'].authenticate_client! # authenticate if not already
     request.env['warden'].manager
   end
 
