@@ -1,3 +1,4 @@
+@import "loafgo-color-palette";
 
 .new-order-header {
   color: #666666;
@@ -6,4 +7,23 @@
 .edit-order-header > h1 {
   color: #666666;
   text-align: center;
+}
+
+.client-orders-header > h1 {
+  text-align: center;
+  color: #848484;
+  padding-top: 0.50em;
+}
+
+.bread-color {
+  color: $color2;
+}
+
+img.order-card-img-size {
+  height: 18em;
+  width: 20em;
+}
+
+.new-order-btn {
+  padding-bottom: 0.50em;
 }

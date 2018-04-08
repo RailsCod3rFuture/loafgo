@@ -1,30 +1,39 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="client-orders-header">
+        <h1><strong class="bread-color">Bread </strong>Orders</h1>
+      </div>
+      <div class="new-order-btn">
+        <%= link_to 'Place New Order', new_order_path, class: 'btn btn-outline-primary btn-sm' %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <% @orders.each do |my_order| %>
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="card h-100">
+          <%= order_status_bg(my_order) %>
+          <div class="card-body">
+            <h5 class="card-title">
+              <%= inline_svg 'orders_assets/loaf_name_icon.svg', height: 20, width: 20 %> <%= my_order.bread_name %> |
+              Quantity: <%= my_order.bread_quantity %>
+            </h5>
+            <p class="card-text"><%= fa_icon 'calendar' %> Order Date: <%= my_order.created_at.strftime('%D') %></p>
+            <p class="card-text"><%= fa_icon 'th' %> Status: <%= my_order.order_tracker.time_delivered %></p>
+            <% if current_manager %>
+              <p class="card-text"><%= fa_icon 'user' %> <%= my_order.client_name %></p>
+              <p class="card-text"><%= fa_icon 'bookmark' %><%= my_order.client_zip_code %></p>
+              <p class="card-text"><%= fa_icon 'map-marker' %><%= my_order.client_address %></p>
+            <% end %>
+            <%= link_to 'View', my_order, class: 'btn btn-outline-dark btn-sm' %> <%= link_to 'Change', edit_order_path(my_order), class: 'btn btn-outline-info btn-sm' %> <%= link_to 'Cancel', my_order, method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-outline-danger btn-sm' %>
+          </div>
+    <% end %>
+    </div>
+    </div>
+  </div>
+</div>
 
-<h1>Orders</h1>
 
-<table>
-  <thead>
-  <tr>
-    <th colspan="3"></th>
-  </tr>
-  </thead>
-
-  <tbody>
-  <% @orders.each do |my_order| %>
-    <tr>
-      <td><%= my_order.client_name %></td>
-      <td><%= my_order.client_zip_code %></td>
-      <td><%= my_order.client_address %></td>
-      <td><%= my_order.bread_name %></td>
-      <td><%= my_order.bread_quantity %></td>
-      <td><%= link_to 'Show', my_order %></td>
-      <td><%= link_to 'Edit', edit_order_path(my_order) %></td>
-      <td><%= link_to 'Destroy', my_order, method: :delete, data: {confirm: 'Are you sure?'} %></td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Order', new_order_path %>

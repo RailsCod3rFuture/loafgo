@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180407213133) do
+ActiveRecord::Schema.define(version: 20180408050723) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -129,8 +129,8 @@ ActiveRecord::Schema.define(version: 20180407213133) do
     t.bigint "order_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "order_shipped"
     t.string "order_location"
+    t.boolean "order_shipped", default: false
     t.index ["order_id"], name: "index_order_trackers_on_order_id"
   end
 
