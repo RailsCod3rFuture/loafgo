@@ -1,35 +1,26 @@
-<p id="notice"><%= notice %></p>
-
-<h6>Order Details</h6>
-
-<div class="bread-purchase">
-  <h6>Bread name:</h6>
-  <p><%= @order.bread_name %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="order-show-header">
+        <h3>Order Details</h3>
+      </div>
+    </div>
+  </div>
 </div>
-<div class="purchase-date">
-  <h6>Order date:</h6>
-  <p><%= @order.created_at %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-11">
+      <div class="jumbotron">
+        <h1 class="display-4">Bread Name <strong style="color: #FFB4A2;"><%= @order.bread_name %></strong></h1>
+        <p class="lead">Order Date: <strong><%= @order.created_at.strftime('%D %X') %></strong></p>
+        <p class="lead">Quantity: <strong><%= @order.bread_quantity %></strong></p>
+        <hr class="my-4">
+        <p class="lead"><strong>Shipping Address</strong></p>
+        <p class="lead" style="color: #534450"><%= @order.client_name %></p>
+        <p class="lead"><%= @order.client_address %></p>
+        <p class="lead"><%= @order.client_state %>, <%= @order.client_zip_code %></p>
+        <%= link_to 'Want to edit your order?', edit_order_path(@order), class: 'btn btn-outline-info' %> <%= link_to 'Go Back To Orders Directory', orders_path, class: 'btn btn-outline-dark' %>
+      </div>
+    </div>
+  </div>
 </div>
-<div class="bread-quantity">
-  <h6>Bread Quantity:</h6>
-  <p><%= @order.bread_quantity %></p>
-</div>
-<div class="billing-name">
-  <h6>Name of buyer:</h6>
-  <p><%= @order.client_name %></p>
-</div>
-<div class="billing-address">
-  <h6>Shipment Address</h6>
-  <%= @order.client_address %>
-</div>
-<div class="billing-state">
-  <%= @order.client_state %>
-</div>
-<div class="billing-zip-code">
-  <h6>Shipment Zip Code:</h6>
-  <p><%= @order.client_zip_code %></p>
-</div>
-
-
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>

@@ -58,14 +58,13 @@
   }
 
   .full-width-bakery-bg-img {
-    position: relative;
-    background: url('home_img_assets/Bakery-Cafe-Bread.jpg') center center no-repeat;
     background-size: cover;
     -web-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
+    background: url('home_img_assets/Bakery-Cafe-Bread.jpg') center;
     background-size: cover;
-    height: 600px;
+    height: 30em;
     padding: 0;
   }
 
@@ -82,7 +81,7 @@
   }
 
   .critically-acclaimed-header-small {
-    color: $color1;
+    color: $color3;
   }
 
   .five-star-ratings-title > h1 {
@@ -145,7 +144,12 @@
   .become-a-member-today-hr h1 {
     margin-top: 1em;
     text-align: center;
-    color: $color1;
+    color: $color7;
+  }
+
+  .manager-registration-header > h2 {
+    text-align: center;
+    color: #6d6d6d;
   }
 
   .login-panel-client {
@@ -206,7 +210,7 @@
     width: 30em;
     border: #534450 0.10em solid;
     padding: 0.50em 0.60em;
-    border-radius: 0.14em;
+    border-radius: 0.17em;
   }
 
   .form-box-container-manager {
@@ -215,7 +219,7 @@
     width: 30em;
     border: $color1 0.10em solid;
     padding: 0.50em 0.60em;
-    border-radius: 0.14em;
+    border-radius: 0.17em;
   }
 
   .form-box-divider-manager {
@@ -290,6 +294,13 @@
   .wrap-img-index{
     width: 100%;
     max-height: 216px;
+  }
+
+  // About Page
+  .contact-us-header > h3 {
+    color: $color5;
+    text-align: center;
+    margin-top: 2em;
   }
 }
 

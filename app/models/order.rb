@@ -15,13 +15,13 @@ class Order < ApplicationRecord
 
   after_create do
     create_order_tracker(
-        order_date: order.created_at,
+        order_date: created_at,
         delivery_on_time: true,
-        order_shipped: 'Pending',
+        order_shipped: false,
         order_location: 'TBA',
         time_delivered: 'TBA',
-        order_id: order.id
-    )
+
+        )
   end
 
   after_create do
@@ -29,9 +29,6 @@ class Order < ApplicationRecord
         title: 'Untitled',
         order_opinion: 'Positive',
         feedback_body_text: 'Add your comments & feedback about the order, here!',
-        created_at: DateTime.now,
-        client_id: client.id,
-        order_id: order.id
     )
   end
 end

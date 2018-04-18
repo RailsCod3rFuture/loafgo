@@ -13,7 +13,7 @@
         </div>
         <section class="deliveries-so-far deliveries-so-far-counter">
           <p class="deliveries-so-far bounceInUp animated" style="vertical-align: middle; padding:4px 4px">
-            <%= inline_svg 'home_img_assets/package.svg',height: 50, width: 50%>
+            <%= inline_svg 'home_img_assets/package.svg', height: 50, width: 50 %>
             Deliveries Made So Far
           </p>
           <h1 class="jumbo" id="myTargetElement">0</h1>
@@ -44,7 +44,7 @@
             <h3 class="card-title card-header-color">24 Hour Shipment or Less</h3>
             <p class="card-text">We will ship a bulk of fresh bread loaves from our warehouse as soon as your
               order is placed</p>
-            <a href="#" class="btn btn-outline-dark video-btn card-button-bottom-padding" data-toggle="modal" data-src="https://www.youtube.com/watch?v=KzsHYFK4Zhw" data-target="#myModal">Learn
+            <a href="#" class="btn btn-outline-dark video-btn card-button-bottom-padding" data-toggle="modal" data-src="https://www.youtube.com/embed/KzsHYFK4Zhw" data-target="#myModal">Learn
               more about our fast deliveries</a>
           </div>
         </div>
@@ -55,7 +55,7 @@
             <%= image_tag 'home_img_assets/Truck-Formula-1.jpg', class: 'wrap-img-index' %>
             <h3 class="card-title card-header-color">GPS Tracking</h3>
             <p class="card-text">You will easily be able to locate the truck with your shipment on it</p>
-            <a href="#" class="btn btn-outline-dark video-btn" data-toggle="modal" data-src="https://www.youtube.com/watch?v=EKN_dwIVuZE" data-target="#myModal">Learn
+            <a href="#" class="btn btn-outline-dark video-btn" data-toggle="modal" data-src="https://www.youtube.com/embed/EKN_dwIVuZE" data-target="#myModal">Learn
               more about our AI 'Loctable'</a>
           </div>
         </div>
@@ -66,13 +66,14 @@
             <%= image_tag 'home_img_assets/Bakery-Boulanger-Bread-Stick.jpg', class: 'wrap-img-index' %>
             <h3 class="card-title card-header-color">Fresh Bread Guaranteed</h3>
             <p class="card-text">LoafGo will bake your shipment within 2 hours of receiving/confirming your order.</p>
-            <a href="#" class="btn btn-outline-dark video-btn" data-toggle="modal" data-src="https://www.youtube.com/watch?v=3UjUWfwWAC4" data-target="#myModal">Learn
+            <a href="#" class="btn btn-outline-dark video-btn" data-toggle="modal" data-src="https://www.youtube.com/embed/3UjUWfwWAC4" data-target="#myModal">Learn
               more about our Bread Factory</a>
           </div>
         </div>
       </div>
     </div>
   </div>
+
 </div>
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -102,7 +103,7 @@
             useEasing: true,
             useGrouping: true,
             separator: ',',
-            decimal: '.',
+            decimal: '.'
         };
         var demo = new CountUp('myTargetElement', 0, 100000, 0, 49, options);
         if (!demo.error) {
@@ -111,34 +112,29 @@
             console.error(demo.error);
         }
 
-        $(document).ready(function () {
+        // Gets the video src from the data-src on each button
 
-// Gets the video src from the data-src on each button
-
-            var $videoSrc;
-            $('.video-btn').click(function () {
-                $videoSrc = $(this).data("src");
-            });
-            console.log($videoSrc);
+        var $videoSrc;
+        $('.video-btn').click(function () {
+            $videoSrc = $(this).data("src");
+        });
+        console.log($videoSrc);
 
 
 // when the modal is opened autoplay it
-            $('#myModal').on('shown.bs.modal', function (e) {
+        $('#myModal').on('shown.bs.modal', function (e) {
 
 // set the video src to autoplay and not to show related video. Youtube related video is like a box of chocolates... you never know what you're gonna get
-                $("#video").attr('src', $videoSrc + "?rel=0&amp;showinfo=0&amp;modestbranding=1&amp;autoplay=1");
-            });
+            $("#video").attr('src', $videoSrc + "?rel=0&amp;showinfo=0&amp;modestbranding=1&amp;autoplay=1");
+        });
 
 
 // stop playing the youtube video when I close the modal
-            $('#myModal').on('hide.bs.modal', function (e) {
-                // a poor man's stop video
-                $("#video").attr('src', $videoSrc);
-            })
+        $('#myModal').on('hide.bs.modal', function (e) {
+            // a poor man's stop video
+            $("#video").attr('src', $videoSrc);
+        })
 
-
-// document ready
-        });
 
     });
 </script>

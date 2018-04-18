@@ -5,7 +5,7 @@ class HomeController < ApplicationController
     ab_finished('offer_header')
   end
 
-  def about;
+  def about
   end
 
   def contact;
