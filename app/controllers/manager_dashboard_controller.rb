@@ -3,6 +3,6 @@ class ManagerDashboardController < ApplicationController
   def index
     @trucks = Truck.all
     @recently_added_orders = Order.last(10)
-    @truck_locator = Truck.limit(10)
+    @truck_locator = Truck.order('created_at DESC').last(4)
   end
 end

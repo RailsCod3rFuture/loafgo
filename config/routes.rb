@@ -26,6 +26,9 @@ Rails.application.routes.draw do
 
   mount LG::Base => '/'
 
+  controller :analytics do
+    get 'analytics', to: 'analytics#index', as: 'analytics'
+  end
   controller :home do
     get 'home', to: 'home#index', as: 'home'
     get 'about', to: 'home#about', as: 'about'

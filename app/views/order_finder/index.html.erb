@@ -46,3 +46,15 @@
     <% end %>
   </div>
 </div>
+
+<script type="text/javascript">
+    $(document).on('turbolinks:load', function () {
+        $(document).on("page:fetch", function () {
+            $(".spinner").show();
+        });
+
+        $(document).on("page:receive", function () {
+            $(".spinner").hide();
+        });
+    });
+</script>

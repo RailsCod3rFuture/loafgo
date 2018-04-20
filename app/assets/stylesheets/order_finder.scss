@@ -1,6 +1,6 @@
 .order-finder-search-background {
   position: relative;
-  background-color: #979797;
+  background-color: #464c5f;
   border: 0.10em #d9d9d9 solid;
   background-size: cover;
   -web-background-size: cover;
@@ -13,6 +13,11 @@
   border-bottom-right-radius: 0.12em;
 }
 
+.no-results-for-search > h1 {
+  color: #BBBBBB;
+  text-align: center;
+  margin-top: 2em;
+}
 .order-finder-title > h3 {
   color: #f7f7f7;
   text-align: center;

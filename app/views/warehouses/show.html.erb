@@ -37,16 +37,13 @@
       <div class="manager-newest-orders-box-pos">
         <div class="manager-newest-orders-box">
           <div class="manager-newest-orders-header">
-            <h2>Newest Client Orders</h2>
+            <h2>Newest Clients</h2>
             <div class="orders-list">
-              <% @orders.each do |order| %>
-                <%= order.client_name %>
-                <%= order.client_zip_code %>
-                <%= order.client_state %>
-                <%= order.client_address %>
-                <%= order.bread_quantity %>
-                <%= order.id %>
-              <% end %>
+              <ul>
+                <% @orders.each do |order| %>
+                  <li style="color: #334a53"><%= order.client_name %></li>
+                <% end %>
+              </ul>
             </div>
           </div>
         </div>

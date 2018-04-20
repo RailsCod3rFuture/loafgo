@@ -1,7 +1,51 @@
-<div class="container">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-5">
+      <div class="delivery-show-side-panel">
+        <%= inline_svg 'manager_img_assets/logistics.svg', width: 60, height: 60 %>
+        <div class="delivery-show-sub-header">
+          <h5>Viewing Delivery <strong style="color: #FFB4A2;">#<%= @delivery.id %></strong></h5>
+        </div>
 
+        <div class="delivery-show-on-time-checker">
+          <h5>Delivery on-time <strong style="color: #FFB4A2;"><%= delivery_on_time_checker(@delivery) %> </strong></h5>
+        </div>
+        <div class="delivery-show-date-created-at">
+          <h5>Delivery Preparation Date
+            <strong style="color: #FFB4A2;"><%= @delivery.created_at.strftime('%D %X') %> </strong></h5>
+        </div>
+        <%= inline_svg 'manager_img_assets/writer.svg', width: 60, height: 60 %>
+        <div class="delivery-show-edit-btn text-center">
+          <%= link_to 'Make Changes to the Delivery', edit_delivery_path(@delivery), class: 'bttn-material-flat bttn-md bttn-success', style: 'text-decoration: none;' %>
+        </div>
+        <%= inline_svg 'manager_img_assets/trash.svg', width: 60, height: 60 %>
+        <div class="delivery-destroy-btn text-center">
+          <%= button_to 'Throw Away Delivery!', @delivery, :method => :delete, :confirm => "Are you sure you want to delete your delivery?", class: 'bttn-material-flat bttn-md bttn-danger' %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-6">
+      <div class="delivery-show-client-name">
+        <h3>Delivering To <strong style="color: #2f323d"><%= @delivery.delivery_order.order.client_name %></strong></h3>
+      </div>
+      <div class="delivery-show-client-phone-number">
+        <h3>Contact Number
+          <strong style="color: #2f323d;"><%= number_to_phone(@delivery.delivery_order.order.client.telephone) %></strong>
+        </h3>
+      </div>
+      <div class="delivery-show-client-address">
+        <h3>Address <strong style="color: #2f323d;"> <%= @delivery.delivery_order.order.client_address %></strong></h3>
+      </div>
+      <div class="delivery-show-bread-name">
+        <h3>Item(s) Ordered <strong style="color: #2f323d;"><%= @delivery.delivery_order.order.bread_name %></strong>
+        </h3>
+      </div>
+      <div class="delivery-show-how-many-items-ordered">
+        <h3>How many Item(s) Ordered?
+          <strong style="color: #2f323d;"><%= @delivery.delivery_order.order.bread_quantity %></strong></h3>
+      </div>
+    </div>
+  </div>
 </div>
-<p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_delivery_path(@delivery) %> |
-<%= link_to 'Back', deliveries_path %>

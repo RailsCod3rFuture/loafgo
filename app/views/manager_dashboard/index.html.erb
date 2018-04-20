@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-12">
         <div class="manager-dashboard-header">
-          <h2>Management Dashboard</h2>
+          <h2><%= inline_svg 'manager_img_assets/speedometer.svg', height: 40, width: 40 %> Management Dashboard</h2>
         </div>
         <div class="manager-dashboard-divider"></div>
       </div>
@@ -15,18 +15,18 @@
             <h4>Recently Added Orders</h4>
           </div>
           <% if @recently_added_orders.present? %>
-          <% @recently_added_orders.each do |order| %>
-            <ul class="recently-added-orders-list">
-              <li><%= fa_icon 'user' %> <strong><%= order.client_name %></strong></li>
-              <li><%= fa_icon 'map' %> <%= order.client_address + " " + order.client_state + " " + order.client_zip_code %> </li>
-              <li><p><%= fa_icon 'barcode' %> <strong>Bread Name:</strong> <%= order.bread_name %> |
-                <strong>Quantity:</strong> <%= order.bread_quantity %></p></li>
-              <li>Order completed:</li>
-              <li><%= link_to 'View Order', order_path(order), class: 'btn btn-outline-info btn-sm' %> </li>
-              <li>
-                <div class="orders-divider"></div>
-              </li>
-            </ul>
+            <% @recently_added_orders.each do |order| %>
+              <ul class="recently-added-orders-list">
+                <li><%= fa_icon 'user' %> <strong><%= order.client_name %></strong></li>
+                <li><%= fa_icon 'map' %> <%= order.client_address + " " + order.client_state + " " + order.client_zip_code %> </li>
+                <li><p><%= fa_icon 'barcode' %> <strong>Bread Name:</strong> <%= order.bread_name %> |
+                  <strong>Quantity:</strong> <%= order.bread_quantity %></p></li>
+                <li><strong>Order Status </strong> <%= order_tracker_shipment_status(order) %> </li>
+                <li><%= link_to 'View Order', order_path(order), class: 'btn btn-outline-info btn-sm' %> </li>
+                <li>
+                  <div class="orders-divider"></div>
+                </li>
+              </ul>
             <% end %>
           <% else %>
             <div class="no-orders-listed">
@@ -51,6 +51,7 @@
                     <li><strong>Delivering to: </strong>  <%= truck.delivery.delivery_order.order.client_name %> </li>
                     <li><strong>Address for client: </strong>  <%= truck.delivery.delivery_order.order.address %> </li>
                   <% end %>
+                  <li><%= link_to 'View Truck Driver Account', truck_path(truck), class: 'btn btn-outline-light' %> </li>
                   <li>
                     <div class="orders-divider"></div>
                   </li>
@@ -69,43 +70,43 @@
     <div class="truck-beacon">
       <h3>Quick View of Truck Locations</h3>
     </div>
-    <div class="row">
-      <div class="truck-locator">
-        <% if @truck_locator.present? %>
+    <% if @truck_locator.present? %>
+      <div class="row">
           <% @truck_locator.each do |truck_locator| %>
-            <div class="col-12">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title"><%= truck_locator.truck_driver_name %> <%= link_to truck_path(truck_locator), style: 'float: right;' do %> <%= fa_icon 'arrow-circle-right' %>
-                    <% end %></h5>
-                  <p>
-                    <strong>Location Title: </strong> <%= truck_locator.current_location_title %>
-                  </p>
-                  <p>
-                    <strong>Current Location: </strong> <%= truck_locator.current_street_address %>
-                    , <%= truck_locator.current_city %>, <%= truck_locator.current_state %>
-                  </p>
-                  <p>
-                    <% if truck_locator.versions.size > 0 %>
-                      <strong>Last Location: </strong> <%= truck_locator.versions.last.reify.current_street_address %>
-                    <% else %>
-                      <strong>Shipment in preparation or still at checkpoint</strong>
-                    <% end %>
-                  </p>
-                  <div class="card-footer text-muted">
-                    <%= static_map_for_card(truck_locator) %>
-                  </div>
-                  <div class="card-footer text-muted">
-                    <iframe width="400" height="200" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyBNg3p1HLMTIrU_KZzT5qwdSPe3kedtKxc&origin=<%= truck_locator.current_street_address + truck_locator.current_city + truck_locator.current_state %>&destination=<%= truck_locator.delivery.delivery_order.order.client_address + truck_locator.delivery.delivery_order.order.client_state %>&avoid=tolls|highways" allowfullscreen></iframe>
-                  </div>
+          <div class="col-sm-5">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title"><%= truck_locator.truck_driver_name %> <%= link_to truck_path(truck_locator), style: 'float: right;' do %> <%= fa_icon 'arrow-circle-right' %>
+                  <% end %></h5>
+                <p>
+                  <strong>Location Title: </strong> <%= truck_locator.current_location_title %>
+                </p>
+                <p>
+                  <strong>Current Location: </strong> <%= truck_locator.current_street_address %>
+                  , <%= truck_locator.current_city %>, <%= truck_locator.current_state %>
+                </p>
+                <p>
+                  <% if truck_locator.versions.size > 0 %>
+                    <strong>Last Location: </strong> <%= truck_locator.versions.last.reify.current_street_address %>
+                  <% else %>
+                    <strong>Shipment in preparation or still at checkpoint</strong>
+                  <% end %>
+                </p>
+                <div class="card-footer text-muted">
+                  <%= static_map_for_card(truck_locator) %>
+                </div>
+                <div class="card-footer text-muted">
+                  <% if truck_locator.delivery.present? %>
+                    <iframe class="img-fluid img-rounded" width="400" height="200" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyBNg3p1HLMTIrU_KZzT5qwdSPe3kedtKxc&origin=<%= truck_locator.current_street_address + truck_locator.current_city + truck_locator.current_state %>&destination=<%= truck_locator.delivery.delivery_order.order.client_address + truck_locator.delivery.delivery_order.order.client_state %>&avoid=tolls|highways" allowfullscreen></iframe>
+                  <% end %>
                 </div>
               </div>
             </div>
+          </div>
           <% end %>
-        <% else %>
-          <h3 class="text-center">No trucks are on the road</h3>
-        <% end %>
       </div>
+      </div>
+    <% else %>
+      <h3 class="text-center">No trucks are on the road</h3>
+    <% end %>
     </div>
-  </div>
-</div>

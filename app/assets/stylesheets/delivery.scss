@@ -22,3 +22,71 @@
   color: $color3;
   padding-top: 1em;
 }
+
+.delivery-show-side-panel {
+  background: $color5;
+  height: 28em !important;
+  min-height: 6em;
+  width: 26em;
+  border-bottom-left-radius: 12em;
+  border-bottom-right-radius: 12em;
+  border: 0.20em $color3 solid;
+}
+
+.delivery-show-side-panel > svg {
+  padding-top: 1em;
+  margin-left: 12em;
+}
+
+.delivery-show-client-name > h3 {
+  color: #6d6d6d;
+  padding-top: 0.50em;
+}
+
+.delivery-show-client-address > h3 {
+  color: #6d6d6d;
+  padding-top: 0.50em;
+}
+
+.delivery-show-bread-name > h3 {
+  color: #6d6d6d;
+  padding-top: 0.50em;
+}
+
+.delivery-show-how-many-items-ordered > h3 {
+  color: #6d6d6d;
+  padding-top: 0.50em;
+}
+
+.edit-delivery-header > h1 {
+  text-align: center;
+  color: #BBBBBB;
+}
+
+.delivery-show-client-phone-number > h3 {
+  color: #6d6d6d;
+  padding-top: 0.50em;
+}
+
+.delivery-show-sub-header > h5 {
+  color: whitesmoke;
+  text-align: center;
+  margin-top: 0.20em;
+}
+
+.delivery-show-on-time-checker > h5 {
+  color: whitesmoke;
+  text-align: center;
+  margin-top: 0.20em;
+}
+
+.delivery-show-date-created-at > h5 {
+  color: whitesmoke;
+  text-align: center;
+  margin-top: 0.20em;
+}
+
+.delivery-show-edit-btn > a {
+
+}
+

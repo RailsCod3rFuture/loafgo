@@ -5,7 +5,7 @@ class TrucksController < ApplicationController
   # GET /trucks.json
   def index
     @trucks = Truck.all
-    @new_truckers = Truck.last(4)
+    @new_truckers = Truck.where("created_at > ?", 24.hours.ago).limit(2)
   end
 
   # GET /trucks/1

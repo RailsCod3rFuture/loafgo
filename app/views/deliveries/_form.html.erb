@@ -10,13 +10,13 @@
     <div class="form-group">
       <div class="col-5">
         <label>Assign Truck To Job</label>
-        <%= f.input :truck_id, collection: @trucks, label_method: lambda {|c| "Truck Id: #{c.id} Truck Driver Name: #{c.truck_driver_name}"}, value_method: :id, include_blank: false, prompt: 'Choose a truck', class: 'form-control', label: false %>
+        <%= f.input :truck_id, collection: @trucks, label_method: lambda {|c| "Truck Id: #{c.id} Truck Driver Name: #{c.truck_driver_name}"}, value_method: :id, include_blank: false, prompt: 'Choose a truck', class: 'form-control', label: false, :selected => f.object.truck_id %>
       </div>
     </div>
     <%= f.simple_fields_for :delivery_order do |d| %>
       <div class="form-control">
         <label>Delivery Order</label>
-        <%= d.input :order_id, collection: @orders, label_method: lambda {|c| "Order Id: #{c.id} Client Name: #{c.client_name} | Client Address: #{c.client_address} | Bread Choice: #{c.bread_name}"}, value_method: :id, include_blank: false, prompt: 'Add your first order to the delivery', class: 'form-control', label: false %>
+        <%= d.input :order_id, collection: @orders, label_method: lambda {|c| "Order Id: #{c.id} Client Name: #{c.client_name} | Client Address: #{c.client_address} | Bread Choice: #{c.bread_name}"}, value_method: :id, include_blank: false, prompt: 'Add your first order to the delivery', class: 'form-control', label: false, :selected => d.object.order_id %>
       </div>
     <% end %>
     <div class="form-group" style="margin-top: 0.50em;">

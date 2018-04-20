@@ -6,7 +6,7 @@
 .manager-dashboard-header > h2 {
   text-align: center;
   padding-top: 1em;
-  color: #534450;
+  color: #767676;
 }
 
 .manager-gray-side-panel {
@@ -39,7 +39,7 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 100%;
+  height: 100% !important;
   padding: 0;
 }
 
@@ -47,7 +47,7 @@
   height: 16em;
   width: 30em;
   margin-top: 1em;
-  background-color: #c29369;
+  background-color: #464c5f;
   border: 0.10em #534450 solid;
   border-radius: 0.10em;
   overflow-y: auto;
@@ -57,7 +57,7 @@
 .manager-dashboard-divider {
   width: 100%;
   height: 0.20em;
-  background-color: #534450;
+  background-color: #7d7d7d;
 }
 
 .manager-panel-title-box {

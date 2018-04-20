@@ -2,22 +2,14 @@
   <%= simple_form_for(@truck) do |f| %>
     <%= f.error_notification %>
     <div class="form-group">
-      <div class="col-3">
-        <label>Loaded Date (Click Box Below)</label>
-        <div class="input-group date" id="truck_loaded_date" data-target-input="nearest">
-          <%= f.input :loaded_date, class: 'form-control', placeholder: "Tap to view calendar <i class: 'fa fa-hand-o-up'></i>", data: {target: '#truck_loaded_date'}, label: false %>
-          <div class="input-group-append" data-target="#truck_loaded_date" data-toggle="datetimepicker">
-            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-          </div>
-        </div>
+      <div class="col-5">
+        <%= f.input :loaded_date, class: 'form-control' %>
       </div>
-
     </div>
     <div class="form-group">
       <div class="col-5">
         <%= f.input :delivery_total, class: 'form-control' %>
       </div>
-
     </div>
     <div class="form-group">
       <div class="col-5">
@@ -51,19 +43,20 @@
     </div>
     <div class="form-group">
       <div class="col-5">
-
         <%= f.input :current_country, collection: CountryStateSelect.countries_collection, prompt: 'Choose your country' %>
       </div>
     </div>
 
     <div class="form-group">
       <div class="col-5">
-        <%= f.hidden_field :delivery_id %>
+        <%= f.input :delivery_id, collection: @deliveries, label_method: :delivery_date, value_method: :id, include_blank: false, :prompt => "Select a scheduled delivery", label: 'Delivery Selection', class: 'form-control' %>
       </div>
 
     </div>
-    <div class="form-actions">
-      <%= f.button :submit, class: 'btn btn-outline-success' %>
+    <div class="form-group">
+      <div class="col-5">
+        <%= f.button :submit, class: 'btn btn-outline-success' %>
+      </div>
     </div>
   <% end %>
 </div>

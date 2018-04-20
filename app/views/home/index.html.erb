@@ -75,12 +75,10 @@
   </div>
 
 </div>
-<!-- Modal -->
+<!-- Modal Code -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-
-
       <div class="modal-body">
 
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -90,10 +88,7 @@
         <div class="embed-responsive embed-responsive-16by9">
           <iframe class="embed-responsive-item" src="" id="video" allowscriptaccess="always">></iframe>
         </div>
-
-
       </div>
-
     </div>
   </div>
 </div>
@@ -112,29 +107,25 @@
             console.error(demo.error);
         }
 
-        // Gets the video src from the data-src on each button
+        // Grab video feed from data-src on each button
 
         var $videoSrc;
         $('.video-btn').click(function () {
             $videoSrc = $(this).data("src");
         });
-        console.log($videoSrc);
 
-
-// when the modal is opened autoplay it
+        // When modal is opened, autoplay video
         $('#myModal').on('shown.bs.modal', function (e) {
 
-// set the video src to autoplay and not to show related video. Youtube related video is like a box of chocolates... you never know what you're gonna get
+            // Set video to autoplay without showing similar content afterwards
             $("#video").attr('src', $videoSrc + "?rel=0&amp;showinfo=0&amp;modestbranding=1&amp;autoplay=1");
         });
 
 
-// stop playing the youtube video when I close the modal
+        // End video when modal closes
         $('#myModal').on('hide.bs.modal', function (e) {
             // a poor man's stop video
             $("#video").attr('src', $videoSrc);
         })
-
-
     });
 </script>
