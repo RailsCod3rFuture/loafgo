@@ -11,14 +11,17 @@
   <div class="row">
     <div class="col-12">
       <div class="analytics-graph-orders">
+        <!-- Show volume of orders created for a particular bread -->
         <%= bar_chart Order.group(:bread_name).sum(:bread_quantity), xtitle: 'Quantity of Orders for Bread', ytitle: 'Bread Type/Name', colors: ["#B5838D", "#FFCDB2"], label: 'Total orders' %>
       </div>
       <div class="chart-border"></div>
       <div class="analytics-graph-clients">
+        <!-- Show newly created clients -->
         <%= line_chart Client.group_by_day(:created_at).count, label: 'New Client Registrations', xtitle: 'Date of Registration', ytitle: 'Total Client Registration Count', colors: ["#6D6875", "#E5989B"] %>
       </div>
       <div class="chart-border"></div>
       <div class="analytics-graph-breads">
+        <!-- Pie chart for showing the most popular bread types by customer selection -->
         <%= pie_chart Order.group(:bread_name).sum(:bread_quantity) %>
       </div>
     </div>
