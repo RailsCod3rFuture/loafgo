@@ -3,53 +3,53 @@
     <%= f.error_notification %>
     <div class="form-group">
       <div class="col-5">
-        <%= f.input :loaded_date, class: 'form-control' %>
+        <%= f.input :loaded_date, class: 'form-control', required: true %>
       </div>
     </div>
     <div class="form-group">
       <div class="col-5">
-        <%= f.input :delivery_total, class: 'form-control' %>
+        <%= f.input :delivery_total, class: 'form-control', required: true %>
       </div>
     </div>
     <div class="form-group">
       <div class="col-5">
-        <%= f.input :current_location_title, class: 'form-control' %>
+        <%= f.input :current_location_title, class: 'form-control', required: true %>
       </div>
     </div>
     <div class="form-group">
       <div class="col-5">
-        <%= f.input :truck_driver_name, class: 'form-control btn btn-outline-primary' %>
-      </div>
-
-    </div>
-    <div class="form-group">
-      <div class="col-5">
-        <%= f.input :current_street_address, class: 'form-control' %>
+        <%= f.input :truck_driver_name, class: 'form-control btn btn-outline-primary', required: true %>
       </div>
 
     </div>
     <div class="form-group">
       <div class="col-5">
-        <%= f.input :current_city, class: 'form-control' %>
+        <%= f.input :current_street_address, class: 'form-control', required: true %>
+      </div>
+
+    </div>
+    <div class="form-group">
+      <div class="col-5">
+        <%= f.input :current_city, class: 'form-control', required: true %>
       </div>
 
     </div>
     <div class="form-group">
       <div class="col-5">
         <label>Current State</label>
-        <%= options = {form: f, field_names: {:country => :current_country, :state => :current_state}, label: false, prompt: 'Choose your state'}
+        <%= options = {form: f, field_names: {:country => :current_country, :state => :current_state}, label: false, prompt: 'Choose your state', required: true}
             f.input :current_state, CountryStateSelect.state_options(options) %>
       </div>
     </div>
     <div class="form-group">
       <div class="col-5">
-        <%= f.input :current_country, collection: CountryStateSelect.countries_collection, prompt: 'Choose your country' %>
+        <%= f.input :current_country, collection: CountryStateSelect.countries_collection, prompt: 'Choose your country', required: true %>
       </div>
     </div>
 
     <div class="form-group">
       <div class="col-5">
-        <%= f.input :delivery_id, collection: @deliveries, label_method: :delivery_date, value_method: :id, include_blank: false, :prompt => "Select a scheduled delivery", label: 'Delivery Selection', class: 'form-control' %>
+        <%= f.input :delivery_id, collection: @deliveries, label_method: :assigned_trucker_to_delivery, value_method: :id, include_blank: true, :prompt => "Select a scheduled delivery", label: 'Delivery Selection', class: 'form-control', required: true %>
       </div>
 
     </div>

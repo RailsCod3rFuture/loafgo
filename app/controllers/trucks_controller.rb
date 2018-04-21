@@ -16,7 +16,7 @@ class TrucksController < ApplicationController
   # GET /trucks/new
   def new
     @truck = Truck.new
-    @deliveries = Delivery.all
+    @deliveries = Delivery.order('created_at DESC').joins(:delivery_order)
   end
 
   # GET /trucks/1/edit

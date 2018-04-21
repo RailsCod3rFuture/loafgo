@@ -8,4 +8,8 @@ class Delivery < ApplicationRecord
   accepts_nested_attributes_for :delivery_order
 
 
+  def assigned_trucker_to_delivery
+    "Delivery was assigned to #{truck.truck_driver_name} on #{delivery_date.strftime('%D')}"
+  end
+
 end
