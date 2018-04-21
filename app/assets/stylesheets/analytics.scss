@@ -1,0 +1,25 @@
+@import "loafgo-color-palette";
+
+.analytics-header-1 > h2 {
+  text-decoration: underline;
+  font-weight: 700;
+  color: #bababa;
+  text-align: center;
+  margin-top: 1em;
+}
+
+.chart-border {
+  height: 0.10em;
+  width: 100%;
+  background-color: $color3;
+}
+
+.analytics-graph-orders {
+  padding-bottom: 0.50em;
+  padding-top: 0.50em;
+}
+
+.analytics-graph-clients {
+  padding-bottom: 0.50em;
+  padding-top: 0.50em;
+}
