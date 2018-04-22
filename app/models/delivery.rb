@@ -9,7 +9,7 @@ class Delivery < ApplicationRecord
 
 
   def assigned_trucker_to_delivery
-    "Delivery was assigned to #{truck.truck_driver_name} on #{delivery_date.strftime('%D')}"
+    "Delivery for #{delivery_order.order.client_name} w/ID ##{id} was assigned to #{truck.truck_driver_name} on #{delivery_date.strftime('%D')}"
   end
 
 end
