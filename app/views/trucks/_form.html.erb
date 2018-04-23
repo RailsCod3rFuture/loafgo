@@ -49,7 +49,7 @@
 
     <div class="form-group">
       <div class="col-5">
-        <%= f.input :delivery_id, collection: @deliveries, label_method: :assigned_trucker_to_delivery, value_method: :id, include_blank: true, :prompt => "Select a scheduled delivery", label: 'Delivery Selection', class: 'form-control', required: true %>
+        <%= f.input :delivery_id, collection: @deliveries, label_method: :assigned_trucker_to_delivery, value_method: :id, include_blank: false, :prompt => "Select a scheduled delivery", label: 'Delivery Selection (Assignment required for new truckers)', class: 'form-control', required: false %>
       </div>
 
     </div>
