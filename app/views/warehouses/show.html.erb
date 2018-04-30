@@ -25,7 +25,7 @@
               </li>
               <li><%= fa_icon 'map-marker' %> <strong>State:</strong>  <%= current_manager.warehouse.state %> </li>
               <li><%= fa_icon 'barcode' %>
-                <strong>Inventories:</strong>  <%= current_manager.inventories.size %> </li>
+                <strong>Bread Offerings:</strong> <%= current_manager.breads.size %> </li>
               <li><%= fa_icon 'truck' %>
                 <strong>Trucks Available:</strong>  <%= current_manager.warehouse.trucks.size %></li>
             </ul>
@@ -42,6 +42,8 @@
               <ul>
                 <% @orders.each do |order| %>
                   <li style="color: #334a53"><%= order.client_name %></li>
+                  <li style="color: #2f323d;"><%= fa_icon 'calendar' %> Join
+                    Date: <%= order.client.created_at.strftime('%D') %></li>
                 <% end %>
               </ul>
             </div>

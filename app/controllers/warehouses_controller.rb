@@ -4,7 +4,7 @@ class WarehousesController < ApplicationController
 
 
   def show
-    @orders = Order.all
+    @orders = Order.order('created_at DESC').last(10)
   end
 
   # GET /warehouses/1/edit
