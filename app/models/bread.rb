@@ -5,8 +5,4 @@ class Bread < ApplicationRecord
   belongs_to :warehouse, optional: true
   accepts_nested_attributes_for :inventory
 
-  after_create do
-    create_inventory
-    # Will update!
-  end
 end

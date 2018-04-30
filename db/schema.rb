@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180408050723) do
+ActiveRecord::Schema.define(version: 20180430185342) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 20180408050723) do
   create_table "breads", force: :cascade do |t|
     t.string "bread_name"
     t.string "bread_type"
-    t.date "bread_expire_date"
     t.bigint "warehouse_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -78,13 +77,10 @@ ActiveRecord::Schema.define(version: 20180408050723) do
   create_table "inventories", force: :cascade do |t|
     t.integer "bread_stock_quantity"
     t.boolean "bread_inventory_low"
-    t.bigint "warehouse_id"
-    t.bigint "manager_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "bread_id"
-    t.index ["manager_id"], name: "index_inventories_on_manager_id"
-    t.index ["warehouse_id"], name: "index_inventories_on_warehouse_id"
+    t.index ["bread_id"], name: "index_inventories_on_bread_id"
   end
 
   create_table "managers", force: :cascade do |t|
@@ -194,8 +190,6 @@ ActiveRecord::Schema.define(version: 20180408050723) do
   add_foreign_key "deliveries", "warehouses"
   add_foreign_key "delivery_orders", "deliveries", on_delete: :cascade
   add_foreign_key "delivery_orders", "orders"
-  add_foreign_key "inventories", "managers"
-  add_foreign_key "inventories", "warehouses"
   add_foreign_key "order_feedbacks", "clients"
   add_foreign_key "order_feedbacks", "orders"
   add_foreign_key "order_trackers", "orders"

@@ -1,5 +1,3 @@
 class Inventory < ApplicationRecord
-  belongs_to :warehouse, optional: true
-  belongs_to :manager, optional: true
-  belongs_to :bread
+  belongs_to :bread, optional: true
 end

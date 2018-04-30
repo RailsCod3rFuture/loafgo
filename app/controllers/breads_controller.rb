@@ -1,6 +1,8 @@
 class BreadsController < ApplicationController
-  before_action :set_bread, only: [:show, :edit, :update, :destroy]
+  before_action :set_bread, only: %i[show edit update destroy]
   before_action :authenticate_manager!
+
+
   # GET /breads
   # GET /breads.json
   def index
@@ -9,7 +11,7 @@ class BreadsController < ApplicationController
 
   # GET /breads/1
   # GET /breads/1.json
-  def show
+  def show;
   end
 
   # GET /breads/new
@@ -20,7 +22,7 @@ class BreadsController < ApplicationController
   end
 
   # GET /breads/1/edit
-  def edit
+  def edit;
   end
 
   # POST /breads
@@ -65,14 +67,15 @@ class BreadsController < ApplicationController
 
   def get_barcode
     @bread = Bread.find_or_initialize_by(upc: params[:upc])
-    unless @bread.new_record?
-      redirect_to @bread
-    else
+    if @bread.new_record?
       redirect_to new_bread_path(upc: params[:upc])
+    else
+      redirect_to @bread
     end
   end
 
   private
+
   # Use callbacks to share common setup or constraints between actions.
   def set_bread
     @bread = Bread.find(params[:id])
@@ -80,6 +83,6 @@ class BreadsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def bread_params
-    params.require(:bread).permit(:bread_name, :bread_type, :upc, :image_url, :bread_expire_date, :id, :bread_quantity, inventory_attributes: [:bread_stock_quantity, :bread_inventory_low, :id])
+    params.require(:bread).permit(:bread_name, :bread_type, :upc, :image_url, :bread_expire_date, inventory_attributes: [:bread_stock_quantity, :bread_inventory_low, :bread_id, :_destroy])
   end
 end

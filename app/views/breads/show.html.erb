@@ -1,8 +1,36 @@
-<p id="notice"><%= notice %></p>
-<%= @bread.bread_name %>
-<%= @bread.upc %>
-<%= content_tag :p do %>
-  <%= image_tag @bread.image_url, class: 'img-responsive', width: 640, height: 480 %>
-<% end if @bread.image_url.present? %>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="bread-name text-center">
+        <h1><%= @bread.bread_name %></h1>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title"><%= fa_icon 'camera' %></h5>
+          <% if @bread.image_url.present? %>
+            <%= content_tag :p do %>
+              <%= image_tag @bread.image_url, class: 'img-responsive', width: 640, height: 480 %>
+            <% end if @bread.image_url.present? %>
+          <% else %>
+            <h4 class="text-center">No image was scanned in</h4>
+          <% end %>
+        </div>
+        <div class="card-footer text-muted">
+          <%= fa_icon 'barcode' %> UPC <strong><%= @bread.upc %></strong> | <%= fa_icon 'box' %> Available
+          <strong><%= @bread.inventory.bread_stock_quantity %> </strong> | Created on
+          <strong><%= @bread.created_at.strftime('%A, %d %b %Y %l:%M %p') %></strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <%= link_to 'Edit', edit_bread_path(@bread) %> |
 <%= link_to 'Back', breads_path %>
