@@ -41,9 +41,9 @@
             <div class="orders-list">
               <ul>
                 <% @orders.each do |order| %>
-                  <li style="color: #334a53"><%= order.client_name %></li>
+                  <li style="color: #334a53" class="lead"><%= order.client_name %></li>
                   <li style="color: #2f323d;"><%= fa_icon 'calendar' %> Join
-                    Date: <%= order.client.created_at.strftime('%D') %></li>
+                    Date: <strong><%= order.client.created_at.strftime('%D') %></strong></li>
                 <% end %>
               </ul>
             </div>
