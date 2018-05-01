@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180430185342) do
+ActiveRecord::Schema.define(version: 20180501005305) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,8 +23,6 @@ ActiveRecord::Schema.define(version: 20180430185342) do
     t.datetime "updated_at", null: false
     t.string "upc"
     t.string "image_url"
-    t.bigint "inventory_id"
-    t.index ["inventory_id"], name: "index_breads_on_inventory_id"
     t.index ["warehouse_id"], name: "index_breads_on_warehouse_id"
   end
 
@@ -184,7 +182,6 @@ ActiveRecord::Schema.define(version: 20180430185342) do
     t.index ["manager_id"], name: "index_warehouses_on_manager_id"
   end
 
-  add_foreign_key "breads", "inventories"
   add_foreign_key "breads", "warehouses"
   add_foreign_key "deliveries", "trucks", on_delete: :cascade
   add_foreign_key "deliveries", "warehouses"
